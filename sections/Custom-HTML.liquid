@@ -1,0 +1,207 @@
+{% comment %} 
+    Custom HTML section
+    © 2021 EcomGraduates
+    https://wwww.ecomgraduates.com 
+{% endcomment %}
+
+<style>
+    #eg-custom-html-{{ section.id }} {
+        {% unless section.settings.bg_color == 'rgba(0,0,0,0)' %}
+            background-color: {{ section.settings.bg_color }};
+        {% endunless %}
+        {% unless section.settings.color == 'rgba(0,0,0,0)' %}
+            color: {{ section.settings.color }};
+        {% endunless %}
+        overflow: hidden;
+        padding-top: {{ section.settings.pt }}rem;
+        padding-bottom: {{ section.settings.pb }}rem;
+        margin-top: {{ section.settings.mt }}rem;
+        margin-bottom: {{ section.settings.mb }}rem;
+    }
+
+    #eg-custom-html-{{ section.id }} header {
+        {% if section.settings.header_center %}
+            text-align: center;
+        {% endif %}
+    }
+
+    #eg-custom-html-{{ section.id }} header .title {
+        {% unless section.settings.color == 'rgba(0,0,0,0)' %}
+            color: {{ section.settings.color }};
+        {% endunless %}
+        margin-bottom: .5rem;
+    }
+
+    #eg-custom-html-{{ section.id }} .eg-custom-html-content {
+        margin: 3rem 0;
+    }
+
+    /* Applies if the content is an embed YouTube iframe video */
+    #eg-custom-html-{{ section.id }} .iframe-wrapper-fix {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+      }
+    #eg-custom-html-{{ section.id }} .iframe-wrapper-fix  iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Dummy code to fix editor styling */
+    #eg-custom-html-{{ section.id }} .test {} 
+    /* End dummy code */
+</style>
+
+<section 
+    id="eg-custom-html-{{ section.id }}" 
+    class="eg-custom-html">
+    <div 
+        class="page-width container" 
+        style="max-width: 720px">
+        <header>
+            {% unless section.settings.title == blank %}
+                <h2 class="title {{ section.settings.title_size }}">
+                    {{ section.settings.title }}
+                </h2>
+            {% endunless %}
+            {% unless section.settings.description == blank %}
+                <div class="description rte">
+                    {{ section.settings.description }}
+                </div>
+            {% endunless %}
+        </header>
+    </div>
+    <div 
+        class="{% if section.settings.container %}page-width container{% endif %}" 
+        style="max-width: {{ section.settings.max_width }}px">
+        <div class="eg-custom-html-content {% if section.settings.html contains 'youtube.com/embed/' %}iframe-wrapper-fix{% endif %}">
+            {{ section.settings.html }}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "EG - Custom HTML",
+    "settings": [
+        {
+            "type": "html",
+            "id": "html",
+            "label": "HTML code"
+        },
+        {
+            "type": "header",
+            "content": "General"
+        },
+        {
+            "type": "checkbox",
+            "id": "container",
+            "label": "Wrap in a container",
+            "info": "Enable to use theme's container"
+        },
+        {
+            "type": "text",
+            "id": "max_width",
+            "label": "Max width (px)",
+            "info": "Adjust container width (in pixels). Leave empty to use your theme's container width."
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Text color"
+        },
+        {
+            "type": "header",
+            "content": "Header"
+        },
+        {
+            "type": "checkbox",
+            "id": "header_center",
+            "label": "Align center",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Custom HTML"
+        },
+        {
+            "type": "select",
+            "id": "title_size",
+            "label": "Title Size",
+            "default": "h2",
+            "options": [
+                {  "value": "h1", "label": "H1" },
+                {  "value": "h2", "label": "H2" },
+                {  "value": "h3", "label": "H3" },
+                {  "value": "h4", "label": "H4" },
+                {  "value": "h5", "label": "H5" },
+                {  "value": "h6", "label": "H6" }
+            ]
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>You may use this section to display any HTML code to your Shopify store. E.g. Google maps or YouTube embed iframe.</p>"
+        },
+        
+        {
+            "type": "header",
+            "content": "Spacing",
+            "info": "Based on 'rem' values [Learn more](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)"
+        },
+        {
+            "type": "range",
+            "id": "pt",
+            "label": "Padding top",
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "pb",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mt",
+            "label": "Margin top",
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mb",
+            "label": "Margin bottom",
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "default": 0
+        }
+    ],
+    "presets": [
+        {
+            "name": "EG - Custom HTML",
+            "category": "General"
+        }
+    ]
+}
+{% endschema %}

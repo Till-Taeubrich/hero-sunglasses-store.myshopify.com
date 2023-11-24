@@ -1,0 +1,132 @@
+{%- comment -%}
+  
+<div class="brand-img-pdp-container">
+<div id="logo-media-box-1">
+
+{% if product.metafields.custom.brand == 'OAKLEY' %}
+{% assign img_thumb = 'oakley-logo.jpg' | asset_img_url %}
+{% elsif product.metafields.custom.brand == 'RAY BAN' %}
+{% assign img_thumb = 'ray-ban-logo.png' | asset_img_url %}
+{% elsif product.metafields.custom.brand == 'COSTA' %}
+{% assign img_thumb = 'costa-logo.png' | asset_img_url %}
+{% else %}
+{% endif %}
+
+<img id="brand-img-pdp-logo" src={{img_thumb}} />
+</div>
+<div id="logo-media-box-2">
+<span class="information__value font-body-semi-bold text-small">
+MODEL NAME<br>{{ product.title | upcase }}
+</span>
+</div>
+<div id="logo-media-box-3">
+<span class="information__value font-body-semi-bold text-small">MSRP <br> {{ product.price | money_with_currency }}</span>
+</div>
+</div>
+{%- endcomment -%}
+    
+<div class="angry-grid-specs-top">
+    <div id="item-0-top-specs">
+        
+<div class="specs-top-wrapper-0">
+<span class="information__value font-body-semi-bold text-small">
+    MODEL NAME<br>{{ product.title | upcase }}
+    </span>
+</div>
+  </div>
+    <div id="item-1-specs">
+        <div class="specs-top-wrapper-1">
+            
+            <span class="information__value font-body-semi-bold text-small">MSRP </span><br>
+            {%- comment -%}
+                
+                {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'information__value font-body-semi-bold text-small', show_in_card: false -%}
+            {%- endcomment -%}
+            {%- if product.price_varies -%}
+                <div class="no-js-hidden" id="price-{{ section.id }}" role="status">
+                  {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'information__value font-body-semi-bold text-small price-mobile-span', show_in_card: false -%}
+                </div>
+                {%- else -%}
+                {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'information__value font-body-semi-bold text-small price-mobile-span', show_in_card: false -%}
+              {%- endif -%}
+        </div>
+    </div>
+  </div>
+  
+<style>
+    
+
+    .specs-top-wrapper-0 {
+    text-align: left;    
+    }
+    .specs-top-wrapper-1 {
+        text-align: right;
+        font-size: smaller;
+    }
+    .angry-grid-specs-top {
+       display: grid; 
+       position: absolute;
+       z-index: 3;
+       grid-template-rows: 1fr;
+       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+       gap: 0px;
+       width: 92vw;       
+    }
+      
+    #item-0-top-specs {
+    
+       grid-row-start: 1;
+       grid-column-start: 1;
+    
+       grid-row-end: 2;
+       grid-column-end: 5;
+       
+    }
+
+    .price-mobile-span > span{
+    font-size: smaller !important;  
+    }
+    #item-1-specs {
+    
+       grid-row-start: 1;
+       grid-column-start: 4;
+    
+       grid-row-end: 2;
+       grid-column-end: 6;
+       
+    }
+
+    @media screen and (max-width: 749px) {
+        .product__title {
+        display: none;
+        }
+        #dekstop-variant-metafield-box {
+            display: none !important;
+        }        
+        .price__regular span {
+            font-size: smaller !important;
+          }
+
+    }
+
+    @media screen and (min-width: 749px) {
+        .angry-grid-specs-top {
+        display: none;
+        }
+        .variant__description:first-child {
+            display: none;
+        }
+    }
+
+    </style>
+
+    
+
+<style>
+    /* Brand Image PDP 
+    #logo-media-box-1 {
+        display: flex;
+        justify-content: inherit;
+    } 
+    */
+</style>

@@ -1,0 +1,50 @@
+{% for variant in product.variants %}
+  <div 
+    id="dekstop-variant-metafield-box"
+    class="variant__description desktop-variant-above-buy"
+    data-variant-id="{{variant.id}}"
+    {% if product.selected_or_first_available_variant.id == variant.id %}
+      style="display: block;"
+    {% endif %}
+  >
+    {% if variant.metafields.custom.frame_color %}
+      <div class="displayRow mb-8 mimic-button">
+      <span class="first-pdp-metafield font-body-bold">FRAME COLOR: </span><p class="second-pdp-metafield"> {{ variant.metafields.custom.frame_color }}</p>
+      </div>
+    {% endif -%}
+    {% if variant.metafields.custom.lens_color %}
+      <div class="displayRow mb-8 mimic-button">
+            <span class="first-pdp-metafield font-body-bold">LENS COLOR: </span><p class="second-pdp-metafield"> {{ variant.metafields.custom.lens_color }}</p>
+          </div>
+          
+        {% endif -%}
+    {% if variant.metafields.custom.polarized %}
+      <div class="displayRow mb-8 mimic-button">
+      <span class="first-pdp-metafield font-body-bold">POLARIZED: </span> <p class="second-pdp-metafield"> {{ variant.metafields.custom.polarized }}</p>
+    </div>
+  {% endif %}
+  
+  {% if variant.metafields.custom.lens_material %}
+    <div class="displayRow mb-8 mimic-button">
+      <span class="first-pdp-metafield font-body-bold">LENS MATERIAL: </span><p class="second-pdp-metafield"> {{ variant.metafields.custom.lens_material }}</p>
+    </div>
+  {% endif -%}
+
+  {%- if product.metafields.custom.fit_description != blank -%}
+    <div class="displayRow mb-8 mimic-button">
+      <span class="first-pdp-metafield font-body-bold">FIT: </span><p class="second-pdp-metafield"> {{ product.metafields.custom.fit_description }}</p>
+    </div>
+
+  {%- endif -%}
+
+</div>
+{% endfor %}
+      
+    <style>
+      .variant__description {
+      display: none;
+    }
+    legend.product-form__input__form-label { 
+      display: none;
+    }
+    </style>

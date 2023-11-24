@@ -1,0 +1,167 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_number_of_products": false,
+        "collection_icon_color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "b956e729-3f73-41ea-8f6f-4162743c81b7": {
+          "type": "category_filter_icon",
+          "settings": {
+            "trigger": "Computers & tablets",
+            "icon": "computers"
+          }
+        },
+        "35ce6bc3-b36c-404c-9cd4-aa917dfe7802": {
+          "type": "category_filter_icon",
+          "settings": {
+            "trigger": "Cellphones & accessories",
+            "icon": "cellphone"
+          }
+        },
+        "4ea7a827-8579-4c44-ae4c-37eb6fdcb9cc": {
+          "type": "category_filter_icon",
+          "settings": {
+            "trigger": "Cameras, camcorders",
+            "icon": "camera"
+          }
+        },
+        "54ca538a-6880-4ba5-96a8-07839008ca90": {
+          "type": "category_filter_icon",
+          "settings": {
+            "trigger": "Others",
+            "icon": "newspaper"
+          }
+        }
+      },
+      "block_order": [
+        "b956e729-3f73-41ea-8f6f-4162743c81b7",
+        "35ce6bc3-b36c-404c-9cd4-aa917dfe7802",
+        "4ea7a827-8579-4c44-ae4c-37eb6fdcb9cc",
+        "54ca538a-6880-4ba5-96a8-07839008ca90"
+      ],
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "pagination_style": "infinite",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "include_collection_in_url": true,
+        "enable_quick_add": false,
+        "enable_compare": true,
+        "enable_quick_view": false,
+        "show_color_swatches": true,
+        "color_swatches_style": "variant",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "filter_include_group_name": true,
+        "enable_sorting": true,
+        "categories_filter": "",
+        "show_collection_description": true,
+        "description_position": "above",
+        "description_style": "body",
+        "description_alignment": "left",
+        "columns_tablet": "3",
+        "columns_mobile": "2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "80c7fe04-64c4-420c-aa28-d0c1d28eb7e8": {
+      "type": "scrolling-text",
+      "blocks": {
+        "template--20124662661421__80c7fe04-64c4-420c-aa28-d0c1d28eb7e8-normal_text-1": {
+          "type": "normal_text",
+          "settings": {
+            "title": "<strong>Your text 1<\/strong>",
+            "link": "#",
+            "use_outline_text": false,
+            "text_stroke": 2,
+            "gradient_color": "linear-gradient(270deg, rgba(241, 130, 49, 1), rgba(253, 212, 32, 1) 51.04%, rgba(143, 202, 72, 1) 100%)"
+          }
+        },
+        "ddbff642-45a9-41aa-9709-8b0ae6636866": {
+          "type": "normal_text",
+          "settings": {
+            "title": "<strong>-<\/strong>",
+            "link": "",
+            "use_outline_text": false,
+            "text_stroke": 5,
+            "gradient_color": "linear-gradient(270deg, rgba(122, 158, 228, 1), rgba(244, 86, 86, 1) 97.77%)"
+          }
+        },
+        "a9fc78f8-8846-4864-b16b-982c3cd38d17": {
+          "type": "normal_text",
+          "settings": {
+            "title": "<strong>Your text 2<\/strong>",
+            "link": "#",
+            "use_outline_text": false,
+            "text_stroke": 2,
+            "gradient_color": "linear-gradient(270deg, rgba(241, 92, 49, 1), rgba(253, 212, 32, 1) 51.04%, rgba(72, 202, 202, 1) 100%)"
+          }
+        },
+        "c83d5217-3322-4bfa-a194-daf253cbea5a": {
+          "type": "normal_text",
+          "settings": {
+            "title": "<strong>-<\/strong>",
+            "link": "",
+            "use_outline_text": false,
+            "text_stroke": 5,
+            "gradient_color": "linear-gradient(270deg, rgba(122, 158, 228, 1), rgba(244, 86, 86, 1) 97.77%)"
+          }
+        },
+        "87f4a1c8-7d1c-464e-b1af-c7dadedb54ad": {
+          "type": "normal_text",
+          "settings": {
+            "title": "<strong>Your text 3<\/strong>",
+            "link": "#",
+            "use_outline_text": false,
+            "text_stroke": 5,
+            "gradient_color": "linear-gradient(270deg, rgba(241, 49, 118, 1), rgba(253, 212, 32, 1) 51.04%, rgba(143, 202, 72, 1) 100%)"
+          }
+        },
+        "cdf1448d-c5b2-4df8-9dae-8e7dca3fe6d6": {
+          "type": "normal_text",
+          "settings": {
+            "title": "<strong>-<\/strong>",
+            "link": "",
+            "use_outline_text": false,
+            "text_stroke": 5,
+            "gradient_color": "linear-gradient(270deg, rgba(122, 158, 228, 1), rgba(244, 86, 86, 1) 97.77%)"
+          }
+        }
+      },
+      "block_order": [
+        "template--20124662661421__80c7fe04-64c4-420c-aa28-d0c1d28eb7e8-normal_text-1",
+        "ddbff642-45a9-41aa-9709-8b0ae6636866",
+        "a9fc78f8-8846-4864-b16b-982c3cd38d17",
+        "c83d5217-3322-4bfa-a194-daf253cbea5a",
+        "87f4a1c8-7d1c-464e-b1af-c7dadedb54ad",
+        "cdf1448d-c5b2-4df8-9dae-8e7dca3fe6d6"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "scrolling_speed": 10,
+        "pause_on_hover": true,
+        "direction": "normal",
+        "spacing": 5,
+        "color_scheme": "",
+        "font_size": 48,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "80c7fe04-64c4-420c-aa28-d0c1d28eb7e8"
+  ]
+}

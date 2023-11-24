@@ -1,0 +1,33 @@
+{% for variant in product.variants %}
+    <div
+       id="angry-grid-four-variant" 
+       class="variant__description"
+       data-variant-id="{{variant.id}}"
+       {% if product.selected_or_first_available_variant.id == variant.id %}
+         style="display: block;"
+       {% endif %}
+     >
+    <div class="angry-grid-four-variant">
+        {%- if  variant.metafields.custom.frame_color != blank -%}
+            
+            <div id="item-four-details-0">
+                <span class="span-metafields-top font-body-bold">FRAME COLOR</span>
+                <span class=" four-variant-smaller span-metafields">{{ variant.metafields.custom.frame_color }}</span>
+            </div>
+        {%- endif -%}
+        {%- if  variant.metafields.custom.lens_color != blank -%}
+
+      <div id="item-four-details-1">
+        <span class="span-metafields-top font-body-bold">LENS COLOR</span>
+        <span class=" four-variant-smaller span-metafields">{{ variant.metafields.custom.lens_color }}</span>
+    </div>
+{%- endif -%}
+{%- if  variant.metafields.custom.polarized != blank -%}
+      <div id="item-four-details-2">
+        <span class="span-metafields-top font-body-bold">POLARIZED</span>
+        <span class=" four-variant-smaller span-metafields">{{ variant.metafields.custom.polarized }}</span>
+    </div>
+{%- endif -%}
+    </div>
+</div>
+{% endfor %}

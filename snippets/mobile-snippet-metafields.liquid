@@ -1,0 +1,32 @@
+<div class="mobile-variant-metafield-specs">
+
+    {% for variant in product.variants %}
+          
+        <div
+           data-variant-id="{{variant.id}}"
+           class="variant__description"
+           {% if product.selected_or_first_available_variant.id == variant.id %}
+             style="display: block;"
+           {% endif %}
+         >
+            {% if variant.metafields.custom.frame_color %}
+                <div id="">
+               <span class="span-metafields-top font-body-bold">FRAME COLOR</span>
+               <br>
+               <span class="span-metafields"> {{ variant.metafields.custom.frame_color }} </span>
+               </div>
+               {% endif %}
+         {% endfor %}
+
+</div>
+
+<style>
+    .mobile-variant-metafield-specs {
+        display: none;
+    }
+    @media (max-width: 767px) {
+        .mobile-variant-metafield-specs {
+            display: block;
+        }
+    }
+</style>

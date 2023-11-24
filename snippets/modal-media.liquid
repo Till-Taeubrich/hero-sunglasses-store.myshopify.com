@@ -1,0 +1,35 @@
+{% for variant in product.variants %}
+
+  <div class="modal-media-{{ forloop.index }} modal-hide">
+    
+    <div class="modal-content">
+      <button type="button" class="modal__close-button link link--text focus-inset flex justify-center align-center close-btn" aria-label="Close">
+        <svg loading="lazy" class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+          <use href="#icon-close"></use>
+        </svg>
+      </button>
+    <div class="swiper-container gallery">
+      <div class="swiper-wrapper">
+            {% for metafield in variant.metafields.custom.gallery-slider-mixed.value %}
+        <div class="swiper-slide">
+          {% if metafield.media_type == 'video' %}
+                              
+            <video class="yourVideo slider-video-full" id="yourVideo" autoplay playsinline preload="metadata" muted>
+              <source src={{ metafield | metafield_tag }}
+              </video>
+            {% else %}
+            <img lazyload="lazyload" lazyload id="item-video-pdp-{{ forloop.rindex0}}"  src="{{ metafield | img_url: '1000x600' }}" alt=""> 
+            {% endif %}
+        </div>
+         {% endfor %}
+         </div>
+
+        </div>
+    </div>  
+</div>
+
+
+
+
+  {% endfor %}
+  

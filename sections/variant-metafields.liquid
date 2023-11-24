@@ -1,0 +1,50 @@
+{% for variant in product.variants %}
+  <div
+    class="variant__description"
+    data-variant-id="{{variant.id}}"
+    {% if product.selected_or_first_available_variant.id == variant.id %}
+      style="display: block;"
+    {% endif %}
+  >
+    {% if variant.metafields.custom.custom.frame_color %}
+      <span class="first-pdp-metafield font-body-bold">FRAME COLOR:</span><p class="second-pdp-metafield"> {{ variant.metafields.custom.frame_color }}</p>
+    {% endif -%}
+    <br>
+    {% if variant.metafields.custom.lens_color %}
+      <span class="first-pdp-metafield font-body-bold">LENS COLOR:</span><p class="second-pdp-metafield"> {{ variant.metafields.custom.lens_color }}</p>
+    {% endif -%}
+    <br>
+    {% if variant.metafields.custom.polarized %}
+      <span class="first-pdp-metafield font-body-bold">POLARIZED:</span> <p class="second-pdp-metafield"> {{ variant.metafields.custom.polarized }}</p>
+    {% endif %}
+  </div>
+{% endfor %}
+
+<style>
+  .variant__description { 
+    display: none;
+  }
+</style>
+{% schema %}
+{
+  "name": "Variant Metafield Testing",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Text 0",
+      "id": "text_0"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Variant Metafield Testing"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

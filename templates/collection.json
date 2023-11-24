@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "product-grid": {
+      "type": "main-usf-collection",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}

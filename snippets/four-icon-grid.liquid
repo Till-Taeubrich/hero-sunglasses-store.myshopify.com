@@ -1,0 +1,96 @@
+<style>
+    .four-icon-grid {
+       display: grid; 
+       grid-template-rows: 1fr;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+       place-items: center;
+       gap: 10px;
+       height: 100%;
+       
+    }
+
+    #four-0, #four-1, #four-2, #four-3 {
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px solid gray;
+    }
+      .four-grid-span {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: x-small;
+      font-weight: bold;      
+      }
+    #four-0 { 
+       grid-row-start: 1;
+       grid-column-start: 1;
+        place-items:center;
+       grid-row-end: 2;
+       grid-column-end: 2;
+       
+    }
+    #four-1 { 
+       grid-row-start: 1;
+       grid-column-start: 2;
+    place-items:center;
+       grid-row-end: 2;
+       grid-column-end: 3;
+       
+    }
+    #four-2 { 
+       grid-row-start: 1;
+       grid-column-start: 3;
+    place-items:center;
+       grid-row-end: 2;
+       grid-column-end: 4;
+       
+    }
+    #four-3 { 
+       grid-row-start: 1;
+       grid-column-start: 4;
+    place-items:center;
+       grid-row-end: 2;
+       grid-column-end: 5;
+       
+    }
+    .four-logo-grid-img {
+    max-width: 65px;
+    max-height: 65px;
+}
+
+
+@media screen and (max-width: 760px) {
+    .four-logo-grid-img {
+        max-width: 45px;
+        max-height: 45px;
+        
+    }
+}
+    </style>
+    
+    <div class="four-icon-grid">
+      <div id="four-0">
+    <img class="four-logo-grid-img" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/ship-grey.svg?v=1698077231">
+    <span class="four-grid-span">
+      Free Same Day Shipping
+    </span>
+      </div>
+      <div id="four-1">
+    <img class="four-logo-grid-img" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/gu-grey.svg?v=1698077230">
+    <span class="four-grid-span">
+Guarenteed in stock
+    </span>
+      </div>
+      <div id="four-2">
+    <img class="four-logo-grid-img" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/cust-grey_f3c9a44a-5a5d-4571-be2f-5265540a627b.svg?v=1698077574">
+    <span class="four-grid-span">
+      lifetime customer service
+    </span>
+      </div>
+      <div id="four-3">
+    <img class="four-logo-grid-img" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/family-grey_9a2314de-df37-43d1-9882-912fe838f6ab.svg?v=1698077652">
+    <span class="four-grid-span">
+      family owned & operated
+      </div>
+    </div>
+    
+    

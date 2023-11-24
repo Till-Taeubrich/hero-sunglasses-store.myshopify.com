@@ -1,0 +1,14 @@
+{% for variant in product.variants %}
+    <div 
+       class="variant__description"
+       data-variant-id="{{variant.id}}"
+       {% if product.selected_or_first_available_variant.id == variant.id %}
+         style="display: block;"
+       {% endif %}
+     >
+    <div class="variant-fit-size-wrapper">
+        <span class="fit-title-size">{{  variant.metafields.custom.fit }}</span>
+
+</div>
+         </div>
+{% endfor %}

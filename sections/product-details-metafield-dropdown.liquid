@@ -1,0 +1,596 @@
+<section id="shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" class="shopify-section mw-58"><link href="//s1o3wq7mjxqlnwyo-83776799012.shopifypreview.com/cdn/shop/t/8/assets/component-accordion.css?v=18637288360933037841698094434" rel="stylesheet" type="text/css" media="all">
+
+<link href="//s1o3wq7mjxqlnwyo-83776799012.shopifypreview.com/cdn/shop/t/8/assets/collapsible-content.css?v=106254775568716911291698094434" rel="stylesheet" type="text/css" media="all">
+<script src="//s1o3wq7mjxqlnwyo-83776799012.shopifypreview.com/cdn/shop/t/8/assets/details-accordion.js?v=170558748681591396671698094434" defer="defer"></script><style data-shopify="">.section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-padding {
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-padding {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+  }#shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824 {--title-gap: -1.8rem;
+      --title-indent: 0.8rem;
+      --title-back-size: 4rem;
+      --title-back-letter-spacing: -1.6px;}
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824 {--title-gap: -2.2rem;
+        --title-indent: 1rem;
+        --title-back-size: 4.8rem;
+        --title-back-letter-spacing: -2.4px;}
+  }
+
+  @media screen and (min-width: 1200px) {
+    #shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824 {--title-gap: -2.6rem;
+        --title-indent: 1.2rem;
+        --title-back-size: 5.4rem;
+        --title-back-letter-spacing: -2.7px;}
+  }</style>
+
+
+  <div class="color-background-1 gradient">
+  <div class="collapsible-content collapsible-row-layout isolate page-width">
+    <div class="collapsible-content__wrapper section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-padding">
+      <div class="collapsible-content__header left">
+		
+      <div class="grid grid--1-col collapsible-content__grid collapsible-content__grid--reverse">
+        <div class="grid__item">
+            
+  {% for variant in product.variants %}
+    <div
+       class="variant__description"
+       data-variant-id="{{variant.id}}"
+       {% if product.selected_or_first_available_variant.id == variant.id %}
+         style="display: block;"
+       {% endif %}>
+       {%- comment -%}
+         
+<details-accordion class="accordion db collapsible-content__item">
+              <details class="details-metafield" id="Details-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      FIT GUIDE
+                    </h2>
+                  </div>
+             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-caret light">
+                    <path d="M12.6667 6L8 10.6667L3.33333 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </summary>
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+
+                        
+                        <div class="angry-grid-fit-guide">
+                          <div id="item-fit-guide-0">
+                            <span class="fit-guide-text">
+                            The Aviator Medium boasts a lightweight metal
+                            frame complemented by acetate temple tips,
+                            ensuring both style and comfort. With its
+                            standard dimensionalfit, adjustable nose pads,
+                            and generous lens coverage, it promises an
+                            impeccable and secure fit for everyday wear.
+                        </span>
+                          </div>
+                          <div id="item-fit-guide-1">
+                          <img lazyload class="fit-guide-image-img" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/SKETCH.png?v=1698085392">
+                          </div>
+                          <div id="item-fit-guide-2">
+                            <div class="angry-grid-four-fit">
+                            <div id="item-0-four-fit" class="dropdown-metafields-wrapper">
+                                <span class="span-metafields  dropdown-metafield-header font-body-bold">A. BRIDGE WIDTH - {{ product.metafields.custom.bridge_width }}</span>
+                                <span class="span-metafields  dropdown-metafield-header font-body-bold"></span>
+                                </div>  
+                            <div id="item-1-four-fit" class="dropdown-metafields-wrapper">
+                                <span class="span-metafields  dropdown-metafield-header font-body-bold">B. LENS WIDTH - {{ product.metafields.custom.lens_width }}</span>
+                                <span class="span-metafields  dropdown-metafield-header font-body-bold"></span>
+                                </div>  
+                                <div id="item-2-four-fit" class="dropdown-metafields-wrapper">
+                                    <span class="span-metafields  dropdown-metafield-header font-body-bold">C. TEMPLE LENGTH - {{ product.metafields.custom.temple_length }}</span>
+                                    <span class="span-metafields  dropdown-metafield-header font-body-bold"></span>
+                                    </div>  
+                                    <div id="item-3-four-fit" class="dropdown-metafields-wrapper">
+                                        <span class="span-metafields  dropdown-metafield-header font-body-bold">D. HINGE TO HINGE - {{ product.metafields.custom.hinge }}</span>
+                                        <span class="span-metafields  dropdown-metafield-header font-body-bold"></span>
+                                        </div>  
+                                        </div>
+                          </div>
+                          <div id="item-fit-guide-3">
+                            <video id="fit-guide-video" controls autoplay loop muted>
+                                <source src="https://www.w3schools.com/tags/mov_bbb.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                              </video> 
+                          </div>
+                        </div>
+                        
+                        
+                    
+                  </div>  
+                </div>
+              </details>
+            </details-accordion>
+       {%- endcomment -%}
+       {%- if  variant.metafields.custom.fit_description_long != blank -%}
+            
+            <details-accordion  class="accordion db collapsible-content__item lens_description">
+              <details id="lens_description_details" class="details-metafield" id="Details-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      LENS DESCRIPTION
+                    </h2>
+                  </div>
+             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-caret light">
+                    <path d="M12.6667 6L8 10.6667L3.33333 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </summary>
+                
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+                    <div class="angry-grid-lens-description">
+                        <div id="item-0-lens-description">
+                            <h2 class="dropdowns-header-item">{{ product.title }} LENS INFORMATION</h2>
+                        </div>
+                        <div id="item-1-lens-description">
+                          {% for variant in product.variants %}
+                            <div 
+                              class="variant__description "
+                              data-variant-id="{{variant.id}}"
+                              {% if product.selected_or_first_available_variant.id == variant.id %}
+                                style="display: block;"
+                              {% endif %}
+                            >
+
+
+                      <span>      
+
+                                {{ variant.metafields.custom.fit_description_long  }}
+                              </span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div id="item-2-lens-description">
+                          {%- comment -%}
+                            
+                            <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/Screenshot_1.png?v=1698085392" class="lens-information-image">
+                          {%- endcomment -%}
+                        </div>
+                      </div>
+                  </div>  
+                </div>
+              </details>
+            </details-accordion>
+          {%- endif -%}
+            {%- if  variant.metafields.custom.lens_technology_long != blank -%}
+              
+            <details-accordion class="accordion db collapsible-content__item lens_tech_long">
+              <details class="details-metafield" id="Details-22f02c17-4651-49b4-b13c-c889a238c968-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-22f02c17-4651-49b4-b13c-c889a238c968-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      LENS TECHNOLOGY
+                    </h2>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-caret light">
+                    <path d="M12.6667 6L8 10.6667L3.33333 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </summary>
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-22f02c17-4651-49b4-b13c-c889a238c968-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-22f02c17-4651-49b4-b13c-c889a238c968-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+                    
+                    <div class="angry-grid-lens-technology">
+                        <div id="item-0-lens-technology">
+                            <h2 class="dropdowns-header-item">{{product.title }} LENS TECHNOLOGY</h2>
+                        </div>
+                        <div id="item-1-lens-technology">
+                        <span>
+{{ variant.metafields.custom.lens_technology_long }}
+                        </span>
+                        </div>
+                      </div>
+                  </div>  
+                </div>
+              </details>
+            </details-accordion>  
+          {%- endif -%}
+            
+            <details-accordion class="accordion db collapsible-content__item">
+              <details class="details-metafield" id="Details-0489008a-3640-46d4-8a38-1308d49bbde4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-0489008a-3640-46d4-8a38-1308d49bbde4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      INCLUDED IN ALL ORDERS
+                    </h2>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-caret light">
+                    <path d="M12.6667 6L8 10.6667L3.33333 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </summary>
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-0489008a-3640-46d4-8a38-1308d49bbde4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-0489008a-3640-46d4-8a38-1308d49bbde4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+                      <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/INCLUDED.png?v=1700593481">
+                </div>
+              </details>
+            </details-accordion>
+        </div>
+    {% endfor %}
+        
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</section>
+
+<style>
+
+    /*PRODUCT DETAILS*/
+    #item-details-0, #item-details-1 {
+        text-align: center;
+    }
+
+    #item-details-2, #item-details-3 {
+     padding: 20px;
+    }
+    .angry-grid-product-information {
+       display: grid; 
+       grid-template-rows: 1fr 1fr 1fr;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+       
+       gap: 0px;
+       height: 100%;
+       
+    }
+      
+    #item-details-0 {
+       grid-row-start: 1;
+       grid-column-start: 1;
+       grid-row-end: 2;
+       grid-column-end: 3;
+       
+    }
+    #item-details-1 {
+       grid-row-start: 1;
+       grid-column-start: 3;
+       grid-row-end: 2;
+       grid-column-end: 5;
+        
+    }
+    #item-details-2 {
+    
+       grid-row-start: 2;
+       grid-column-start: 1;
+       grid-row-end: 4;
+       grid-column-end: 3;
+       border-right: 0.25rem solid rgb(18,18,18,.06);
+    }
+    #item-details-3 {
+    
+       grid-row-start: 2;
+       grid-column-start: 3;
+       grid-row-end: 4;
+       grid-column-end: 5;
+       border-left: 0.25rem solid rgb(18,18,18,.06);
+       text-align: right;
+    }
+    </style>
+
+    <style>
+        /*FIT GUIDE*/
+
+        .angry-grid-four-fit {
+          display: grid; 
+          align-items: center;
+          grid-template-rows: 1fr 1fr;
+          grid-template-columns: 1fr 1fr;
+          
+          gap: 20px;
+          height: 100%;
+          
+       }
+         
+       #item-0-four-fit {
+       
+          grid-row-start: 1;
+          grid-column-start: 1;
+       
+          grid-row-end: 2;
+          grid-column-end: 2;
+          
+       }
+       #item-1-four-fit {
+       
+          grid-row-start: 1;
+          grid-column-start: 2;
+       
+          grid-row-end: 2;
+          grid-column-end: 3;
+          
+       }
+       #item-2-four-fit {
+       
+          grid-row-start: 2;
+          grid-column-start: 1;
+       
+          grid-row-end: 3;
+          grid-column-end: 2;
+          
+       }
+       #item-3-four-fit {
+       
+          grid-row-start: 2;
+          grid-column-start: 2;
+       
+          grid-row-end: 3;
+          grid-column-end: 3;
+          
+       }
+       #item-0-four-fit, #item-1-four-fit, #item-2-four-fit, #item-3-four-fit {
+           display: flex;
+           justify-content: center;
+           flex-direction: column;
+           align-items: center;
+           min-width: 14vw;
+       }
+        
+        .fit-guide-image-img {
+            min-height: 20vh;
+            object-fit: contain;
+        }
+        #fit-guide-video {
+            min-height: 27vh;
+        }
+        #item-fit-guide-0, #item-fit-guide-1, #item-fit-guide-2, #item-fit-guide-3 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            
+        }
+        .angry-grid-fit-guide {
+           display: grid; 
+            margin-top: 30px;
+           grid-template-rows: 1fr 1fr 1fr 1fr;
+           grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+           
+           gap: 0px;
+           height: 100%;
+           
+        }
+          
+        #item-fit-guide-0 {
+           grid-row-start: 1;
+           grid-column-start: 1;
+           grid-row-end: 3;
+           grid-column-end: 5;
+           
+        }
+        #item-fit-guide-1 {
+        
+           grid-row-start: 3;
+           grid-column-start: 1;
+           grid-row-end: 5;
+           grid-column-end: 5;
+        }
+        #item-fit-guide-2 {
+        
+           grid-row-start: 3;
+           grid-column-start: 5;
+           display: flex;
+           flex-direction: column;
+           grid-row-end: 5;
+           grid-column-end: 8;
+        }
+        #item-fit-guide-3 {
+        
+           grid-row-start: 1;
+           grid-column-start: 5;
+           grid-row-end: 3;
+           grid-column-end: 8;
+        }
+
+        #item-fit-guide-3, #item-fit-guide-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 auto;
+        }
+/* LENS DESCRIPTION */
+            .angry-grid-lens-description {
+               display: grid; 
+            
+               grid-template-rows: 1fr 1fr 1fr;
+               grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+               
+               gap: 0px;
+               height: 100%;
+               
+            }
+              
+            #item-0-lens-description {
+               grid-row-start: 1;
+               grid-column-start: 1;
+            
+               grid-row-end: 2;
+               grid-column-end: 5;
+               
+            }
+            #item-1-lens-description {
+               grid-row-start: 2;
+               grid-column-start: 1;
+            
+               grid-row-end: 4;
+               grid-column-end: 5;
+               
+            }
+            #item-2-lens-description {
+               grid-row-start: 1;
+               grid-column-start: 5;
+            
+               grid-row-end: 4;
+               grid-column-end: 7;
+               display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .lens-information-image {
+            max-width: 20vw;
+            }
+
+
+/* LENS TECHNOLOGY*/
+.angry-grid-lens-technology {
+    display: grid; 
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px;
+    height: 100%;
+    
+ }
+   
+ #item-0-lens-technology {
+ 
+    grid-row-start: 1;
+    grid-column-start: 1;
+ 
+    grid-row-end: 2;
+    grid-column-end: 6;
+    
+ }
+ #item-1-lens-technology {
+ 
+    grid-row-start: 2;
+    grid-column-start: 1;
+ 
+    grid-row-end: 4;
+    grid-column-end: 6;
+    
+ }
+
+ .column-icons {
+    display: grid; 
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    height: 100%;
+    place-items: center;
+    margin-top: 30px;
+  }
+
+ 
+   
+ #item-0-column {
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  grid-row-end: 2;
+  grid-column-end: 2;
+  
+    
+ }
+ #item-1-column {
+  grid-row-start: 1;
+  grid-column-start: 2;
+
+  grid-row-end: 2;
+  grid-column-end: 3;
+  
+ }
+
+
+ @media screen and (max-width: 750px) {
+    .dropdown-metafield-header {
+        font-size: 1em !important;   
+    }
+    .dropdown-metafields-detail {
+    font-size: 0.6em !important;
+   }
+   #item-details-2, #item-details-3 {
+    padding: 0px 20px;
+    text-align: left;
+   }
+   .angry-grid-fit-guide {
+    display: flex;
+    flex-direction: column;
+}
+#fit-guide-video {
+    min-height: 0vh;
+}
+#item-fit-guide-3 {
+margin: 0 auto;
+padding: 10px 0px;
+}
+.fit-guide-img {
+    max-width: 81%;
+    object-fit: contain;
+}
+#item-1-lens-description, #item-1-lens-technology {
+    grid-row-start: 1;
+    margin-top: 15vh;
+}
+.column-icons {
+gap:10px;
+}
+#item-fit-guide-3, #item-fit-guide-2 {
+display: grid;
+}
+
+.fit-guide-image-img {
+margin-bottom: 15px;
+}
+#item-details-0, #item-details-1 {
+
+margin-top: 15px;
+
+}
+
+.angry-grid-product-information {
+  margin-bottom: 20px;
+}
+
+
+ }
+            </style>
+
+<script>
+    // Get all elements with the class "details"
+const detailsElements = document.querySelectorAll(".details-metafield");
+
+// Loop through each details element and set the "open" attribute to true
+detailsElements.forEach(function (detailsElement) {
+  detailsElement.open = true;
+});
+</script>
+
+<style>
+  .item-1-lens-technology:empty {
+    display: none;
+  }
+</style>
+{% schema %}
+  {
+  "name": "Details Metafield",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Details Metafield"
+    }
+  ]
+}  
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

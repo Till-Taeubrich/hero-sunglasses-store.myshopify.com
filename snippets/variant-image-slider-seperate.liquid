@@ -1,0 +1,152 @@
+{% for variant in product.variants %}
+    <div
+       class="variant__description"
+       data-variant-id="{{variant.id}}"
+       {% if product.selected_or_first_available_variant.id == variant.id %}
+         style="display: block;"
+       {% endif %}
+     >
+
+
+
+  <div class="angry-grid-video-pdp">
+    
+    {% for metafield in variant.metafields.custom.variant_image.value %}
+      <img lazyload="lazyload" lazyload id="item-video-pdp-{{ forloop.rindex0}}" class="variant-image-slider-image product__media-item--variant" src="{{ metafield | img_url: '400x300' }}" alt=""> 
+   {% endfor %}
+
+
+  </div>
+  <div id="removeIfNoVideo" >
+<div class="angry-grid-video-pdp removeIfNoVideo">
+  
+  
+  <div id="item-video-pdp-2">
+      {%- if variant.metafields.custom.pdp_male_video  != blank -%}
+        
+        <div id="video-pdp-container">
+          
+          <video class="yourVideo" id="yourVideo" preload="metadata" muted  width="400" height="300">
+            <source src={{ variant.metafields.custom.pdp_male_video | metafield_tag }}
+            </video>
+            
+          </div>
+          {%- else -%}
+          <img class="pdp-video-replacement" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/hero-pdp-video-banner-left_1.png?v=1700153658">
+        {%- endif -%}
+
+    </div>
+
+    <div id="item-video-pdp-3">
+      {%- if variant.metafields.custom.pdp_female_video  != blank -%}
+
+      <div id="video-pdp-container">
+
+        <video class="yourVideo" id="yourVideo2" preload="metadata" muted  width="400" height="300">
+          <source src={{ variant.metafields.custom.pdp_female_video | metafield_tag }}
+        </video>
+
+
+      </div>
+      {%- else -%}
+      <img class="pdp-video-replacement" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/hero-pdp-video-banner_1.png?v=1700152859">
+    {%- endif -%}
+
+    </div>
+
+  </div>
+  <div id="item-video-logo-container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="162" height="81" viewBox="0 0 162 81" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M162 81C162 36.2649 125.735 0 81 0C36.2649 0 0 36.2649 0 81H162Z" fill="white"/>
+        <img id="brand-middle-pdp-logo" src="{{ product.metafields.custom.brand_name_image.value | image_url }}">
+      </svg>
+  </div>
+</div>
+
+</div>
+
+{% endfor %}
+{%- comment -%}
+      {% for variant in product.variants %}
+      <div
+         class="variant__description"
+         data-variant-id="{{variant.id}}"
+         {% if product.selected_or_first_available_variant.id == variant.id %}
+           style="display: block;"
+         {% endif %}
+       >
+    <video id="yourVideo" preload="metadata" muted  width="400" height="300">
+      <source src="{{ variant.metafields.custom.pdp_male_video  | metafield_tag   }}
+      </video>
+    </div>
+    {% endfor %}
+{%- endcomment -%}
+
+
+  <script>
+
+    var videoElements = document.querySelectorAll('.yourVideo');
+
+    // Loop through each video element
+    videoElements.forEach(function(videoElement) {
+        // Remove controls
+        if (videoElement) {
+            videoElement.removeAttribute('controls');
+            
+            // Add click event listener to play the video
+            videoElement.addEventListener('click', function() {
+                videoElement.play();
+            }, false);
+        }
+    });
+    
+
+    
+</script>
+  <style>
+    .angry-grid-video-pdp {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: stretch;
+      max-width: 95%;
+      gap: 0px;
+      height: 100%;
+    }
+      
+    #item-video-pdp-0 {
+       grid-row-start: 1;
+       grid-column-start: 1;
+    
+       grid-row-end: 2;
+       grid-column-end: 2;
+       
+    }
+    #item-video-pdp-1 {
+       grid-row-start: 1;
+       grid-column-start: 2;
+    
+       grid-row-end: 2;
+       grid-column-end: 3;
+       
+    }
+    #item-video-pdp-2 {
+       grid-row-start: 2;
+       grid-column-start: 1;
+    display: flex;
+    justify-content: center;
+       grid-row-end: 3;
+       grid-column-end: 2;
+       
+    }
+    #item-video-pdp-3 {
+       grid-row-start: 2;
+       grid-column-start: 2;
+    display: flex;
+       justify-content: center;
+       grid-row-end: 3;
+       grid-column-end: 3;
+       
+    }
+    #item-video-logo-container
+    </style>
+    

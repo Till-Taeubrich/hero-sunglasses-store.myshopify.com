@@ -1,0 +1,653 @@
+{% comment %}
+<section id="shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" class="shopify-section mw-75"><link href="//s1o3wq7mjxqlnwyo-83776799012.shopifypreview.com/cdn/shop/t/8/assets/component-accordion.css?v=18637288360933037841698094434" rel="stylesheet" type="text/css" media="all">
+
+<link href="//s1o3wq7mjxqlnwyo-83776799012.shopifypreview.com/cdn/shop/t/8/assets/collapsible-content.css?v=106254775568716911291698094434" rel="stylesheet" type="text/css" media="all">
+<script src="//s1o3wq7mjxqlnwyo-83776799012.shopifypreview.com/cdn/shop/t/8/assets/details-accordion.js?v=170558748681591396671698094434" defer="defer"></script><style data-shopify="">.section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-padding {
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-padding {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+  }#shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824 {--title-gap: -1.8rem;
+      --title-indent: 0.8rem;
+      --title-back-size: 4rem;
+      --title-back-letter-spacing: -1.6px;}
+
+  @media screen and (min-width: 990px) {
+    #shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824 {--title-gap: -2.2rem;
+        --title-indent: 1rem;
+        --title-back-size: 4.8rem;
+        --title-back-letter-spacing: -2.4px;}
+  }
+
+  @media screen and (min-width: 1200px) {
+    #shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824 {--title-gap: -2.6rem;
+        --title-indent: 1.2rem;
+        --title-back-size: 5.4rem;
+        --title-back-letter-spacing: -2.7px;}
+  }</style>
+
+
+  <div class="color-background-1 gradient">
+  <div class="collapsible-content collapsible-row-layout isolate page-width">
+    <div class="collapsible-content__wrapper section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-padding">
+      <div class="collapsible-content__header left">
+<div class="title">
+		<div class="flex justify-space-between w100 align-center title__gap por"><h2 class="title__heading h2 font-heading-extra-bold margin0 lh1">PRODUCT INFORMATION</h2>	
+				<hr class="title__line flex-grow-1 margin0"></div>
+	</div>
+      </div>
+    
+      <div class="grid grid--1-col collapsible-content__grid collapsible-content__grid--reverse">
+        <div class="grid__item">
+            
+  {% for variant in product.variants %}
+    <div
+       class="variant__description"
+       data-variant-id="{{variant.id}}"
+       {% if product.selected_or_first_available_variant.id == variant.id %}
+         style="display: block;"
+       {% endif %}>
+            <details-accordion  class="accordion db collapsible-content__item" open>
+              <details style class="details-metafield" id="Details-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-1-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" open>
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-1-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      PRODUCT DETAILS
+                    </h2>
+                  </div>
+                  <div class="summary-accordion__plus-minus-wrapper flex justify-center align-center">
+                    <span class="summary-accordion__plus-minus por flex justify-center align-center">
+                      <span class="summary-accordion__icon-line"></span>
+                      <span class="summary-accordion__icon-line"></span>
+                    </span>
+                  </div>
+                </summary>
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-1-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-1-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+                        
+                        <div class="angry-grid-product-information">
+                          <div id="item-details-0">
+                        <h2 class="dropdown-metafield-header">FRAME INFORMATION</h2>
+                          </div>
+                          <div id="item-details-1">
+                            <h2 class="dropdown-metafield-header">LENS INFORMATION</h2>
+                          </div>
+                          <div id="item-details-2">
+                            <div class="dropdown-metafields-wrapper">
+                            <span class="span-metafields font-body-bold dropdown-metafields-detail">FRAME COLOR -</span>
+                            <span class="span-metafields font-body-bold dropdown-metafields-detail"> {{ variant.metafields.custom.frame_color }}</span>
+                            </div>
+                            <br>
+                            <div class="dropdown-metafields-wrapper">
+                            <span class="span-metafields font-body-bold dropdown-metafields-detail">FRAME MATERIAL, FRONT -</span>
+                            <span class="span-metafields font-body-bold dropdown-metafields-detail"> {{ variant.metafields.custom.frame_color }}</span>
+                            </div>                    
+                            <br>
+                            <div class="dropdown-metafields-wrapper">
+                            <span class="span-metafields font-body-bold dropdown-metafields-detail">FRAME MATERIAL, TEMPLE -</span>
+                            <span class="span-metafields font-body-bold dropdown-metafields-detail"> {{ variant.metafields.custom.frame_color }} </span>
+                            
+                            </div>
+                            <br>
+                            
+                          </div>
+                          <div id="item-details-3">
+                            <div class="dropdown-metafields-wrapper">
+                                <span class="span-metafields font-body-bold dropdown-metafields-detail">LENS COLOR -</span>
+                                <span class="span-metafields font-body-bold dropdown-metafields-detail"> {{ variant.metafields.custom.lens_color }}</span>
+                                </div>
+                                <br>
+                                <div class="dropdown-metafields-wrapper">
+                                <span class="span-metafields font-body-bold dropdown-metafields-detail">LENS MATERIAL -</span>
+                                <span class="span-metafields font-body-bold dropdown-metafields-detail"> {{ variant.metafields.custom.lens_material }}</span>
+                                </div>                    
+                                <br>
+                                <div class="dropdown-metafields-wrapper">
+                                <span class="span-metafields font-body-bold dropdown-metafields-detail">POLARIZED -</span>
+                                <span class="span-metafields font-body-bold dropdown-metafields-detail"> {{ variant.metafields.custom.polarized }} </span>
+                                
+                                </div>
+                                <br>
+                          </div>
+                        </div>
+                        
+                        
+                  </div>  
+                </div>
+              </details>
+            </details-accordion>
+          </div>
+        {% endfor %}
+            <details-accordion class="accordion db collapsible-content__item">
+              <details class="details-metafield" id="Details-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      FIT GUIDE
+                    </h2>
+                  </div>
+                  <div class="summary-accordion__plus-minus-wrapper flex justify-center align-center">
+                    <span class="summary-accordion__plus-minus por flex justify-center align-center">
+                      <span class="summary-accordion__icon-line"></span>
+                      <span class="summary-accordion__icon-line"></span>
+                    </span>
+                  </div>
+                </summary>
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+
+                        
+                        <div class="angry-grid-fit-guide">
+                          <div id="item-fit-guide-0">
+                            <span class="fit-guide-text">
+                            The Aviator Medium boasts a lightweight metal
+                            frame complemented by acetate temple tips,
+                            ensuring both style and comfort. With its
+                            standard dimensionalfit, adjustable nose pads,
+                            and generous lens coverage, it promises an
+                            impeccable and secure fit for everyday wear.
+                        </span>
+                          </div>
+                          <div id="item-fit-guide-1">
+                          <img lazyload class="fit-guide-image-img" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/SKETCH.png?v=1698085392">
+                          </div>
+                          <div id="item-fit-guide-2">
+                            <div id="item-0-guide" class="dropdown-metafields-wrapper">
+                                <span class="span-metafields  dropdown-metafield-header">A. BRIDGE WIDTH -</span>
+                                <span class="span-metafields  dropdown-metafield-header">{{ product.metafields.custom.bridge_width }}</span>
+                                </div>  
+                                <br>
+                            <div id="item-1-guide" class="dropdown-metafields-wrapper">
+                                <span class="span-metafields  dropdown-metafield-header">B. LENS WIDTH -</span>
+                                <span class="span-metafields  dropdown-metafield-header">{{ product.metafields.custom.lens_width }}</span>
+                                </div>  
+                                <br>
+                                <div id="item-2-guide" class="dropdown-metafields-wrapper">
+                                    <span class="span-metafields  dropdown-metafield-header">C. TEMPLE LENGTH -</span>
+                                    <span class="span-metafields  dropdown-metafield-header">{{ product.metafields.custom.temple_length }}</span>
+                                    </div>  
+                                    <br>
+                                    <di id="item-3-guide"v class="dropdown-metafields-wrapper">
+                                        <span class="span-metafields  dropdown-metafield-header">D. HINGE TO HINGE -</span>
+                                        <span class="span-metafields  dropdown-metafield-header">{{ product.metafields.custom.hinge }}</span>
+                                        </div>  
+                          </div>
+                          <div id="item-fit-guide-3">
+                            <video id="fit-guide-video" controls autoplay loop muted>
+                                <source src="https://www.w3schools.com/tags/mov_bbb.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                              </video> 
+                          </div>
+                        </div>
+                        
+                        
+                    
+                  </div>  
+                </div>
+              </details>
+            </details-accordion><details-accordion class="accordion db collapsible-content__item">
+              <details class="details-metafield" id="Details-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      LENS DESCRIPTION
+                    </h2>
+                  </div>
+                  <div class="summary-accordion__plus-minus-wrapper flex justify-center align-center">
+                    <span class="summary-accordion__plus-minus por flex justify-center align-center">
+                      <span class="summary-accordion__icon-line"></span>
+                      <span class="summary-accordion__icon-line"></span>
+                    </span>
+                  </div>
+                </summary>
+                
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+                    <div class="angry-grid-lens-description">
+                        <div id="item-0-lens-description">
+                            <h2>Ray Ban Green Lenses</h2>
+                        </div>
+                        <div id="item-1-lens-description">
+                        <span>
+                        Green lenses enhance contrast and clarity, they provide true color perception,
+                        and they work to reduce glare, making them comfortable for outdoor use.
+                        Green lenses are versatile and work well in various light conditions, from sunny
+                        to overcast skies. They offer a balance between style and functionality, making
+                        them a popular choice for fashion-conscious individuals who want both eye
+                        protection and a trendy look.
+                        </span>
+                        </div>
+                        <div id="item-2-lens-description">
+                        <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/Screenshot_1.png?v=1698085392" class="lens-information-image">
+                        </div>
+                      </div>
+                  </div>  
+                </div>
+              </details>
+            </details-accordion><details-accordion class="accordion db collapsible-content__item">
+              <details class="details-metafield" id="Details-22f02c17-4651-49b4-b13c-c889a238c968-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-22f02c17-4651-49b4-b13c-c889a238c968-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      LENS TECHNOLOGY
+                    </h2>
+                  </div>
+                  <div class="summary-accordion__plus-minus-wrapper flex justify-center align-center">
+                    <span class="summary-accordion__plus-minus por flex justify-center align-center">
+                      <span class="summary-accordion__icon-line"></span>
+                      <span class="summary-accordion__icon-line"></span>
+                    </span>
+                  </div>
+                </summary>
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-22f02c17-4651-49b4-b13c-c889a238c968-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-22f02c17-4651-49b4-b13c-c889a238c968-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+                    
+                    <div class="angry-grid-lens-technology">
+                        <div id="item-0-lens-technology">
+                            <h2>Ray Ban POLARIZED Crystal Glass Lenses</h2>
+                        </div>
+                        <div id="item-1-lens-technology">
+                        <span>
+Ray-Ban's Polarized Crystal Glass Lenses are like having a high-definition upgrade for your sunglasses. The
+polarization, achieved by aligning microscopic crystals, selectively blocks horizontally polarized light, or
+glare, resulting in improved visual acuity; this reduces eye-fatigue, or as we say in the sunglass business, it
+does the squinting for you. It also improves color sharpness and depth of vision, enhances clarity and
+contrast, and offers 100% protection for your eyes against harmful UV rays from the sun. They're made to
+resist scratches, so your lenses stay clearer longer.
+                        </span>
+                        </div>
+                      </div>
+                  </div>  
+                </div>
+              </details>
+            </details-accordion><details-accordion class="accordion db collapsible-content__item">
+              <details class="details-metafield" id="Details-0489008a-3640-46d4-8a38-1308d49bbde4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por" role="button" aria-expanded="false" aria-controls="CollapsibleAccordion-0489008a-3640-46d4-8a38-1308d49bbde4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="summary__title flex align-center flex-grow-1">
+                    
+                    <h2 class="h6 accordion__title font-heading-bold margin0">
+                      INCLUDED IN YOUR ORDER
+                    </h2>
+                  </div>
+                  <div class="summary-accordion__plus-minus-wrapper flex justify-center align-center">
+                    <span class="summary-accordion__plus-minus por flex justify-center align-center">
+                      <span class="summary-accordion__icon-line"></span>
+                      <span class="summary-accordion__icon-line"></span>
+                    </span>
+                  </div>
+                </summary>
+                <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-0489008a-3640-46d4-8a38-1308d49bbde4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-0489008a-3640-46d4-8a38-1308d49bbde4-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
+                  <div class="rte">
+                    <div class="column-icons">
+                        <div id="item-0-column">
+                        <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/MODEL.png?v=1698085392" alt="" class="3-column-item">
+                        </div>
+                        <div id="item-1-column">
+                        <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/MODEL.png?v=1698085392" alt="" class="3-column-item">
+                        </div>
+                        <div id="item-2-column">
+                        <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/MODEL.png?v=1698085392" alt="" class="3-column-item">
+                        </div>
+                      </div>
+                    
+                  </div>  
+                </div>
+              </details>
+            </details-accordion>
+
+        
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</section>
+
+<style>
+
+    /*PRODUCT DETAILS*/
+    #item-details-0, #item-details-1 {
+        text-align: center;
+    }
+
+    #item-details-2, #item-details-3 {
+     padding: 20px;
+    }
+    .angry-grid-product-information {
+       display: grid; 
+       grid-template-rows: 1fr 1fr 1fr;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+       
+       gap: 0px;
+       height: 100%;
+       
+    }
+      
+    #item-details-0 {
+       grid-row-start: 1;
+       grid-column-start: 1;
+       grid-row-end: 2;
+       grid-column-end: 3;
+       
+    }
+    #item-details-1 {
+       grid-row-start: 1;
+       grid-column-start: 3;
+       grid-row-end: 2;
+       grid-column-end: 5;
+        
+    }
+    #item-details-2 {
+    
+       grid-row-start: 2;
+       grid-column-start: 1;
+       grid-row-end: 4;
+       grid-column-end: 3;
+       border-right: 0.25rem solid rgb(18,18,18,.06);
+    }
+    #item-details-3 {
+    
+       grid-row-start: 2;
+       grid-column-start: 3;
+       grid-row-end: 4;
+       grid-column-end: 5;
+       border-left: 0.25rem solid rgb(18,18,18,.06);
+       text-align: right;
+    }
+    </style>
+
+    <style>
+        /*FIT GUIDE*/
+        .fit-guide-image-img {
+            min-height: 25vh;
+            object-fit: contain;
+        }
+        #fit-guide-video {
+            min-height: 35vh;
+        }
+        #item-fit-guide-0, #item-fit-guide-1, #item-fit-guide-2, #item-fit-guide-3 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .angry-grid-fit-guide {
+           display: grid; 
+        
+           grid-template-rows: 1fr 1fr 1fr 1fr;
+           grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+           
+           gap: 0px;
+           height: 100%;
+           
+        }
+          
+        #item-fit-guide-0 {
+           grid-row-start: 1;
+           grid-column-start: 1;
+           grid-row-end: 3;
+           grid-column-end: 5;
+           
+        }
+        #item-fit-guide-1 {
+        
+           grid-row-start: 3;
+           grid-column-start: 1;
+           grid-row-end: 5;
+           grid-column-end: 5;
+        }
+        #item-fit-guide-2 {
+        
+           grid-row-start: 3;
+           grid-column-start: 5;
+           display: flex;
+           flex-direction: column;
+           grid-row-end: 5;
+           grid-column-end: 8;
+        }
+        #item-fit-guide-3 {
+        
+           grid-row-start: 1;
+           grid-column-start: 5;
+           grid-row-end: 3;
+           grid-column-end: 8;
+        }
+
+        #item-fit-guide-3, #item-fit-guide-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+/* LENS DESCRIPTION */
+            .angry-grid-lens-description {
+               display: grid; 
+            
+               grid-template-rows: 1fr 1fr 1fr;
+               grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+               
+               gap: 0px;
+               height: 100%;
+               
+            }
+              
+            #item-0-lens-description {
+               grid-row-start: 1;
+               grid-column-start: 1;
+            
+               grid-row-end: 2;
+               grid-column-end: 5;
+               
+            }
+            #item-1-lens-description {
+               grid-row-start: 2;
+               grid-column-start: 1;
+            
+               grid-row-end: 4;
+               grid-column-end: 5;
+               
+            }
+            #item-2-lens-description {
+               grid-row-start: 1;
+               grid-column-start: 5;
+            
+               grid-row-end: 4;
+               grid-column-end: 7;
+               display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .lens-information-image {
+            max-width: 20vw;
+            }
+
+
+/* LENS TECHNOLOGY*/
+.angry-grid-lens-technology {
+    display: grid; 
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px;
+    height: 100%;
+    
+ }
+   
+ #item-0-lens-technology {
+ 
+    grid-row-start: 1;
+    grid-column-start: 1;
+ 
+    grid-row-end: 2;
+    grid-column-end: 6;
+    
+ }
+ #item-1-lens-technology {
+ 
+    grid-row-start: 2;
+    grid-column-start: 1;
+ 
+    grid-row-end: 4;
+    grid-column-end: 6;
+    
+ }
+
+ .column-icons {
+    display: grid; 
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px;
+    height: 100%;
+    place-items: center;
+    padding: 10px 0px;  
+ }
+
+ 
+   
+ #item-0-column {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 2;
+    
+ }
+ #item-1-column {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
+    
+ }
+ #item-2-column {
+    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-row-end: 2;
+    grid-column-end: 4;
+    
+ }
+
+ @media screen and (max-width: 750px) {
+    .dropdown-metafield-header {
+        font-size: 1em !important;   
+    }
+    .dropdown-metafields-detail {
+    font-size: 0.6em !important;
+   }
+   #item-details-2, #item-details-3 {
+    padding: 0px 20px;
+    text-align: left;
+   }
+   .angry-grid-fit-guide {
+    display: flex;
+    flex-direction: column;
+}
+#fit-guide-video {
+    min-height: 0vh;
+}
+#item-fit-guide-3 {
+margin: 0 auto;
+padding: 10px 0px;
+}
+.fit-guide-img {
+    max-width: 81%;
+    object-fit: contain;
+}
+#item-1-lens-description, #item-1-lens-technology {
+}
+.column-icons {
+gap:10px;
+}
+#item-fit-guide-3, #item-fit-guide-2 {
+display: grid;
+}
+
+
+#item-fit-guide-2 {
+  display: grid; 
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  height: 100%;
+  
+}
+ 
+#item-0-guide {
+
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  grid-row-end: 2;
+  grid-column-end: 2;
+  
+}
+#item-1-guide {
+
+  grid-row-start: 1;
+  grid-column-start: 2;
+
+  grid-row-end: 2;
+  grid-column-end: 3;
+  
+}
+#item-2-guide {
+
+  grid-row-start: 2;
+  grid-column-start: 1;
+
+  grid-row-end: 3;
+  grid-column-end: 2;
+  
+}
+#item-3-guide {
+
+  grid-row-start: 2;
+  grid-column-start: 2;
+
+  grid-row-end: 3;
+  grid-column-end: 3;
+  
+}
+
+ }
+            </style>
+
+<script>
+    // Get all elements with the class "details"
+const detailsElements = document.querySelectorAll(".details-metafield");
+
+// Loop through each details element and set the "open" attribute to true
+detailsElements.forEach(function (detailsElement) {
+  detailsElement.open = true;
+});
+
+</script>
+{% schema %}
+  {
+  "name": "Details Metafield",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Details Metafield"
+    }
+  ]
+}  
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% endcomment %}

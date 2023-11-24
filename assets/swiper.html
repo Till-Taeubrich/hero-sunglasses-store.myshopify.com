@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal with Swipe Gallery</title>
+
+  <!-- Include Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <style>
+    /* Your existing styles remain unchanged */
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-media {
+      max-width: 100vw;
+      overflow: hidden;
+      display: none; /* Hide the modal by default */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Trigger button -->
+  <button class="openModalBtn">Open Modal</button>
+
+  <!-- The Modal -->
+  <div class="modal-media">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="swiper-container gallery">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://hero-sunglasses-store.myshopify.com/cdn/shop/files/21_MICHAELKORSPIC1.png?v=1699311292&width=1324" alt="Image 1"></div>
+          <div class="swiper-slide"><img src="https://hero-sunglasses-store.myshopify.com/cdn/shop/files/21_MICHAELKORSPIC3_400x300.png?v=1699052668" alt="Image 2"></div>
+          <div class="swiper-slide"><img src="https://hero-sunglasses-store.myshopify.com/cdn/shop/files/21_MICHAELKORSPIC2_400x300.png?v=1699051786" alt="Image 3"></div>
+          <!-- Add more slides as needed -->
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Swiper JS -->
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    // Initialize Swiper
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Open the modal
+    $(document).ready(function() {
+    $(document).on("click", ".openModalBtn", function() {
+      $(".modal-media").fadeIn(); 
+      swiper.update(); // Update Swiper when the modal is opened
+
+        // Add functionality to open your modal here
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
+});
+
+
+
+    // Close the modal
+    $(".close-btn").click(function() {
+      $(".modal-media").fadeOut();
+    });
+  </script>
+</body>
+</html> 

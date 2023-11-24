@@ -1,0 +1,29 @@
+{
+  "imageName": "preloaderappblack.gif",
+  "imageOpacity": 100,
+  "fadingIn": 0.5,
+  "fadingOut": 0.5,
+  "staticDuration": 0.5,
+  "r": 255,
+  "g": 255,
+  "b": 255,
+  "a": 1,
+  "isBackground": true,
+  "onceOnly": false,
+  "unit": "percent",
+  "unitPercent": "40",
+  "unitPixel": "300",
+  "mobile": true,
+  "tablet": true,
+  "desktop": true,
+  "installationDate": "Mon Oct 11 2021 18:38:37 GMT+0800 (Philippine Standard Time)",
+  "reviewState": null,
+  "fadeInExcludedClasses": "js-,cart,ajax,toggle",
+  "langId": "en",
+  "watermark": false,
+  "templatesEnabled": [
+
+  ],
+  "allPages": true,
+  "preset": "preset_0"
+}

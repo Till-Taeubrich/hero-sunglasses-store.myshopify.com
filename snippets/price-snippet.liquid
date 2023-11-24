@@ -1,0 +1,7 @@
+{%- if product.price_varies -%}
+    <div class="no-js-hidden" id="price-{{ section.id }}" role="status">
+      {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'information__value font-body-semi-bold text-small price-mobile-span', show_in_card: false -%}
+    </div>
+    {%- else -%}
+    {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'information__value font-body-semi-bold text-small price-mobile-span', show_in_card: false -%}
+  {%- endif -%}

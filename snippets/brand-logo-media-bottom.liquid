@@ -1,0 +1,28 @@
+  {%- comment -%}
+    
+<div class="brand-logo-media-bottom-wrapper">
+    {% if product.metafields.custom.brand == 'OAKLEY' %}
+        {% assign img_thumb = 'oakley-logo.jpg' | asset_img_url %}
+        {% elsif product.metafields.custom.brand == 'RAY BAN' %}
+        {% assign img_thumb = 'ray-ban-logo.png' | asset_img_url %}
+        {% elsif product.metafields.custom.brand == 'COSTA' %}
+        {% assign img_thumb = 'costa-logo.png' | asset_img_url %}
+        {% else %}
+        {% endif %}
+    <img id="brand-img-pdp-logo-image" src={{img_thumb}} />
+    
+    
+    </div>
+    
+    <style>
+        .brand-logo-media-bottom-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        }
+    #brand-img-pdp-logo-image {
+        position: absolute;
+        z-index: 5;
+        max-width: 15vw;
+    }
+    </style>
+  {%- endcomment -%}

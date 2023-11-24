@@ -1,0 +1,430 @@
+<section class="pdp-metafields-section" id="section-id-{{ section.id }}">
+    {% for variant in product.variants %}
+       <div
+          class="variant__description"
+          data-variant-id="{{variant.id}}"
+          {% if product.selected_or_first_available_variant.id == variant.id %}
+            style="display: block;"
+          {% endif %}
+        >
+         <div class="pl-10">
+      </div>
+ <div class="angry-grid">
+     <div id="item-0">
+    <span class="span-metafields-top font-body-bold specs-meta-header">PRODUCT INFORMATION</span>    
+    <br>
+    </div>
+     <div id="item-1">
+    <span class="span-metafields-top font-body-bold specs-meta-header">LENS INFORMATION</span>
+    <br>
+    </div>
+     <div id="item-2">
+    <span class="span-metafields-top font-body-bold specs-meta-header">FIT GUIDE</span>
+    <br>
+    </div>
+     <div class="pdp-leftside-metafield" id="item-3">
+    <span class=" product-information-mobile">PRODUCT INFORMATION</span>
+
+        <div>
+    <span class="span-metafields-top font-body-bold">MODEL NAME:</span>
+    <br>
+    <span class="span-metafields">{{ product.title }}</span>
+        </div>
+     <div id="item-4">
+    <span class="span-metafields-top font-body-bold">MODEL NUMBER W/ COLOR CODE:</span>
+    <br>
+    {% if variant.metafields.custom.model_number_w_color_code %}
+    <span class="span-metafields">{{  variant.metafields.custom.model_number_w_color_code }}</span>
+    {% endif %}
+    </div>
+    {% if variant.metafields.custom.frame_color %}
+     <div id="item-5">
+    <span class="span-metafields-top font-body-bold">FRAME COLOR</span>
+    <br>
+    <span class="span-metafields"> {{ variant.metafields.custom.frame_color }} </span>
+    </div>
+    {% endif %}
+    
+    <div id="item-6">
+        <span class="span-metafields-top font-body-bold">POLARIZED:</span>
+        <br>
+        <span class="span-metafields">{{ variant.metafields.custom.polarized }}</span>
+    </div>
+    <div id="item-6.1">
+        <span class="span-metafields-top font-body-bold">FRAME MATERIAL FRONT:</span>
+        <br>
+        <span class="span-metafields">{{ variant.metafields.custom.frame_material_front }}</span>
+    </div>
+    <div id="item-6.2">
+        <span class="span-metafields-top font-body-bold">LENS MATERIAL:</span>
+        <br>
+        <span class="span-metafields">{{ variant.metafields.custom.lens_material }}</span>
+    </div>
+    <div id="item-6.3">
+        <span class="span-metafields-top font-body-bold">FIT:</span>
+        <br>
+        <span class="span-metafields">{{ variant.metafields.custom.fit }}</span>
+    </div>
+    </div>
+     <div id="item-7">
+    <span class="lens-info-mobile">LENS INFORMATION</span>
+
+   <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/Screenshot_1.png?v=1698085392" alt="lens-image" class="lens-image-pdp">
+   <span class="span-metafields-top font-body-bold">{{ variant.metafields.custom.frame_color }}</span>
+    </div>
+    <div id="item-8">
+      <span class="span-metafields">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, fuga eum. Ratione, cupiditate minus!</span>
+      </div>
+     <div id="item-9">
+    <span class="span-metafields-top font-body-bold">LENS TECHNOLOGY:</span>
+    <br>
+    <span class="span-metafields">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, fuga eum. Ratione, cupiditate minus!</span>
+    </div>
+     <div id="item-10">
+    <span class="span-metafields-top font-body-bold">CASE INCLUDED:</span>
+<img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/case.png?v=1698085600" alt="case-image" class="case-image">    
+    </div>
+     <div id="item-11">
+      <span class="fit-guide-mobile">FIT GUIDE</span>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/SKETCH.png?v=1698085392" alt="fit-guide-image" class="fit-guide-image">
+    </div>
+     <div id="item-12">
+    <span class="span-metafields">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, fuga eum. Ratione, cupiditate minus!</span>
+    </div>
+     <div id="item-13">
+      <img src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/MODEL.png?v=1698085392" alt="model-image" class="model-image">
+    </div>
+   </div>
+ </div>
+   
+ {% endfor %}
+ </section>
+ 
+ <style>
+.pdp-metafields-section {
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.model-image {
+   max-width: 20vw;
+}
+
+.fit-guide-image {
+max-width: 20vw;
+}
+   .pdp-center-metafield {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+   }
+    .pdp-leftside-metafield {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .specs-meta-header {
+    font-size: 2.2em !important;
+    }
+ .lens-image-pdp {
+    max-width: 20vw;
+ }
+    .span-metafields-top {
+       font-size: 1.7em;
+    }
+     .angry-grid {
+        display: grid; 
+        max-width: 76vw;
+        margin: 0 auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        height: 100%;
+ 
+     }
+       #item-0, #item-1, #item-2 {
+       text-align: center;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+ 
+    }
+ 
+     #item-0 {
+     
+        
+        grid-row-start: 1;
+        grid-column-start: 1;
+     
+        grid-row-end: 2;
+        grid-column-end: 3;
+        
+     }
+     #item-1 {
+     
+        
+        grid-row-start: 1;
+        grid-column-start: 3;
+     
+        grid-row-end: 2;
+        grid-column-end: 5;
+        
+     }
+     #item-2 {
+     
+        
+        grid-row-start: 1;
+        grid-column-start: 5;
+     
+        grid-row-end: 2;
+        grid-column-end: 7;
+        
+     }
+     #item-3 {
+     
+        
+        grid-row-start: 2;
+        grid-column-start: 1;
+     
+        grid-row-end: 6;
+        grid-column-end: 3;
+        
+     }
+     /*  
+
+     #item-4 {
+     
+        
+        grid-row-start: 3;
+        grid-column-start: 1;
+     
+        grid-row-end: 4;
+        grid-column-end: 3;
+        
+     }
+     #item-5 {
+     
+        
+        grid-row-start: 4;
+        grid-column-start: 1;
+     
+        grid-row-end: 5;
+        grid-column-end: 3;
+        
+     }
+     #item-6 {
+      
+        
+        grid-row-start: 5;
+        grid-column-start: 1;
+     
+        grid-row-end: 6;
+        grid-column-end: 3;
+        
+     }
+     */
+     #item-7 {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       text-align: center ;
+        flex-direction: column;
+        grid-row-start: 2;
+        grid-column-start: 3;
+     
+        grid-row-end: 3;
+        grid-column-end: 5;
+        
+     }
+     #item-8 {
+     
+        
+        grid-row-start: 3;
+        grid-column-start: 3;
+        text-align: center ;
+        grid-row-end: 4;
+        grid-column-end: 5;
+        
+     }
+     #item-9 {
+     
+        
+        grid-row-start: 4;
+        grid-column-start: 3;
+        text-align: center ;
+        grid-row-end: 5;
+        grid-column-end: 5;
+        
+     }
+     #item-10 {
+     
+        
+        grid-row-start: 5;
+        grid-column-start: 3;
+        text-align: center ;
+        grid-row-end: 6;
+        grid-column-end: 5;
+        
+     }
+     #item-11 {
+     
+        
+        grid-row-start: 2;
+        grid-column-start: 5;
+     
+        grid-row-end: 3;
+        grid-column-end: 7;
+        
+     }
+     #item-12 {
+     
+        
+        grid-row-start: 3;
+        grid-column-start: 5;
+     
+        grid-row-end: 4;
+        grid-column-end: 7;
+        
+     }
+     #item-13 {
+     
+        
+        grid-row-start: 4;
+        grid-column-start: 5;
+     
+        grid-row-end: 6;
+        grid-column-end: 7;
+        
+     }
+     #item-8, #item-9, #item-10, {
+      
+     }
+ #item-10  {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+#item-11 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#item-12, #item-13 {
+text-align: center;
+}
+.case-image {
+max-width: 7vw;
+}
+
+.pl-10 {
+margin-left: 5vw;
+}
+
+.lens-info-mobile, .fit-guide-mobile, .product-information-mobile {
+   display: none;
+}
+/*MOBILE*/
+     @media screen  and (max-width: 749px){
+       
+       .lens-image-pdp {
+          max-width: 129px;
+          max-height: 60px;
+          }
+       .angry-grid {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         text-align: center;
+       }
+ 
+       div.angry-grid > div > span {
+       font-size: 1.4rem;
+       }
+ 
+       #item-0, #item-1, #item-2 {
+          font-size: 1.6rem;
+          
+       }
+       .span-metafields-top {
+         font-size: 1em !important;
+     }
+     .specs-meta-header {
+    font-size: 1em;
+    }
+    .span-metafields {
+   font-size: 0.75em;
+   }
+    div.pdp-leftside-metafield > div {
+   margin-bottom: 10px; 
+   }
+   #item-7, #item-11 {
+   align-items: center;
+   justify-content: flex-start;
+   flex-direction: column;
+   }
+   #item-0, #item-1, #item-2 {
+   display: none;
+   }
+   .case-image {
+      max-width: 31vw;
+   }
+
+   .fit-guide-image, .model-image {
+      max-width: 50vw;
+   }
+   .model-image::before {
+   content: "Model";
+   background-color: #ffba10;
+   border-color: black;
+   border-style: dotted;
+   }
+   #brand-img-pdp-logo {
+   max-width: 14vw;
+   }
+
+   .lens-info-mobile, .fit-guide-mobile, .product-information-mobile {
+   display: block !important;
+   font-size: 1.75em !important;
+   font-weight: bold;
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
+#item-10 {
+   flex-direction: row;
+   gap: 20px;
+}
+.pdp-metafields-section {
+padding-top: 0px;
+}
+}
+ 
+     </style>
+     
+     
+     {% schema %}
+       {
+       "name": "PDP Specs Table Alt",
+       "settings": [
+         {
+           "type": "text",
+           "label": "Text 0",
+           "id": "text_0"
+         }
+       ],
+       "presets": [
+         {
+           "name": "PDP Specs Table Alt"
+         }
+       ]
+     }  
+     {% endschema %}
+     
+     {% stylesheet %}
+     {% endstylesheet %}
+     
+     {% javascript %}
+     {% endjavascript %}

@@ -1,0 +1,24 @@
+   {% for variant in product.variants %}
+      <div
+         class="variant__description"
+         data-variant-id="{{variant.id}}"
+         {% if product.selected_or_first_available_variant.id == variant.id %}
+           style="display: block;"
+         {% endif %}
+       >
+
+        {% for metafield in variant.metafields.custom.variant_image.value %}
+          <img class="variant-image-slider-image" src="{{ metafield | img_url: '400x300' }}" alt=""> 
+       {% endfor %}
+
+      </div>
+
+     {% endfor %}
+
+     <img src="{{ variant.metafields.custom.variant_image.value }}" alt="" class="variant__image">
+
+
+{% for ingredient in variant.metafields.custom.variant_image.value %}
+  <img src="{{ ingredient }}">
+  {% endfor %}
+  

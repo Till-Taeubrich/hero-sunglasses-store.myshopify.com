@@ -1,0 +1,132 @@
+<div  class="page-width">
+<section id="icon-{{section.id}}">
+    <div class="angry-grid-icon">
+{%- for block in section.blocks -%}
+    {%- case block.type -%}
+        {%- when 'logo_with_statement' -%}
+            <div id="icon-statement-{{ forloop.rindex[0] }}">
+        {%- # Label: icon -%}
+        {%- assign icon = block.settings.icon -%}
+       {{ icon | image_url: width: icon.width | image_tag: class: 'icon-statment-image', loading: 'lazy' }}
+  
+        {%- # Label: Statement -%}
+    <h6 class="icon-statment"> {{ block.settings.statement }}<h6> 
+      </div>
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+  </section>
+</div>
+
+  <style>
+.icon-statment-image {
+max-width: 50px;
+max-height: 50px;
+}
+
+    .icon-statement {
+    font-weight: 700;
+    }
+    .angry-grid-icon {
+       display: grid; 
+    
+       grid-template-rows: 1fr;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+       
+       gap: 0px;
+       height: 100%;
+       
+    }
+      
+    #item-statement-0 {
+    
+       background-color: #9579EB; 
+       grid-row-start: 1;
+       grid-column-start: 1;
+    
+       grid-row-end: 2;
+       grid-column-end: 2;
+       
+    }
+    #item-statement-1 {
+    
+       background-color: #9AA559; 
+       grid-row-start: 1;
+       grid-column-start: 2;
+    
+       grid-row-end: 2;
+       grid-column-end: 3;
+       
+    }
+    #item-statement-2 {
+    
+       background-color: #A7BECD; 
+       grid-row-start: 1;
+       grid-column-start: 3;
+    
+       grid-row-end: 2;
+       grid-column-end: 4;
+       
+    }
+    #item-statement-3 {
+    
+       background-color: #FB6C9F; 
+       grid-row-start: 1;
+       grid-column-start: 4;
+    
+       grid-row-end: 2;
+       grid-column-end: 5;
+       
+    }
+    </style>
+    
+
+    {%- style -%}
+      #icon-{{section.id}} {
+        max-width: {{section.settings.number_0}}vw;
+      }
+    {%- endstyle -%}
+    
+
+
+  {% schema %}
+    {
+    "name": "Icon Row",
+    "settings": [
+        {
+          "type": "number",
+          "label": "Max section width",
+          "id": "number_0"
+        }
+      ],
+    "blocks": [
+      {
+        "name": "Logo With Statement",
+        "type": "logo_with_statement",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "icon"
+          },
+          {
+            "type": "text",
+            "id": "statement",
+            "label": "Statement"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Icon Row"
+      }
+    ]
+  }  
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}
