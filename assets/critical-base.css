@@ -661,7 +661,6 @@ details > * {
 }
 
 .underlined-link {
-  color: rgba(var(--color-link), var(--alpha-link));
   position: relative;
   padding: 0;
   text-decoration: none;
@@ -1483,10 +1482,6 @@ details[open] > .header__icon--menu .icon-open-state {
 
 .header__menu-item .icon-caret {
   right: 0.5rem;
-}
-
-.header__active-menu-item {
-  color: rgb(var(--color-foreground));
 }
 
 .mega-menu__content {
