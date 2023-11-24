@@ -13,6 +13,26 @@
         "copy_text": false
       }
     },
+    "da7b0412-8363-4132-9fe2-0cce930d49db": {
+      "type": "announcement-bar",
+      "blocks": {
+        "template--21570111799588__da7b0412-8363-4132-9fe2-0cce930d49db-announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21570111799588__da7b0412-8363-4132-9fe2-0cce930d49db-announcement-1"
+      ],
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": ""
+      }
+    },
     "1aded6ef-5727-4347-bf56-9fc610343e55": {
       "type": "collection-list",
       "blocks": {
@@ -513,6 +533,7 @@
   },
   "order": [
     "4ba2b456-2cb4-4318-a9f0-9774a05259ab",
+    "da7b0412-8363-4132-9fe2-0cce930d49db",
     "1aded6ef-5727-4347-bf56-9fc610343e55",
     "e29b335b-7785-4c4a-a545-49cc12604aa5",
     "5b71ef94-4638-489f-ae0b-ff72c1082704",

@@ -2,8 +2,76 @@
   #shopify-section-{{ section.id }} {
     padding-top: {{ section.settings.padding-top }}px;
     padding-bottom: {{ section.settings.padding-bottom }}px;
+    color: var(--lt-color-white);
+    background-image: url("../assets/bullet-bar-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-points-container {
+    padding: 10px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-point-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-point-img__wrapper img {
+    vertical-align: middle;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-point-label {
+    font-weight: 600;
+  }
+
+  @media(max-width: 989px) {
+    #shopify-section-{{ section.id }} .bullet-points-container {
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 749px) {
+    #shopify-section-{{ section.id }} .bullet-point-label {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .bullet-points-container {
+      padding: 10px 0;
+      display: flex;
+      gap: 47px;
+      justify-content: center;
+    }
   }
 </style>
+
+<section class="shopify-section section section-bullet-point-bar">
+  <div class="bullet-points-container">
+    {%- for block in section.blocks -%}
+      <div class="bullet-point-container">
+        {%- if block.settings.img != blank -%}
+          <div class="bullet-point-img__wrapper">
+            {%- assign img_height = block.settings.img.width | divided_by: block.settings.img.aspect_ratio -%}
+
+            {{ block.settings.img | image_url: width: 1000 | image_tag:
+            height: img_height,
+            width: block.settings.img.width,
+            loading: 'lazy'
+            }}
+          </div>
+        {%- endif -%}
+        {% if block.settings.text != blank %}
+          <div class="bullet-point-label">{{ block.settings.text }}</div>
+        {% endif %}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
 
 {% schema %}
 {
@@ -14,6 +82,11 @@
   }
   ],
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_img",
+      "label": "Background image"
+    },
 		{
       "type": "range",
       "id": "padding-top",
@@ -38,12 +111,12 @@
        "settings": [
          {
            "type": "image_picker",
-           "id": "image",
+           "id": "img",
            "label": "Icon"
          },
          {
            "type": "text",
-           "id": "label",
+           "id": "text",
            "label": "Label"
          }
        ]

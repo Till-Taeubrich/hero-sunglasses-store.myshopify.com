@@ -132,6 +132,50 @@
         "customer_support_region_global_hotline": "Your hotline"
       }
     },
+    "c0a18aba-f749-4871-a793-4c16130cbb26": {
+      "type": "bullet-point-bar",
+      "blocks": {
+        "2a19021f-ec03-4d65-b3bb-1cab79ceec8c": {
+          "type": "bullet-point",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/noun-ruler-6248911_1.png",
+            "text": "Perfect Fit Guarantee"
+          }
+        },
+        "0753e3ea-25be-4015-9b58-681c56800788": {
+          "type": "bullet-point",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/noun-discount-5991097_1.png",
+            "text": "Lifetime Warranty"
+          }
+        },
+        "6a723026-c835-4545-9eac-99d580a24dd9": {
+          "type": "bullet-point",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/noun-shipping-5991111_1.png",
+            "text": "Fast Free Shipping"
+          }
+        },
+        "80685d78-da58-49bf-972d-b4c34e477665": {
+          "type": "bullet-point",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/noun-message-5991101_1.png",
+            "text": "24\/7 Customer Support"
+          }
+        }
+      },
+      "block_order": [
+        "2a19021f-ec03-4d65-b3bb-1cab79ceec8c",
+        "0753e3ea-25be-4015-9b58-681c56800788",
+        "6a723026-c835-4545-9eac-99d580a24dd9",
+        "80685d78-da58-49bf-972d-b4c34e477665"
+      ],
+      "settings": {
+        "background_img": "shopify:\/\/shop_images\/198_OAKLEYPIC1_63460d82-8959-47ff-a239-2686932c351d.png",
+        "padding-top": 0,
+        "padding-bottom": 0
+      }
+    },
     "1699830288448e1e16": {
       "type": "apps",
       "blocks": {
@@ -152,6 +196,7 @@
   },
   "order": [
     "header",
+    "c0a18aba-f749-4871-a793-4c16130cbb26",
     "1699830288448e1e16"
   ]
 }
