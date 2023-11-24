@@ -1,0 +1,53 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bullet point bar",
+  "presets": [
+  {
+   "name":"Bullet point bar"
+  }
+  ],
+  "settings": [
+		{
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Bullet point",
+       "type": "bullet-point",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Icon"
+         },
+         {
+           "type": "text",
+           "id": "label",
+           "label": "Label"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}
