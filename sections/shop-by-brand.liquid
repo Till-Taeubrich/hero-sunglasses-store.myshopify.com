@@ -8,32 +8,6 @@
     background-size: cover;
   }
 
-  #shopify-section-{{ section.id }} .header-section {
-    border: 5px solid var(--lt-color-white);
-    position: relative;
-    display: inline-block;
-    margin-bottom: 6rem;
-  }
-
-  #shopify-section-{{ section.id }} .header-title {
-    font-size: 50px;
-    padding: 20px 60px;
-    color: var(--lt-color-white);
-    text-align: center;
-  }
-
-  #shopify-section-{{ section.id }} .header-caption {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    font-size: 20px;
-    font-weight: 700;
-    color: #992626;
-    padding: 0 10px;
-    background-color: #292929;
-  }
-
   #shopify-section-{{ section.id }} .brand-list {
     display: grid;
     justify-items: center;
@@ -119,10 +93,7 @@
 
 <section class="shopify-section section section-shop-by-brand">
   <div class="page-width">
-    <div class="header-section">
-      <div class="header-title">{{ section.settings.title }}</div>
-      <div class="header-caption">{{ section.settings.caption }}</div>
-    </div>
+    {% render 'section-headline-box' section: section %}
     <div class="brand-list">
       {% for block in section.blocks %}
         {%- if block.settings.img != blank -%}
@@ -159,12 +130,12 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
+      "id": "box-title",
       "label": "Title"
     },
     {
       "type": "text",
-      "id": "caption",
+      "id": "box-caption",
       "label": "Caption"
     },
     {

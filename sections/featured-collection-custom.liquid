@@ -1,3 +1,17 @@
+<style>
+  #shopify-section-{{ section.id }}.section .header-section {
+    border: 5px solid var(--lt-color-black);
+  }
+
+  #shopify-section-{{ section.id }}.section .header-title {
+    color: var(--lt-color-black);
+  }
+
+  #shopify-section-{{ section.id }}.section .header-caption {
+    background-color: var(--lt-color-white);
+  }
+</style>
+
 <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- if section.settings.show_rating -%}
   <link rel="stylesheet" href="{{ 'component-rating.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -175,6 +189,7 @@
           {%- endcapture -%}
         {%- endif -%}
         {%- render 'section-heading', show_desktop_slider: show_desktop_slider, show_tablet_slider: show_tablet_slider, show_mobile_slider: show_mobile_slider, include_page_width: true, section_additional_buttons: section_additional_buttons -%}
+        {% render 'section-headline-box' section: section %}
         <slider-component class="por slider-mobile-gutter {% if section.settings.full_width %} page-width--full{% endif %}{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %}{% if section.settings.full_width %} slider-component-full-width{% endif %}{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if show_tablet_slider %} slider-component-tablet{% endif %}{% if show_mobile_slider %} slider-component-mobile{% endif %}"
           {% if section.settings.title != blank %}{% if show_desktop_slider or show_tablet_slider or show_mobile_slider %} data-outside-prev-button-id="Slider-{{ section.id }}-prev-button" data-outside-next-button-id="Slider-{{ section.id }}-next-button"{% endif %}{% endif %}
         >
@@ -252,6 +267,18 @@
       "type": "text",
       "id": "subtitle",
       "label": "t:sections.featured-collection.settings.subtitle.label"
+    },
+    {
+      "type": "text",
+      "id": "box-title",
+      "label": "Box title",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "text",
+      "id": "box-caption",
+      "label": "Box caption",
+      "default": "As of Nov, 23"
     },
     {
       "type": "collection",

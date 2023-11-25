@@ -1,5 +1,6 @@
 {% comment %}
     Renders a product card
+    here product card
 
     Accepts:
     - card_product: {Object} Product Liquid object (optional)
@@ -145,6 +146,7 @@
             </button>
           </quick-view-modal-opener>
         {%- endif -%}
+        <div class="variants-counter">{{ card_product.variants.size }} COLORS</div>
       </div>
       <div class="card__content card__content--product">
         <div class="card__information">

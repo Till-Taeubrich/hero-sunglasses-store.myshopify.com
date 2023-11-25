@@ -1,0 +1,32 @@
+<style>
+  #shopify-section-{{ section.id }} .header-section {
+    border: 5px solid var(--lt-color-white);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 6rem;
+  }
+
+  #shopify-section-{{ section.id }} .header-title {
+    font-size: 50px;
+    padding: 20px 60px;
+    color: var(--lt-color-white);
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .header-caption {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 20px;
+    font-weight: 700;
+    color: #D93636;
+    padding: 0 10px;
+    background-color: #292929;
+  }
+</style>
+
+<div class="header-section">
+  <div class="header-title">{{ section.settings.box-title }}</div>
+  <div class="header-caption">{{ section.settings.box-caption }}</div>
+</div>
