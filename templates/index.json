@@ -305,8 +305,8 @@
         "f0416cc3-1ee3-44ed-afc5-981395c834c6"
       ],
       "settings": {
-        "box-title": "",
-        "box-caption": "",
+        "box-title": "Shop by Brand",
+        "box-caption": "Only the Best",
         "background_img": "shopify:\/\/shop_images\/Group_238.png",
         "padding-top": 100,
         "padding-bottom": 100
@@ -436,9 +436,9 @@
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "color_scheme": "",
-        "colors_text": "#fff",
-        "colors_input": "#64748B",
-        "overlay_color": "#1E40AF",
+        "colors_text": "#ffffff",
+        "colors_input": "#64748b",
+        "overlay_color": "#1e40af",
         "mobile_content_alignment": "left",
         "padding_top": 40,
         "padding_bottom": 52
