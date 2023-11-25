@@ -178,7 +178,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/RAY_BAN_SVG_3.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/ray-ban"
           }
         },
@@ -186,7 +185,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/OAKLEY_SVG_1.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/oakley"
           }
         },
@@ -194,7 +192,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/MAUI_JIM_SVG_1_211c3709-ae77-41a2-8702-851b8d30501f.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/maui-jim"
           }
         },
@@ -202,7 +199,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/COSTA_SVG_1_24eb657f-e78d-4b9f-a63b-d231511e06af.svg",
-            "label": "",
             "collection": ""
           }
         },
@@ -210,7 +206,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/PRADA_SVG_1_d5856b32-44bf-411b-b382-77250181f622.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/prada"
           }
         },
@@ -218,7 +213,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/GUCCI_SVG_1_fbc69d45-51c1-4100-aa75-0218b81c4aa0.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/gucci"
           }
         },
@@ -226,7 +220,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/VERSACE_SVG_1.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/versace"
           }
         },
@@ -234,7 +227,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/BURBERRY_SVG_1_34bf5a99-d9df-4006-9e19-9a6d71da9c5e.svg",
-            "label": "",
             "collection": ""
           }
         },
@@ -242,7 +234,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/PERSOL_SVG_1_e70a60b8-5408-4b40-94b8-d841634c36cb.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/persol"
           }
         },
@@ -250,7 +241,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/OLIVER_PEOPLES_SVG_1_76fc469d-add7-4d6f-be82-98551fb49702.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/oliver-peoples"
           }
         },
@@ -258,7 +248,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/MICHAEL_CORS_SVG_1_7b38cde4-d064-4f0c-966f-0717a44a3be5.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/michael-kors"
           }
         },
@@ -266,7 +255,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/RALPH_SVG_1_a2656e73-fef0-4ccd-bacb-2ed87cdaad1c.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/ralph-lauren"
           }
         },
@@ -274,7 +262,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/SUNCLOUD_SVG_1.svg",
-            "label": "",
             "collection": "shopify:\/\/collections\/suncloud"
           }
         },
@@ -282,7 +269,6 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/CROAKIES_SVG_1_72356a81-e9ab-40d3-a5e1-9c1e5880e182.svg",
-            "label": "",
             "collection": ""
           }
         },
@@ -290,14 +276,12 @@
           "type": "brand",
           "settings": {
             "img": "shopify:\/\/shop_images\/CELINE_SVG_1_6995bdbb-370c-48a7-9962-65f903dec2f2.svg",
-            "label": "",
             "collection": ""
           }
         },
         "f0416cc3-1ee3-44ed-afc5-981395c834c6": {
           "type": "brand",
           "settings": {
-            "label": "SHOP ALL",
             "collection": ""
           }
         }
@@ -327,12 +311,45 @@
         "padding-top": 100,
         "padding-bottom": 100
       }
+    },
+    "3f59de8a-1908-4312-be7f-a03238443ace": {
+      "type": "featured-collection-custom",
+      "settings": {
+        "title": "Featured collection",
+        "subtitle": "",
+        "collection": "best-sellers",
+        "heading_size": "h1",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_position_desktop": "left",
+        "image_height": "adapt_product_list",
+        "image_height_mobile": "34",
+        "image_ratio": "landscape",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_compare": false,
+        "enable_quick_view": false,
+        "show_color_swatches": false,
+        "color_swatches_style": "custom",
+        "columns_tablet": "3",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "4ba2b456-2cb4-4318-a9f0-9774a05259ab",
     "fa3b104c-418f-4b63-8f79-e34bfb2158ad",
     "1ff79bea-9fc0-4845-a8a2-7db5c44ace04",
-    "d5aaf82b-b2bb-4cbb-92a3-bd267eb3ff81"
+    "d5aaf82b-b2bb-4cbb-92a3-bd267eb3ff81",
+    "3f59de8a-1908-4312-be7f-a03238443ace"
   ]
 }

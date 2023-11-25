@@ -497,10 +497,6 @@ max-height: 22vh;
   min-width: 28.5vw;
 }
 
-.slider-mobile-gutter {
-  max-width: 58vw;
-}
-
 .complementary__item {
   gap: 4rem !important;
 }
