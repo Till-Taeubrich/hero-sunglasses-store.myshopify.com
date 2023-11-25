@@ -305,8 +305,8 @@
         "f0416cc3-1ee3-44ed-afc5-981395c834c6"
       ],
       "settings": {
-        "title": "",
-        "caption": "",
+        "box-title": "",
+        "box-caption": "",
         "background_img": "shopify:\/\/shop_images\/Group_238.png",
         "padding-top": 100,
         "padding-bottom": 100
@@ -317,6 +317,8 @@
       "settings": {
         "title": "Featured collection",
         "subtitle": "",
+        "box-title": "Best Sellers",
+        "box-caption": "As of Nov, 23",
         "collection": "best-sellers",
         "heading_size": "h1",
         "products_to_show": 8,
@@ -364,6 +366,21 @@
         "padding_bottom": 60
       }
     },
+    "884c7e23-6ed7-4c99-a6df-fd81185d1a58": {
+      "type": "virtual-try-on",
+      "settings": {
+        "background_img": "shopify:\/\/shop_images\/1234.jpg",
+        "title_left": "3D Experience",
+        "caption_left": "Powered by Deep AR",
+        "img_left": "shopify:\/\/shop_images\/solo-shades_1.png",
+        "title_right": "Virtual Try-Ons",
+        "richtext_right": "<p>The most high-tech virtual try-ons you’ve ever experienced. -- Most virtual try on’s get the sizing within 30mm of the actual sunglasses.<\/p><p>We have it within 2mm. What you see, is literally what you get with us. <\/p>",
+        "btn_link": "\/",
+        "btn_text": "EXPERIENCE THE BEST",
+        "padding-top": 0,
+        "padding-bottom": 0
+      }
+    },
     "d87956b0-e577-4c92-859e-40dfee5b0f90": {
       "type": "featured-blog",
       "settings": {
@@ -383,6 +400,49 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "5d00ad76-c801-48a4-bdb5-e8e7d1210de5": {
+      "type": "newsletter",
+      "blocks": {
+        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          }
+        },
+        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-paragraph-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-email_form-1": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-heading-1",
+        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-paragraph-1",
+        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-email_form-1"
+      ],
+      "settings": {
+        "grid_layout": "grid",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "color_scheme": "",
+        "colors_text": "#fff",
+        "colors_input": "#64748B",
+        "overlay_color": "#1E40AF",
+        "mobile_content_alignment": "left",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -392,6 +452,8 @@
     "d5aaf82b-b2bb-4cbb-92a3-bd267eb3ff81",
     "3f59de8a-1908-4312-be7f-a03238443ace",
     "fd37e9c2-fd41-43f0-be72-5842404b2d02",
-    "d87956b0-e577-4c92-859e-40dfee5b0f90"
+    "884c7e23-6ed7-4c99-a6df-fd81185d1a58",
+    "d87956b0-e577-4c92-859e-40dfee5b0f90",
+    "5d00ad76-c801-48a4-bdb5-e8e7d1210de5"
   ]
 }

@@ -1,0 +1,132 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .section-virtual-try-on {
+    background-image: url('{{ section.settings.background_img | image_url: width: 1000 }}');
+		background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 820px;
+  }
+
+  #shopify-section-{{ section.id }} .left-box,
+  #shopify-section-{{ section.id }} .right-box {
+    position: absolute;
+    border: 1px red solid;
+  }
+</style>
+
+<section class="shopify-section section section-virtual-try-on">
+  <div class="left-box">
+    {% if section.settings.title_left %}
+    <div class="title-left">{{ section.settings.title_left }}</div>
+    {% endif %}
+    {% if section.settings.caption_left %}
+    <div class="caption-left">{{ section.settings.caption_left }}</div>
+    {% endif %}
+    {%- if section.settings.img_left != blank -%}
+      <div class="img__wrapper">
+        {%- assign img_height = section.settings.img_left.width | divided_by: section.settings.img_left.aspect_ratio -%}
+              
+        {{ section.settings.img_left | image_url: width: 1000 | image_tag:
+          height: img_height,
+          width: section.settings.img.width,
+          loading: 'lazy'
+        }}
+      </div>
+      {%- endif -%}
+  </div>
+  <div class="right-box">
+    {% if section.settings.title_left %}
+      <div class="title-right">{{ section.settings.title_right }}</div>
+    {% endif %}
+    {% if section.settings.richtext_right %}
+      <div class="description-right">{{ section.settings.richtext_right }}</div>
+    {% endif %}
+    {% if section.settings.richtext_right %}
+      <div class="description-right">{{ section.settings.richtext_right }}</div>
+    {% endif %}
+    <a class="btn" {% if section.settings.btn_link != blank %} href=" {{ section.settings.btn_link }} " {% endif %}> {{ section.settings.btn_text }} </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Virtual try on",
+  "presets": [
+  {
+   "name":"Virtual try on"
+  }
+  ],
+  "settings": [
+		{
+      "type": "image_picker",
+      "id": "background_img",
+      "label": "Background image"
+    },
+		{
+      "type": "header",
+      "content": "Left box"
+    },
+		{
+      "type": "text",
+      "id": "title_left",
+      "label": "Title"
+    },
+		{
+      "type": "text",
+      "id": "caption_left",
+      "label": "Caption"
+    },
+		{
+      "type": "image_picker",
+      "id": "img_left",
+      "label": "Image"
+    },
+		{
+      "type": "header",
+      "content": "Right box"
+    },
+    {
+      "type": "text",
+      "id": "title_right",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext_right",
+      "label": "Richtext"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button text"
+    },
+		{
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    }
+  ]
+}
+{% endschema %}
