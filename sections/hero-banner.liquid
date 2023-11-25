@@ -1,3 +1,9 @@
+<style>
+  #shopify-section-{{ section.id }} .img__wrapper img {
+    width: 100%;
+  }
+</style>
+
 {%-liquid
   assign hide_section = false
   if section.settings.image == blank and section.settings.hide_when_empty_image and request.design_mode == false
@@ -223,6 +229,18 @@
       <div class="banner__box por banner__box--{{ section.id }}{% unless section.settings.show_text_below_image %} background-transparent{% elsif section.settings.layout != 'full_bleed' %} banner__box--radius{% endunless %} center">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
+            {%- when 'logo' -%}
+              {%- if block.settings.img != blank -%}
+                <div class="img__wrapper">
+                  {%- assign img_height = block.settings.img.width | divided_by: block.settings.img.aspect_ratio -%}
+              
+                  {{ block.settings.img | image_url: width: 1000 | image_tag:
+                    height: img_height,
+                    width: block.settings.img.width,
+                    loading: 'lazy'
+                  }}
+                </div>
+              {%- endif -%}
             {%- when 'heading' -%}
               <h2 class="banner__heading banner__heading--{{ section.id }} color-foreground font-heading-extra-bold banner__heading--large-size{% if section.settings.gradient_heading_desktop != blank %} banner__heading--gradient-desktop{% endif %}{% if section.settings.gradient_heading_mobile != blank %} banner__heading--gradient-mobile{% endif %}" {{ block.shopify_attributes }}>
                 <span class="lh1">{{ block.settings.heading | escape }}</span>
@@ -610,6 +628,18 @@
     }
   ],
   "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Logo"
+        }
+      ]
+    },
     {
       "type": "heading",
       "name": "t:sections.image-banner.blocks.heading.name",
