@@ -305,8 +305,8 @@
         "f0416cc3-1ee3-44ed-afc5-981395c834c6"
       ],
       "settings": {
-        "title": "Shop by Brand",
-        "caption": "Only the Best",
+        "title": "",
+        "caption": "",
         "background_img": "shopify:\/\/shop_images\/Group_238.png",
         "padding-top": 100,
         "padding-bottom": 100
@@ -343,6 +343,26 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "fd37e9c2-fd41-43f0-be72-5842404b2d02": {
+      "type": "featured-blog",
+      "settings": {
+        "background_img": "shopify:\/\/shop_images\/Rectangle_132.png",
+        "title": "",
+        "heading_size": "h1",
+        "blog": "news",
+        "post_limit": 2,
+        "image_height": "large",
+        "show_view_all": false,
+        "columns_desktop": 2,
+        "blog_card_text_alignment": "left",
+        "blog_card_color_scheme": "",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
@@ -350,6 +370,7 @@
     "fa3b104c-418f-4b63-8f79-e34bfb2158ad",
     "1ff79bea-9fc0-4845-a8a2-7db5c44ace04",
     "d5aaf82b-b2bb-4cbb-92a3-bd267eb3ff81",
-    "3f59de8a-1908-4312-be7f-a03238443ace"
+    "3f59de8a-1908-4312-be7f-a03238443ace",
+    "fd37e9c2-fd41-43f0-be72-5842404b2d02"
   ]
 }

@@ -1,3 +1,12 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    background-image: url('{{ section.settings.background_img | image_url: width: 1000 }}');
+		background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
 <link rel="stylesheet" href="{{ 'component-article-card.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>
   {{ 'component-article-card.css' | asset_url | stylesheet_tag }}
@@ -40,7 +49,7 @@
   endif
   assign section_additional_buttons = false
 -%}
-<div class="blog color-{{ section.settings.color_scheme }} gradient">
+<div class="blog">
   <div class="page-width isolate section-{{ section.id }}-padding">
     {%- if section.settings.blog != blank
       and section.settings.show_view_all
@@ -102,6 +111,11 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_img",
+      "label": "Background image"
+    },
     {
       "type": "text",
       "id": "title",
@@ -180,12 +194,6 @@
       "step": 1,
       "default": 3,
       "label": "t:sections.featured-blog.settings.columns_desktop.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "default": "background-1",
-      "label": "t:sections.all.colors.label"
     },
     {
       "type": "header",
