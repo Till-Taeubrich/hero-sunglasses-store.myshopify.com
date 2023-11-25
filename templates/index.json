@@ -23,6 +23,17 @@
             "img": "shopify:\/\/shop_images\/Hero_Logo_2SVG_1.svg"
           }
         },
+        "cfeed974-8c2d-4ba5-ab18-df36d915a933": {
+          "type": "logo-list",
+          "settings": {
+            "logo_1": "shopify:\/\/shop_images\/Frame_146.svg",
+            "logo_2": "shopify:\/\/shop_images\/Frame_143.svg",
+            "logo_3": "shopify:\/\/shop_images\/Frame_145.svg",
+            "logo_4": "shopify:\/\/shop_images\/Frame_145.svg",
+            "logo_5": "shopify:\/\/shop_images\/Frame_144.svg",
+            "logo_6": "shopify:\/\/shop_images\/Frame_142.svg"
+          }
+        },
         "template--21570111799588__fa3b104c-418f-4b63-8f79-e34bfb2158ad-buttons-1": {
           "type": "buttons",
           "settings": {
@@ -33,11 +44,20 @@
             "button_link_2": "",
             "button_style_2": "primary"
           }
+        },
+        "6e5e5b22-da2d-4ea4-986b-a3d531d651f9": {
+          "type": "link",
+          "settings": {
+            "title": "Account Login",
+            "link": "\/"
+          }
         }
       },
       "block_order": [
         "62cb1d15-b3d6-49e0-879a-9e8063554f67",
-        "template--21570111799588__fa3b104c-418f-4b63-8f79-e34bfb2158ad-buttons-1"
+        "cfeed974-8c2d-4ba5-ab18-df36d915a933",
+        "template--21570111799588__fa3b104c-418f-4b63-8f79-e34bfb2158ad-buttons-1",
+        "6e5e5b22-da2d-4ea4-986b-a3d531d651f9"
       ],
       "settings": {
         "layout": "full_bleed",
