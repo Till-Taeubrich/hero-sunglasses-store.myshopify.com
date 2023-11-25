@@ -904,3 +904,13 @@ font-weight: 500;
 line-height: normal;
 letter-spacing: 0.96px;
 }
+
+.img__wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+a:not([href]) {
+  cursor: unset;
+}
