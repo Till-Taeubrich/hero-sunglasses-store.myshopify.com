@@ -1,0 +1,129 @@
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 25px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+/* 
+uncomment for stop-on-hover
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+*/
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+</style>
+
+<section class="shopify-section section section-logo-carousel logos">
+  <div class="logos-slide">
+  {% for block in section.blocks %}
+    {%- if block.settings.img != blank -%}
+      {%- assign img_height = block.settings.img.width | divided_by: block.settings.img.aspect_ratio -%}
+  
+      {{ block.settings.img | image_url: width: 1000 | image_tag:
+        height: img_height,
+        width: block.settings.img.width,
+        loading: 'lazy'
+      }}
+    {%- endif -%}
+  {% endfor %}
+  </div>
+</section>
+
+<script>
+  var copy = document.querySelector(".logos-slide").cloneNode(true);
+  document.querySelector(".logos").appendChild(copy);
+</script>
+
+
+{% schema %}
+{
+  "name": "Logo carousel",
+  "presets": [
+  {
+   "name":"Logo carousel"
+  }
+  ],
+  "settings": [
+		{
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    }
+  ],
+  "blocks": [
+     {
+       "name": "logo",
+       "type": "logo",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "img",
+           "label": "Logo"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}

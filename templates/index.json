@@ -13,24 +13,78 @@
         "copy_text": false
       }
     },
-    "da7b0412-8363-4132-9fe2-0cce930d49db": {
-      "type": "announcement-bar",
+    "1ff79bea-9fc0-4845-a8a2-7db5c44ace04": {
+      "type": "logo-carousel",
       "blocks": {
-        "template--21570111799588__da7b0412-8363-4132-9fe2-0cce930d49db-announcement-1": {
-          "type": "announcement",
+        "6a69cc7e-1d7a-4708-9277-ceef8305f8ad": {
+          "type": "logo",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "img": "shopify:\/\/shop_images\/oakley.svg"
+          }
+        },
+        "a8365e10-a6bb-4515-bea7-7f4479297bad": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/MAUI_JIM_SVG_1.svg"
+          }
+        },
+        "5a844e49-b654-4689-98c6-66b8cc586e09": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/COSTA_SVG_1.svg"
+          }
+        },
+        "9a21387b-f0cb-4a98-9953-ac812db100ad": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/CROAKIES_SVG_1.svg"
+          }
+        },
+        "2ee18d65-9495-4fa6-a9fc-f309393cba82": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/BURBERRY_SVG_1.svg"
+          }
+        },
+        "8a6e161f-7a6e-4e04-8b82-0c5a681f4714": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/CELINE_SVG_1.svg"
+          }
+        },
+        "c977b924-be81-499e-bb69-fc47388e0deb": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/GUCCI_SVG_1.svg"
+          }
+        },
+        "b6944348-2623-4513-95f3-8385af183e76": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/MICHAEL_CORS_SVG_1.svg"
+          }
+        },
+        "b1fe13a1-056b-4054-8528-f7b99f6e104d": {
+          "type": "logo",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/OLIVER_PEOPLES_SVG_1.svg"
           }
         }
       },
       "block_order": [
-        "template--21570111799588__da7b0412-8363-4132-9fe2-0cce930d49db-announcement-1"
+        "6a69cc7e-1d7a-4708-9277-ceef8305f8ad",
+        "a8365e10-a6bb-4515-bea7-7f4479297bad",
+        "5a844e49-b654-4689-98c6-66b8cc586e09",
+        "9a21387b-f0cb-4a98-9953-ac812db100ad",
+        "2ee18d65-9495-4fa6-a9fc-f309393cba82",
+        "8a6e161f-7a6e-4e04-8b82-0c5a681f4714",
+        "c977b924-be81-499e-bb69-fc47388e0deb",
+        "b6944348-2623-4513-95f3-8385af183e76",
+        "b1fe13a1-056b-4054-8528-f7b99f6e104d"
       ],
       "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": ""
+        "padding-top": 0,
+        "padding-bottom": 0
       }
     },
     "1aded6ef-5727-4347-bf56-9fc610343e55": {
@@ -533,7 +587,7 @@
   },
   "order": [
     "4ba2b456-2cb4-4318-a9f0-9774a05259ab",
-    "da7b0412-8363-4132-9fe2-0cce930d49db",
+    "1ff79bea-9fc0-4845-a8a2-7db5c44ace04",
     "1aded6ef-5727-4347-bf56-9fc610343e55",
     "e29b335b-7785-4c4a-a545-49cc12604aa5",
     "5b71ef94-4638-489f-ae0b-ff72c1082704",
