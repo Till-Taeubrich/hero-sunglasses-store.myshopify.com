@@ -6,7 +6,7 @@
 .card--article:not(.card--text):before {
   content: "";
   background: linear-gradient(180deg, rgba(var(--color-background), 0.00) 0%, rgba(var(--color-background), 0.70) 100%);
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -72,13 +72,21 @@
 
 .card__content-article {
   z-index: 1;
+  width: 100%;
+  background: rgba(51, 51, 51, 0.6);
+}
+
+.card__content-article > h3 {
+  padding-left: 4rem;
 }
 
 .article-card__image-wrapper + .card__content-article {
-  position: absolute;
-  bottom: var(--content-position);
-  left: var(--content-position);
-  right: var(--content-position);
+	position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 100%;
+  padding: 3rem 0;
 }
 
 .article-card__footer {
