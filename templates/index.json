@@ -14,6 +14,70 @@
         "copy_text": false
       }
     },
+    "fa3b104c-418f-4b63-8f79-e34bfb2158ad": {
+      "type": "hero-banner",
+      "blocks": {
+        "template--21570111799588__fa3b104c-418f-4b63-8f79-e34bfb2158ad-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "Protecting the eyes of the bravest among us",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
+        "template--21570111799588__fa3b104c-418f-4b63-8f79-e34bfb2158ad-buttons-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "REGISTER FREE ACCOUNT",
+            "button_link_1": "\/",
+            "button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_2": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "template--21570111799588__fa3b104c-418f-4b63-8f79-e34bfb2158ad-text-1",
+        "template--21570111799588__fa3b104c-418f-4b63-8f79-e34bfb2158ad-buttons-1"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "image": "shopify:\/\/shop_images\/hero-banner.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_height_mobile": "medium-mobile",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "hide_when_empty_image": false,
+        "preload": false,
+        "mobile_content_alignment": "center",
+        "show_text_below_image": true,
+        "color_text": "#fff",
+        "gradient_heading_desktop": "",
+        "color_button_text_1": "#000",
+        "color_button_1": "#fff",
+        "color_button_text_2": "#000",
+        "color_button_2": "#fff",
+        "colors_badge_foreground": "#fff",
+        "colors_badge_background": "#F87171",
+        "color_countdown_foreground": "#000",
+        "color_countdown_background": "#fff",
+        "color_text_mobile": "#fff",
+        "gradient_heading_mobile": "",
+        "color_button_text_1_mobile": "#000",
+        "color_button_1_mobile": "#fff",
+        "color_button_text_2_mobile": "#000",
+        "color_button_2_mobile": "#fff",
+        "colors_badge_foreground_mobile": "#fff",
+        "colors_badge_background_mobile": "#F87171",
+        "color_countdown_foreground_mobile": "#000",
+        "color_countdown_background_mobile": "#fff",
+        "background_container_mobile": "#565656",
+        "gradient_background_container_mobile": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "1ff79bea-9fc0-4845-a8a2-7db5c44ace04": {
       "type": "logo-carousel",
       "blocks": {
@@ -91,6 +155,7 @@
   },
   "order": [
     "4ba2b456-2cb4-4318-a9f0-9774a05259ab",
+    "fa3b104c-418f-4b63-8f79-e34bfb2158ad",
     "1ff79bea-9fc0-4845-a8a2-7db5c44ace04"
   ]
 }
