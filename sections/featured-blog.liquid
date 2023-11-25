@@ -5,6 +5,18 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+
+
+  @media (max-width: 749px) {
+    #shopify-section-{{ section.id }} .blog__posts > .blog__post {
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .blog__posts {
+      flex-direction: column;
+    }
+  }
 </style>
 
 <link rel="stylesheet" href="{{ 'component-article-card.css' | asset_url }}" media="print" onload="this.media='all'">
