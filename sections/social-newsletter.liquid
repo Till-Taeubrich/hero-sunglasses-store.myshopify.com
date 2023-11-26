@@ -8,10 +8,6 @@
     background-size: cover;
   }
 
-  #shopify-section-{{ section.id }} .section-social-newsletter {
-    padding: 60px 120px 90px 120px
-  }
-
   #shopify-section-{{ section.id }} .section-social-newsletter .img__wrapper {
     background-color: #eeeeec;
   }
@@ -29,8 +25,75 @@
   }
 
   #shopify-section-{{ section.id }} .image-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    margin-bottom: 160px;
+  }
+
+  #shopify-section-{{ section.id }} .image-row > .img__wrapper{
+  }
+
+  #shopify-section-{{ section.id }} .newsletter__box {
+    max-width: 715px;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  #shopify-section-{{ section.id }} .newsletter__form-field-wrapper {
+    gap: 15px;
+  }
+
+  #shopify-section-{{ section.id }} .newsletter__form-field-wrapper .newsletter__input {
+    border: 2px solid rgba(var(--color-button))
+  }
+
+  #shopify-section-{{ section.id }} .newsletter-title {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--lt-color-black);
+    margin-bottom: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .newsletter-caption {
+    font-weight: 400;
+    font-size: 18px;
+    color: #1A1A1A;
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: 1100px) {
+    #shopify-section-{{ section.id }} .image-row {
+      margin-bottom: 90px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width:  749px) {
+    #shopify-section-{{ section.id }} .image-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    #shopify-section-{{ section.id }} .image-row {
+      margin-bottom: 45px;
+    }
+
+    #shopify-section-{{ section.id }} .newsletter__form-field-wrapper  {
+      flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} .field__input {
+      padding: 1rem; 
+      flex-direction: column;
+      padding-left: 2.3rem;
+    }
+
+    #shopify-section-{{ section.id }} .shopify-challenge__button {
+      padding: 1.5rem 5.2rem;
+      flex-direction: column;
+    }
   }
 
 </style>
@@ -56,6 +119,8 @@
     <div class="newsletter-title"></div>
     <div class="newsletter-caption"></div>
     <div class="newsletter__box" {{ block.shopify_attributes }}>
+      <div class="newsletter-title">{{ section.settings.newsletter-title }}</div>
+      <div class="newsletter-caption">{{ section.settings.newsletter-caption }}</div>
       {% form 'customer', class: 'newsletter__email-form' %}
         <input type="hidden" name="contact[tags]" value="newsletter">
         <div class="newsletter__form-field-wrapper newsletter__form-field-wrapper--{{ section.id }} flex justify-space-between">
@@ -85,12 +150,7 @@
             </label>
           </div>
           <button type="submit" class="button newsletter__button{% if section.settings.desktop_image_width == 'large' and section.settings.image != blank %} newsletter__button--square{% endif %}" name="commit" id="Subscribe-{{ section.id }}" aria-label="{{ 'newsletter.button_label' | t | escape }}">
-            {%- unless section.settings.desktop_image_width == 'large' and section.settings.image != blank -%}  
-              <span class="small-hide">{{ 'newsletter.button_label' | t }}</span>
-              {%- render 'icon-arrow', custom_classes: 'medium-hide large-up-hide' -%}
-            {%- else -%}
-              {%- render 'icon-arrow' -%}  
-            {%- endunless -%}
+            <span class="uppercase">{{ 'newsletter.button_label' | t }}</span>
           </button>
         </div>
         {%- if form.errors -%}

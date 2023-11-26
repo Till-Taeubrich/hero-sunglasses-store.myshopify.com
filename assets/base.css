@@ -405,11 +405,6 @@ summary .icon-caret {
   display: none;
 }
 
-.field__input::placeholder,
-.customer .field input::placeholder {
-  opacity: 0;
-}
-
 .field__input:-webkit-autofill ~ .field__button,
 .field__input:-webkit-autofill ~ .field__label,
 .customer .field input:-webkit-autofill ~ label {

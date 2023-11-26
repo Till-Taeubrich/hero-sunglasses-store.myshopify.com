@@ -445,8 +445,8 @@
         "box-icon": "shopify:\/\/shop_images\/Vector.svg",
         "newsletter-title": "Join now to keep up with new deals!",
         "newsletter-caption": "You’ll receive a 20% discount code with each purchase, that your friends and family can use 10 TIMES!!! Stay tuned for new deals.",
-        "padding-top": 0,
-        "padding-bottom": 0
+        "padding-top": 60,
+        "padding-bottom": 90
       }
     }
   },
