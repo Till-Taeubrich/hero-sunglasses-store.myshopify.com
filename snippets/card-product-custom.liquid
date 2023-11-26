@@ -1,0 +1,16 @@
+<div class="custom__product-card">
+  {%- if card_product.featured_media != blank -%}
+    <div class="product-card-img-wrapper img__wrapper">
+      {%- assign img_height = card_product.featured_media.width | divided_by: card_product.featured_media.aspect_ratio -%}
+  
+      {{ card_product.featured_media | image_url: width: 1000 | image_tag:
+        height: img_height,
+        width: card_product.featured_media.width,
+        loading: 'lazy'
+      }}
+      <div class="variants-counter">{{ card_product.variants.size }} Colors</div>
+    </div>
+    {%- endif -%}
+  <div class="product-card-product-title">{{ card_product.title }}</div>
+  {% render 'price', product: card_product, show_in_card: true, price_class: 'small-margin-top', show_badges: true %}
+</div>

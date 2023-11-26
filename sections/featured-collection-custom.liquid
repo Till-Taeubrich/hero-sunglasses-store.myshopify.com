@@ -196,20 +196,8 @@
           <ul id="Slider-{{ section.id }}" class="grid product-grid contains-card contains-card--product grid--{{ section.settings.columns_tablet }}-col-tablet grid--{{ columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col{% else %} grid--{{ section.settings.columns_mobile }}-col{% endif %}{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider{% if section.settings.full_width %} grid--peek{% endif %}{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_tablet_slider %} slider--tablet{% endif %}{% if show_mobile_slider %} slider--mobile{% endif %}{% endif %}" role="list" aria-label="{{ 'sections.featured_collection.slider' | t }}">
             {%- for card_product in section.settings.collection.products limit: section.settings.products_to_show -%}
               <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider__slide{% endif %}">
-                {% render 'card-product',
+                {% render 'card-product-custom',
                   card_product: card_product,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating,
-                  show_quick_add: section.settings.enable_quick_add,
-                  enable_compare: enable_compare,
-                  show_quick_view: section.settings.enable_quick_view,
-                  section_id: section.id,
-                  show_color_swatches: section.settings.show_color_swatches,
-                  color_swatches_style: section.settings.color_swatches_style,
-                  full_on_mobile: full_on_mobile,
-                  small_space_on_large_screen: small_space_on_large_screen
                 %}
               </li>
             {%- else -%}

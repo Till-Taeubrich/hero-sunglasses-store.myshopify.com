@@ -917,3 +917,30 @@ a:not([href]) {
   transform: translate(-50%, -50%);
   bottom: 0%;
 }
+
+.custom__product-card .img__wrapper {
+    display: block;
+    position: relative;
+    padding-top: 100%;
+}
+
+.custom__product-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.custom__product-card .variants-counter {
+	position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom__product-card .product-card-img-wrapper {
+  margin-bottom: 8px;
+  background-color: #f2f2f2;
+}
