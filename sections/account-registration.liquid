@@ -3,17 +3,139 @@
     padding-top: {{ section.settings.padding-top }}px;
     padding-bottom: {{ section.settings.padding-bottom }}px;
   }
+
+  #shopify-section-{{ section.id }} .section-shop-by-brand {
+    color: var(--lt-color-white);;
+    letter-spacing: 0.04em;
+  }
+
+  #shopify-section-{{ section.id }} .first-section {
+    background-color: {{ section.settings.background_color }};
+    padding: 80px 0;
+  }
+
+  #shopify-section-{{ section.id }} .first-section .first-section-title {
+    font-weight: 700;
+    font-size: 50px;
+  }
+
+  #shopify-section-{{ section.id }} .first-section .first-section-caption {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .first-section .flex {
+    gap: 60px;
+  }
+
+  #shopify-section-{{ section.id }} .first-section .flex > * {
+    flex-basis: 50%;
+  }
+
+  #shopify-section-{{ section.id }} .left-bullet-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-point {
+    flex-basis: 50%;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-point .img__wrapper {
+    max-width: 70px;
+    margin-bottom: 10px;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-point-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-point-description {
+    font-size: 18px;
+  }
+
+  #shopify-section-{{ section.id }} .second-section {
+    background-image: url('{{ section.settings.background_img | image_url: width: 1000 }}');
+		background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #shopify-section-{{ section.id }} .second-section .qr-code-wrapper {
+    width: 350px;
+  }
 </style>
+
+<section class="shopify-section section section-shop-by-brand">
+  <div class="first-section">
+    <div class="page-width">
+      <div class="first-section-title">{{ section.settings.title }}</div>
+      <div class="first-section-caption">{{ section.settings.caption }}</div>
+      <div class="flex">
+        <div class="left-bullet-points">
+          {% for block in section.blocks %}
+            <div class="bullet-point">
+              {%- if block.settings.img != blank -%}
+                <div class="img__wrapper">
+                  {%- assign img_height = block.settings.img.width | divided_by: block.settings.img.aspect_ratio -%}
+        
+                  {{ block.settings.img | image_url: width: 1000 | image_tag:
+                    height: img_height,
+                    width: block.settings.img.width,
+                    loading: 'lazy'
+                  }}
+                </div>
+              {%- endif -%}
+              <div class="bullet-point-title">{{ block.settings.title }}</div>
+              <div class="bullet-point-description">{{ block.settings.description }}</div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="right-form">
+          <form action="">
+            test
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="second-section">
+    <div class="page-width">
+      <div class="qr-box">
+        <div class="qr-caption">{{ section.settings.qr_caption }}</div>
+        <div class="qr-title">{{ section.settings.qr_title }}</div>
+        {%- if section.settings.qr_img != blank -%}
+          <div class="img__wrapper qr-code-wrapper">
+            {%- assign img_height = section.settings.qr_img.width | divided_by: section.settings.qr_img.aspect_ratio -%}
+      
+            {{ section.settings.qr_img | image_url: width: 1000 | image_tag:
+              height: img_height,
+              width: section.settings.qr_img.width,
+              loading: 'lazy'
+            }}
+          </div>
+          {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
 
 {% schema %}
 {
-  "name": "SECTIONNAME",
+  "name": "Account registration",
   "presets": [
   {
-   "name":"SECTIONNAME"
+   "name":"Account registration"
   }
   ],
   "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
 		{
       "type": "text",
       "id": "title",
@@ -27,6 +149,11 @@
 		{
       "type": "header",
       "content": "QR-code section"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_img",
+      "label": "Background image"
     },
     {
       "type": "text",
