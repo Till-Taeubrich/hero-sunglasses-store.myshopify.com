@@ -407,6 +407,38 @@
     },
     "d16a4844-1d98-4165-9734-a499d12f0617": {
       "type": "social-newsletter",
+      "blocks": {
+        "3455a556-83f8-4a6e-b7d5-d5da93685d93": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/img_1.png"
+          }
+        },
+        "c9f2bbe7-377b-47cf-ac34-85ea6705a457": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/img_2.png"
+          }
+        },
+        "9bf73b4d-e85c-4e5c-b08b-541df2f06ddb": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/img_3.png"
+          }
+        },
+        "6661d228-97d3-4997-867a-2644df369f3e": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/img_4.png"
+          }
+        }
+      },
+      "block_order": [
+        "3455a556-83f8-4a6e-b7d5-d5da93685d93",
+        "c9f2bbe7-377b-47cf-ac34-85ea6705a457",
+        "9bf73b4d-e85c-4e5c-b08b-541df2f06ddb",
+        "6661d228-97d3-4997-867a-2644df369f3e"
+      ],
       "settings": {
         "background_img": "shopify:\/\/shop_images\/Rectangle_168_b706f254-69ee-4721-90c8-9e1efb1befeb.png",
         "box-title": "Stay Social",
