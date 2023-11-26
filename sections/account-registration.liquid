@@ -1,0 +1,88 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "SECTIONNAME",
+  "presets": [
+  {
+   "name":"SECTIONNAME"
+  }
+  ],
+  "settings": [
+		{
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+		{
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    },
+		{
+      "type": "header",
+      "content": "QR-code section"
+    },
+    {
+      "type": "text",
+      "id": "qr_title",
+      "label": "Title"
+    },
+		{
+      "type": "text",
+      "id": "qr_caption",
+      "label": "Caption"
+    },
+		{
+      "type": "image_picker",
+      "id": "qr_img",
+      "label": "QR code"
+    },
+		{
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Bullet point",
+       "type": "bullet_point",
+       "limit": 4,
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "img",
+           "label": "Icon"
+         },
+         {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
+         },
+         {
+           "type": "text",
+           "id": "description",
+           "label": "Description"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}
