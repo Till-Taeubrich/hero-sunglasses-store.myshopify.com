@@ -1,0 +1,166 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+    background-image: url('{{ section.settings.background_img | image_url: width: 1000 }}');
+		background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #shopify-section-{{ section.id }} .section-social-newsletter {
+    padding: 60px 120px 90px 120px
+  }
+
+  #shopify-section-{{ section.id }} .section-social-newsletter .img__wrapper {
+    background-color: #eeeeec;
+  }
+
+#shopify-section-{{ section.id }} .section-social-newsletter .img__wrapper img {
+    width: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .section-social-newsletter .header-section {
+    border: 5px solid var(--lt-color-black);
+  }
+
+  #shopify-section-{{ section.id }} .section-social-newsletter .header-title {
+    color: var(--lt-color-black);
+  }
+</style>
+
+<section class="shopify-section section section-social-newsletter page-width">
+  {% render 'section-headline-box' section: section %}
+  <div class="image-row">
+    {% for block in section.blocks %}
+      {%- if block.settings.img != blank -%}
+        <div class="img__wrapper">
+          {%- assign img_height = block.settings.img.width | divided_by: block.settings.img.aspect_ratio -%}
+      
+          {{ block.settings.img | image_url: width: 1000 | image_tag:
+            height: img_height,
+            width: block.settings.img.width,
+            loading: 'lazy'
+          }}
+        </div>
+      {%- endif -%}
+    {% endfor %}
+  </div>
+  <div class="newletter-wrapper">
+    <div class="newsletter-title"></div>
+    <div class="newsletter-caption"></div>
+    <div class="newsletter__box" {{ block.shopify_attributes }}>
+      {% form 'customer', class: 'newsletter__email-form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter__form-field-wrapper newsletter__form-field-wrapper--{{ section.id }} flex justify-space-between">
+          <div class="field flex-grow-1">
+            <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="newsletter__input field__input"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                autofocus
+                aria-invalid="true"
+                aria-describedby="Newsletter-error--{{ section.id }}"
+              {% elsif form.posted_successfully? %}
+                aria-describedby="Newsletter-success--{{ section.id }}"
+              {% endif %}
+              placeholder="example@email.com"
+              required
+            >
+            <label class="field__label visually-hidden" for="NewsletterForm--{{ section.id }}">
+              {{ 'newsletter.label' | t }}
+            </label>
+          </div>
+          <button type="submit" class="button newsletter__button{% if section.settings.desktop_image_width == 'large' and section.settings.image != blank %} newsletter__button--square{% endif %}" name="commit" id="Subscribe-{{ section.id }}" aria-label="{{ 'newsletter.button_label' | t | escape }}">
+            {%- unless section.settings.desktop_image_width == 'large' and section.settings.image != blank -%}  
+              <span class="small-hide">{{ 'newsletter.button_label' | t }}</span>
+              {%- render 'icon-arrow', custom_classes: 'medium-hide large-up-hide' -%}
+            {%- else -%}
+              {%- render 'icon-arrow' -%}  
+            {%- endunless -%}
+          </button>
+        </div>
+        {%- if form.errors -%}
+          <small class="form__message alert alert--error alert--small" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+        {%- endif -%}
+        {%- if form.posted_successfully? -%}
+          <h3 class="newsletter-form__message--success form__message alert alert--success alert--small" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+        {%- endif -%}
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Social newsletter",
+  "presets": [
+  {
+   "name":"Social newsletter"
+  }
+  ],
+  "settings": [
+		{
+      "type": "image_picker",
+      "id": "background_img",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "box-title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "box-icon",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "newsletter-title",
+      "label": "Newsletter title"
+    },
+    {
+      "type": "text",
+      "id": "newsletter-caption",
+      "label": "Newsletter caption"
+    },
+		{
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Image",
+       "type": "image",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "img",
+           "label": "Image"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}

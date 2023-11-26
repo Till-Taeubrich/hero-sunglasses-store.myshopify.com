@@ -13,6 +13,7 @@
     text-align: center;
   }
 
+  #shopify-section-{{ section.id }} .box-icon,
   #shopify-section-{{ section.id }} .header-caption {
     position: absolute;
     bottom: 100%;
@@ -28,5 +29,19 @@
 
 <div class="header-section">
   <div class="header-title">{{ section.settings.box-title }}</div>
+  {% if section.settings.box-icon %}
+    {%- if section.settings.box-icon != blank -%}
+      <div class="img__wrapper box-icon">
+        {%- assign img_height = section.settings.box-icon.width | divided_by: section.settings.box-icon.aspect_ratio -%}
+              
+        {{ section.settings.box-icon | image_url: width: 1000 | image_tag:
+          height: img_height,
+          width: section.settings.img.width,
+          loading: 'lazy'
+        }}
+      </div>
+    {%- endif -%}
+  {% else %}
   <div class="header-caption">{{ section.settings.box-caption }}</div>
+  {% endif %}
 </div>

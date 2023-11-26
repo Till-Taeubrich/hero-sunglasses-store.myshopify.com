@@ -311,6 +311,7 @@
         "box-title": "Shop by Brand",
         "box-caption": "Only the Best",
         "background_img": "shopify:\/\/shop_images\/Group_238.png",
+        "shop_all_btn": false,
         "padding-top": 100,
         "padding-bottom": 100
       }
@@ -318,7 +319,7 @@
     "3f59de8a-1908-4312-be7f-a03238443ace": {
       "type": "featured-collection-custom",
       "settings": {
-        "title": "Featured collection",
+        "title": "",
         "subtitle": "",
         "box-title": "Best Sellers",
         "box-caption": "As of Nov, 23",
@@ -404,47 +405,16 @@
         "padding_bottom": 60
       }
     },
-    "5d00ad76-c801-48a4-bdb5-e8e7d1210de5": {
-      "type": "newsletter",
-      "blocks": {
-        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Subscribe to our emails",
-            "heading_size": "h1"
-          }
-        },
-        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-paragraph-1": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
-          }
-        },
-        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-email_form-1": {
-          "type": "email_form",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-heading-1",
-        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-paragraph-1",
-        "template--21570111799588__5d00ad76-c801-48a4-bdb5-e8e7d1210de5-email_form-1"
-      ],
+    "d16a4844-1d98-4165-9734-a499d12f0617": {
+      "type": "social-newsletter",
       "settings": {
-        "grid_layout": "grid",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "color_scheme": "",
-        "colors_text": "#ffffff",
-        "colors_input": "#64748b",
-        "overlay_color": "#1e40af",
-        "mobile_content_alignment": "left",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "background_img": "shopify:\/\/shop_images\/Rectangle_168_b706f254-69ee-4721-90c8-9e1efb1befeb.png",
+        "box-title": "Stay Social",
+        "box-icon": "shopify:\/\/shop_images\/Vector.svg",
+        "newsletter-title": "Join now to keep up with new deals!",
+        "newsletter-caption": "You’ll receive a 20% discount code with each purchase, that your friends and family can use 10 TIMES!!! Stay tuned for new deals.",
+        "padding-top": 0,
+        "padding-bottom": 0
       }
     }
   },
@@ -457,6 +427,6 @@
     "fd37e9c2-fd41-43f0-be72-5842404b2d02",
     "884c7e23-6ed7-4c99-a6df-fd81185d1a58",
     "d87956b0-e577-4c92-859e-40dfee5b0f90",
-    "5d00ad76-c801-48a4-bdb5-e8e7d1210de5"
+    "d16a4844-1d98-4165-9734-a499d12f0617"
   ]
 }
