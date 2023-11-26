@@ -2,55 +2,226 @@
   #shopify-section-{{ section.id }} {
     padding-top: {{ section.settings.padding-top }}px;
     padding-bottom: {{ section.settings.padding-bottom }}px;
-  }
-
-  #shopify-section-{{ section.id }} .section-virtual-try-on {
     background-image: url('{{ section.settings.background_img | image_url: width: 1000 }}');
 		background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  #shopify-section-{{ section.id }} .section-virtual-try-on {
     position: relative;
     height: 820px;
+    max-width: 1700px;
+    margin: 0 auto;
   }
 
   #shopify-section-{{ section.id }} .left-box,
   #shopify-section-{{ section.id }} .right-box {
     position: absolute;
-    border: 1px red solid;
+    background: rgba(51, 51, 51, 0.4);
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+  }
+
+  #shopify-section-{{ section.id }} .left-box {
+    top: 25%;
+    left: 9%;
+    max-width: 400px;
+  }
+
+  #shopify-section-{{ section.id }} .left-box .content-wrapper {
+    padding: 68px 78px;
+    text-align: center;
+    color: var(--lt-color-white);
+    letter-spacing: 0.04em;
+  }
+
+  #shopify-section-{{ section.id }} .left-box .title-left {
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+
+
+  #shopify-section-{{ section.id }} .left-box .img__wrapper {
+    width: 160%;
+    position: relative;
+    right: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .right-box {
+    top: 20%;
+    right: 9%;
+    max-width: 800px;
+  }
+
+  #shopify-section-{{ section.id }} .right-box .title-right {
+    font-weight: 700;
+    font-size: 50px;
+  }
+
+  #shopify-section-{{ section.id }} .right-box .content-wrapper {
+    padding: 56px 180px 130px 67px;
+    color: var(--lt-color-white);
+    letter-spacing: 0.04em;
+  }
+
+  #shopify-section-{{ section.id }} .right-box .description-right {
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  #shopify-section-{{ section.id }} .right-box .btn {
+    text-decoration: none;
+    padding: 16px 22px;
+    background-color: #992626;
+    color: var(--lt-color-white);
+    position: relative;
+    top: 15px;
+  }
+
+  #shopify-section-{{ section.id }} .left-box .caption-left {
+    font-size: 24px;
+    margin-bottom: 128px;
+  }
+
+  @media (max-width: 1500px) {
+    #shopify-section-{{ section.id }} .left-box {
+      left: 3%;
+    }
+
+    #shopify-section-{{ section.id }} .right-box {
+      right: 3%;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    #shopify-section-{{ section.id }} .left-box {
+      max-width: 350px;
+      top: 15%;
+    }
+
+    #shopify-section-{{ section.id }} .right-box {
+      max-width: 650px;
+      top: 10%;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    #shopify-section-{{ section.id }} .section-virtual-try-on {
+      height: unset;
+    }
+
+    #shopify-section-{{ section.id }} .left-box .img__wrapper {
+      width: unset;
+      position: relative;
+      right: unset;
+    }
+
+    #shopify-section-{{ section.id }} .right-box .btn {
+        top: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .section-virtual-try-on {
+      display: flex;
+      padding: 3rem;
+      gap: 2rem;
+    }
+
+    #shopify-section-{{ section.id }} .left-box,
+    #shopify-section-{{ section.id }} .right-box {
+      position: static;
+      max-width: unset;
+    }
+
+    #shopify-section-{{ section.id }} .left-box .content-wrapper,
+    #shopify-section-{{ section.id }} .right-box .content-wrapper {
+      padding: 30px
+    }
+
+    #shopify-section-{{ section.id }} .left-box .title-left {
+      font-size: 22px;
+    }
+
+    #shopify-section-{{ section.id }} .left-box .caption-left {
+      font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .right-box .title-right {
+      font-size: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .right-box .description-right {
+      font-size: 18px;
+    }
+
+    #shopify-section-{{ section.id }} .left-box .caption-left {
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 749px) {
+      #shopify-section-{{ section.id }} .section-virtual-try-on {
+        flex-direction: column;
+      }
+
+      #shopify-section-{{ section.id }} .left-box .img__wrapper {
+        width: unset;
+        position: unset;
+        right: unset;
+        width: 75%;
+        margin: 0 auto;
+      }
+
+      #shopify-section-{{ section.id }} .right-box {
+        text-align: center;
+      }
+
+      #shopify-section-{{ section.id }} .right-box .btn {
+        text-decoration: none;
+        padding: 16px 22px;
+        background-color: #992626;
+        color: var(--lt-color-white);
+        position: relative;
+      }
+    }
   }
 </style>
 
 <section class="shopify-section section section-virtual-try-on">
   <div class="left-box">
-    {% if section.settings.title_left %}
-    <div class="title-left">{{ section.settings.title_left }}</div>
-    {% endif %}
-    {% if section.settings.caption_left %}
-    <div class="caption-left">{{ section.settings.caption_left }}</div>
-    {% endif %}
-    {%- if section.settings.img_left != blank -%}
-      <div class="img__wrapper">
-        {%- assign img_height = section.settings.img_left.width | divided_by: section.settings.img_left.aspect_ratio -%}
-              
-        {{ section.settings.img_left | image_url: width: 1000 | image_tag:
-          height: img_height,
-          width: section.settings.img.width,
-          loading: 'lazy'
-        }}
-      </div>
-      {%- endif -%}
+    <div class="content-wrapper">
+      {% if section.settings.title_left %}
+      <div class="title-left">{{ section.settings.title_left }}</div>
+      {% endif %}
+      {% if section.settings.caption_left %}
+      <div class="caption-left">{{ section.settings.caption_left }}</div>
+      {% endif %}
+      {%- if section.settings.img_left != blank -%}
+        <div class="img__wrapper">
+          {%- assign img_height = section.settings.img_left.width | divided_by: section.settings.img_left.aspect_ratio -%}
+      
+          {{ section.settings.img_left | image_url: width: 1000 | image_tag:
+            height: img_height,
+            width: section.settings.img.width,
+            loading: 'lazy'
+          }}
+        </div>
+        {%- endif -%}
+    </div>
   </div>
   <div class="right-box">
-    {% if section.settings.title_left %}
-      <div class="title-right">{{ section.settings.title_right }}</div>
-    {% endif %}
-    {% if section.settings.richtext_right %}
-      <div class="description-right">{{ section.settings.richtext_right }}</div>
-    {% endif %}
-    {% if section.settings.richtext_right %}
-      <div class="description-right">{{ section.settings.richtext_right }}</div>
-    {% endif %}
-    <a class="btn" {% if section.settings.btn_link != blank %} href=" {{ section.settings.btn_link }} " {% endif %}> {{ section.settings.btn_text }} </a>
+    <div class="content-wrapper">
+      {% if section.settings.title_left %}
+        <div class="title-right">{{ section.settings.title_right }}</div>
+      {% endif %}
+      {% if section.settings.richtext_right %}
+        <div class="description-right">{{ section.settings.richtext_right }}</div>
+      {% endif %}
+      <a class="btn" {% if section.settings.btn_link != blank %} href=" {{ section.settings.btn_link }} " {% endif %}> {{ section.settings.btn_text }} </a>
+    </div>
   </div>
 </section>
 
