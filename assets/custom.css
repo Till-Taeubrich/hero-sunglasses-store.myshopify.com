@@ -944,3 +944,7 @@ a:not([href]) {
   margin-bottom: 8px;
   background-color: #f2f2f2;
 }
+
+.custom__product-card .flickity-button {
+  background-color: transparent;
+}
