@@ -1,3 +1,4 @@
+{% unless customer %}
 <style>
   #shopify-section-{{ section.id }} {
     padding-top: {{ section.settings.padding-top }}px;
@@ -52,8 +53,57 @@
     margin-bottom: 10px;
   }
 
+  #shopify-section-{{ section.id }} .form-section-title {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
   #shopify-section-{{ section.id }} .bullet-point-description {
     font-size: 18px;
+  }
+
+  #shopify-section-{{ section.id }} .account-registration-form {
+    background-color: var(--lt-color-white);;
+    color: black;
+    border-radius: 10px;
+    border-top: 10px #992626 solid;
+    padding: 55px 47px 29px 47px;
+    position: absolute;
+    right: -3%;
+    top: -27%;
+  }
+
+  #shopify-section-{{ section.id }} .account-registration-form .input-wrapper label {
+    background-color: var(--lt-color-white);;
+    color: #333333;
+    padding: 3px 6.5px;
+    font-size: 14px;
+    position: relative;
+    left: 30px;
+    top: 13px;
+  }
+
+  #shopify-section-{{ section.id }} .account-registration-form input {
+    padding: 25px;
+    font-size: 20px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .customer-details {
+    margin-bottom: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .account-registration-form input {
+    padding: 25px;
+    font-size: 20px;
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .form-title {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--lt-color-black);
   }
 
   #shopify-section-{{ section.id }} .second-section {
@@ -66,6 +116,197 @@
   #shopify-section-{{ section.id }} .second-section .qr-code-wrapper {
     width: 350px;
   }
+
+  #shopify-section-{{ section.id }} .form-hr {
+    margin: 32px;
+    flex-grow: 1;
+  }
+
+  #shopify-section-{{ section.id }} .hr-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    gap: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .hr-title .form-hr{
+    margin: 0px;
+  }
+
+  #shopify-section-{{ section.id }} hr {
+    background-color: #B0B0B0;
+  }
+
+  #shopify-section-{{ section.id }} [type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0 !important;
+    height: 0;
+  }
+
+  #shopify-section-{{ section.id }} [type=radio] + svg {
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} label:nth-child(1) [type=radio]:hover + svg,
+  #shopify-section-{{ section.id }} label:nth-child(1) [type=radio]:checked + svg {
+    filter: invert(64%) sepia(30%) saturate(747%) hue-rotate(23deg) brightness(95%) contrast(85%);
+  }
+
+  #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:hover + svg,
+  #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:checked + svg {
+    filter: invert(48%) sepia(44%) saturate(7319%) hue-rotate(340deg) brightness(88%) contrast(106%);
+  }
+
+  #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:hover + svg,
+  #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:checked + svg {
+    filter: invert(56%) sepia(85%) saturate(573%) hue-rotate(210deg) brightness(89%) contrast(91%);
+  }
+
+  #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:hover + svg,
+  #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:checked + svg {
+    filter: invert(29%) sepia(16%) saturate(962%) hue-rotate(170deg) brightness(93%) contrast(93%);
+  }
+
+  #shopify-section-{{ section.id }} label:nth-child(5) [type=radio]:hover + svg,
+  #shopify-section-{{ section.id }} label:nth-child(5) [type=radio]:checked + svg {
+    filter: invert(55%) sepia(57%) saturate(613%) hue-rotate(151deg) brightness(92%) contrast(94%);
+  }
+
+  #shopify-section-{{ section.id }} label:nth-child(6) [type=radio]:hover + svg,
+  #shopify-section-{{ section.id }} label:nth-child(6) [type=radio]:checked + svg {
+    filter: invert(61%) sepia(85%) saturate(322%) hue-rotate(2deg) brightness(90%) contrast(83%);
+  }
+
+  #shopify-section-{{ section.id }} .affiliation-selection {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  #shopify-section-{{ section.id }} .affiliation-selection svg {
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .policy-agreement-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .policy-agreement-wrapper label {
+    display: inline;
+    padding-left: 10px;
+    flex: none;
+  }
+
+  #shopify-section-{{ section.id }} .policy-agreement-wrapper input {
+    width: 21px;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .margin-32 {
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .password-fields-wrapper {
+    margin-bottom: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .submit-wrapper {
+    border-radius: 5px;
+    margin-bottom: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .submit-wrapper > input {
+    background-color: #D93636;
+    border: 1px #D93636 solid;
+    border-radius: 10px;
+    padding: 16px;
+    color: var(--lt-color-white);
+  }
+
+  #shopify-section-{{ section.id }} .submit-wrapper > input:disabled {
+    background-color: #e19092;
+    border-color: #e19092;
+  }
+
+  #shopify-section-{{ section.id }} .form-section-caption {
+    margin-bottom: 15px;
+  }
+
+  #shopify-section-{{ section.id }} .file-upload {
+    width: 240px;
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .file-upload__label {
+    display: block;
+    padding: 16px 27px;
+    color: #333333;
+    background: #BCBCBC;
+    border-radius: .4em;
+    transition: background .3s;
+    text-align: center;
+  }
+      
+  #shopify-section-{{ section.id }} .file-upload__input {
+    cursor: pointer;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      font-size: 1;
+      width:0;
+      height: 100%;
+      opacity: 0;
+  }
+
+  #shopify-section-{{ section.id }} .bullets-and-form-wrapper {
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .qr-box-wrapper {
+    display: flex;
+  }
+
+  #shopify-section-{{ section.id }} .qr-box-wrapper > * {
+    flex-basis: 50%;
+  }
+
+  #shopify-section-{{ section.id }} .qr-box {
+    max-width: 630px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 35px;
+    padding-top: ;
+    background: rgba(51, 51, 51, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  #shopify-section-{{ section.id }} .qr-code-wrapper {
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .qr-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 23px;
+  }
+
+  #shopify-section-{{ section.id }} .qr-caption {
+    font-size: 24px;
+    font-weight: bold;
+  }
 </style>
 
 <section class="shopify-section section section-shop-by-brand">
@@ -73,7 +314,7 @@
     <div class="page-width">
       <div class="first-section-title">{{ section.settings.title }}</div>
       <div class="first-section-caption">{{ section.settings.caption }}</div>
-      <div class="flex">
+      <div class="flex bullets-and-form-wrapper">
         <div class="left-bullet-points">
           {% for block in section.blocks %}
             <div class="bullet-point">
@@ -93,16 +334,108 @@
             </div>
           {% endfor %}
         </div>
-        <div class="right-form">
-          <form action="">
-            test
-          </form>
-        </div>
+        <form class="account-registration-form" action="" method="get" class="right-form">
+          <div class="customer-details">
+            <div class="input-wrapper">
+              <label for="first-name">First Name</label>
+              <input type="text" name="first-name" id="first-name" placeholder="First Name" required />
+            </div>
+            <div class="input-wrapper">
+              <label for="last-name">Last Name</label>
+              <input type="text" name="last-name" id="last-name" placeholder="Last Name" required />
+            </div>
+            <div class="input-wrapper">
+              <label for="phone">Phone #</label>
+              <input type="tel" name="name" id="name" placeholder="317-888-4484" required />
+            </div>
+            <div class="input-wrapper">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="Email*" required />
+            </div>
+          </div>
+          <div class="hr-title">
+            <div class="form-title">Select Affiliation</div>
+            <hr class="form-hr">
+          </div>
+
+
+          <div class="affiliation-selection">
+            <label>
+              <input type="radio" name="affiliation" value="military">
+              {% render 'educators-icon' %}
+            </label>
+
+            <label>
+              <input type="radio" name="affiliation" value="fire-and-ems">
+              {% render 'ems-icon' %}
+            </label>
+
+            <label>
+              <input type="radio" name="affiliation" value="medical">
+              {% render 'medical-icon' %}
+            </label>
+
+            <label>
+              <input type="radio" name="affiliation" value="gov">
+              {% render 'gov-icon' %}
+            </label>
+
+            <label>
+              <input type="radio" name="affiliation" value="police">
+              {% render 'police-icon' %}
+            </label>
+
+            <label>
+              <input type="radio" name="affiliation" value="educator">
+              {% render 'educator-icon' %}
+            </label>
+          </div>
+
+          <hr class="margin-32">
+          <div class="license-upload">
+            <div class="form-section-title">Drivers License (Front)</div>
+            <div class="form-section-caption">Upload a photo of the front of your drivers license or state ID.</div>
+            <div class="file-upload">
+              <label for="upload-license" class="file-upload__label">Upload License</label>
+              <input id="upload-license" class="file-upload__input" type="file" name="drivers-license">
+            </div>
+          </div>
+          <hr class="margin-32">
+          <div class="selfie-upload">
+            <div class="form-section-title">Upload a Selfie</div>
+            <div class="form-section-caption">This helps us verify it's really you. Please provide a photo of yourself.</div>
+            <div class="file-upload">
+              <label for="upload-selfie" class="file-upload__label">Upload a Selfie</label>
+              <input id="upload-selfie" class="file-upload__input" type="file" name="selfie">
+            </div>
+          </div>
+          <hr class="margin-32">
+
+          <div class="password-fields-wrapper">
+            <div class="input-wrapper">
+              <label for="password">Create a Password</label>
+              <input type="password" name="password" id="password" placeholder="Password" required />
+            </div>
+            <div class="input-wrapper">
+              <label for="confirm-password">Confirm Password</label>
+              <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required />
+            </div>
+          </div>
+
+          <div class="submit-wrapper">
+            <input id="submit-btn" disabled type="submit" value="Create my Account" />
+          </div>
+
+          <div class="policy-agreement-wrapper">
+            <input type="checkbox" id="policy-agreement" value="Create my Account"/>
+            <label for="policy-agreement">I agree to Terms of Service and Privacy Policy</label>
+          </div>
+        </form>
       </div>
     </div>
   </div>
   <div class="second-section">
-    <div class="page-width">
+    <div class="page-width qr-box-wrapper">
       <div class="qr-box">
         <div class="qr-caption">{{ section.settings.qr_caption }}</div>
         <div class="qr-title">{{ section.settings.qr_title }}</div>
@@ -118,17 +451,33 @@
           </div>
           {%- endif -%}
       </div>
+      <div class="empty-element" style="display: block;"></div>
     </div>
   </div>
 </section>
+{% endunless %}
+
+<script>
+  const checkbox = document.querySelector("#policy-agreement");
+  const submitBtn = document.querySelector("#submit-btn");
+  console.log('🚀 ~ file: account-registration.liquid:411 ~ submitBtn:', submitBtn)
+
+  checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      submitBtn.disabled = false 
+    } else {
+      submitBtn.disabled = true
+    }
+  });
+</script>
 
 {% schema %}
 {
   "name": "Account registration",
   "presets": [
-  {
-   "name":"Account registration"
-  }
+    {
+      "name": "Account registration"
+    }
   ],
   "settings": [
     {
@@ -136,17 +485,17 @@
       "id": "background_color",
       "label": "Background Color"
     },
-		{
+    {
       "type": "text",
       "id": "title",
       "label": "Title"
     },
-		{
+    {
       "type": "text",
       "id": "caption",
       "label": "Caption"
     },
-		{
+    {
       "type": "header",
       "content": "QR-code section"
     },
@@ -160,17 +509,17 @@
       "id": "qr_title",
       "label": "Title"
     },
-		{
+    {
       "type": "text",
       "id": "qr_caption",
       "label": "Caption"
     },
-		{
+    {
       "type": "image_picker",
       "id": "qr_img",
       "label": "QR code"
     },
-		{
+    {
       "type": "range",
       "id": "padding-top",
       "label": "Padding top",
@@ -188,28 +537,28 @@
     }
   ],
   "blocks": [
-     {
-       "name": "Bullet point",
-       "type": "bullet_point",
-       "limit": 4,
-       "settings": [
-         {
-           "type": "image_picker",
-           "id": "img",
-           "label": "Icon"
-         },
-         {
-           "type": "text",
-           "id": "title",
-           "label": "Title"
-         },
-         {
-           "type": "text",
-           "id": "description",
-           "label": "Description"
-         }
-       ]
-     }
-   ]
+    {
+      "name": "Bullet point",
+      "type": "bullet_point",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
