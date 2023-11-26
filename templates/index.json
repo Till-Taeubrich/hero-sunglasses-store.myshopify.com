@@ -267,6 +267,7 @@
         },
         "6985d3c4-932c-4f5b-8a33-51154351044f": {
           "type": "brand",
+          "disabled": true,
           "settings": {
             "img": "shopify:\/\/shop_images\/CROAKIES_SVG_1_72356a81-e9ab-40d3-a5e1-9c1e5880e182.svg",
             "collection": ""
@@ -274,6 +275,7 @@
         },
         "5e9e4a7a-7d7e-4b50-b5d0-7c3075e77ed3": {
           "type": "brand",
+          "disabled": true,
           "settings": {
             "img": "shopify:\/\/shop_images\/CELINE_SVG_1_6995bdbb-370c-48a7-9962-65f903dec2f2.svg",
             "collection": ""
@@ -281,6 +283,7 @@
         },
         "f0416cc3-1ee3-44ed-afc5-981395c834c6": {
           "type": "brand",
+          "disabled": true,
           "settings": {
             "collection": ""
           }

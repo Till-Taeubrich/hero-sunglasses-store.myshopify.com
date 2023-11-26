@@ -110,11 +110,13 @@
           </a>
         {% endif %}
       {% endfor %}
+      {% if section.settings.shop_all_btn %}
       <a class="shop-all-btn" href="/collections/all">
         <div>
           SHOP ALL
         </div>
       </a>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -142,6 +144,12 @@
       "type": "image_picker",
       "id": "background_img",
       "label": "Background image"
+    },
+    {
+      "type": "checkbox",
+      "id": "shop_all_btn",
+      "label": "Show shop all btn",
+      "default": false
     },
 		{
       "type": "range",
