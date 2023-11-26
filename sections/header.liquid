@@ -1,3 +1,13 @@
+<style>
+  #shopify-section-{{ section.id }} .customer-application-link {
+    font-weight: bold;
+  }
+
+  #shopify-section-{{ section.id }} .customer-application-link > a {
+    color: var(--lt-color-white);
+  }
+</style>
+
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {%- liquid
   assign has_localization = false
@@ -134,6 +144,7 @@
     </div>
   {%- endif -%}
   <header class="header header--{{ section.settings.logo_position }} w100{% if section.settings.menu != blank %} header--has-menu{% endif %} header--mobile-{{ section.settings.mobile_logo_position }}">
+    {% if customer %}
     <div class="header__inner page-width">  
       {%- if section.settings.menu != blank or has_left_account_icon or has_social_media_icons or has_supported_region or settings.enable_product_compare -%}
         {%- liquid
@@ -492,6 +503,9 @@
         {%- render 'header-icons', has_supported_region: has_supported_region, supported_region_blocks: supported_region_blocks -%}
       {%- endunless -%}  
     </div>  
+    {% else %}
+    <div class="no-customer-content page-width">Heavily discounted sunglasses for service providers. <span class="customer-application-link"><a href="{{ section.settings.customer_application_link }}">Do I Qualify?</a></span></div>
+    {% endif %}
   </header>
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}> 
 
@@ -600,6 +614,11 @@
   "class": "section-header",
   "max_blocks": 30,
   "settings": [
+    {
+      "type": "url",
+      "id": "customer_application_link",
+      "label": "Customer application link"
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
