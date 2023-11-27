@@ -214,9 +214,10 @@
         "066c08e4-88d6-41db-b6a7-6f1d5766eb62"
       ],
       "settings": {
-        "background_color": "",
+        "background_color": "#617286",
         "title": "Account Registration",
         "caption": "To gain access to pricing please register to verify your ID affiliation.",
+        "background_img": "shopify:\/\/shop_images\/background_img.png",
         "qr_title": "Sign up with mobile!",
         "qr_caption": "Don’t have your ID on your desktop?",
         "qr_img": "shopify:\/\/shop_images\/qr-code.svg",
