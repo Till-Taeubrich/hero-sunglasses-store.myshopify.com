@@ -8,7 +8,7 @@
         width: card_product.featured_media.width,
         loading: 'lazy'
       }}
-      <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1 }'>
+      <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "pageDots": false }'>
         {% for variant in card_product.variants %}
           <div class="carousel-cell">
             <img class="carousel-cell-image"
