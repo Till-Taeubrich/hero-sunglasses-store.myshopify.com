@@ -1,21 +1,14 @@
-<style>
-  #shopify-section-{{ section.id }} .customer-application-link {
-    font-weight: bold;
-  }
-
-  #shopify-section-{{ section.id }} .customer-application-link > a {
-    color: var(--lt-color-white);
-  }
-</style>
-
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {%- liquid
   assign has_localization = false
+  assign total_location = 0
   if section.settings.enable_country_selector and localization.available_countries.size > 1
     assign has_localization = true
+    assign total_location = total_location | plus: 1
   endif
   if section.settings.enable_language_selector and localization.available_languages.size > 1
     assign has_localization = true
+    assign total_location = total_location | plus: 1
   endif  
   assign menu_labels = section.blocks | where: 'type', 'menu_label'
   render 'header-assets', has_localization: has_localization, menu_labels: menu_labels
@@ -44,7 +37,7 @@
             </div>
           {%- endif -%}
           {%- if has_localization or section.settings.enable_social_links -%}
-            <div class="header__localization align-center isolate flex justify-space-between flex-grow-1">
+            <div class="header__localization align-center isolate flex {% if total_location == 2 %}justify-space-between{% else %}justify-right{% endif %} flex-grow-1">
               {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
                 <noscript>
                   {%- form 'localization', id: 'HeaderCountryFormNoScript', class: 'localization-form' -%}
@@ -144,7 +137,6 @@
     </div>
   {%- endif -%}
   <header class="header header--{{ section.settings.logo_position }} w100{% if section.settings.menu != blank %} header--has-menu{% endif %} header--mobile-{{ section.settings.mobile_logo_position }}">
-    {% if customer %}
     <div class="header__inner page-width">  
       {%- if section.settings.menu != blank or has_left_account_icon or has_social_media_icons or has_supported_region or settings.enable_product_compare -%}
         {%- liquid
@@ -503,9 +495,6 @@
         {%- render 'header-icons', has_supported_region: has_supported_region, supported_region_blocks: supported_region_blocks -%}
       {%- endunless -%}  
     </div>  
-    {% else %}
-    <div class="no-customer-content page-width">Heavily discounted sunglasses for service providers. <span class="customer-application-link"><a href="{{ section.settings.customer_application_link }}">Do I Qualify?</a></span></div>
-    {% endif %}
   </header>
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}> 
 
@@ -614,11 +603,6 @@
   "class": "section-header",
   "max_blocks": 30,
   "settings": [
-    {
-      "type": "url",
-      "id": "customer_application_link",
-      "label": "Customer application link"
-    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
