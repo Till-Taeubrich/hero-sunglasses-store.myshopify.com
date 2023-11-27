@@ -45,6 +45,24 @@
             "heading": "Help & Info",
             "menu": "help-info"
           }
+        },
+        "3786cf6d-d767-4f24-a945-bd715b033143": {
+          "type": "bullet-points",
+          "settings": {
+            "img_1": "shopify:\/\/shop_images\/24_hour_2.svg",
+            "text_1": "Live Chat",
+            "link_1": "\/",
+            "img_2": "shopify:\/\/shop_images\/Customer_Service.svg",
+            "text_2": "Phone Support",
+            "link_2": "\/",
+            "img_3": "shopify:\/\/shop_images\/Online_Payment.svg",
+            "text_3": "Email Support",
+            "link_3": "\/",
+            "img_4": "shopify:\/\/shop_images\/Mobile_Shopping_1_375e1efc-0d18-479d-a51c-1c00ebd2d45e.svg",
+            "text_4": "SMS Support",
+            "link_4": "\/",
+            "logo": "shopify:\/\/shop_images\/footer_Logo_1SVG_4.svg"
+          }
         }
       },
       "block_order": [
@@ -52,10 +70,11 @@
         "footer-1",
         "e1a58367-ad23-47c0-adf6-953cfbd41867",
         "df20ff3c-9292-427d-b6a6-47137f1197dc",
-        "ad48f7c7-8f7f-4d06-9e10-3b06e61396f5"
+        "ad48f7c7-8f7f-4d06-9e10-3b06e61396f5",
+        "3786cf6d-d767-4f24-a945-bd715b033143"
       ],
       "settings": {
-        "color_scheme": "background-2",
+        "color_scheme": "inverse",
         "bottom_links": "footer",
         "show_social": true,
         "enable_country_selector": false,

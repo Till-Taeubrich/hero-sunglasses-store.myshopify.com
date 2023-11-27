@@ -200,6 +200,11 @@
                     <div class="footer-block__details-content">
                       {{ block.settings.custom_liquid_code }}
                     </div>  
+                  {%- when 'bullet-points' -%}
+                    <div class="footer-block__details-content footer-bullet-points">
+
+
+                    </div>  
                   {%- endcase -%}
               </{% if section.settings.enable_collapse and block.settings.heading != blank %}footer-collapse-block{% else %}div{% endif %}>
             {%- endfor -%}
@@ -503,6 +508,77 @@
           "type": "liquid",
           "id": "custom_liquid_code",
           "label": "t:sections.footer.blocks.custom_liquid.settings.custom_liquid_code.label"
+        }
+      ]
+    },
+    {
+      "type": "bullet-points",
+      "name": "Bullet points",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img_1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text 1"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text 2"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Link 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text 3"
+        },
+        {
+          "type": "url",
+          "id": "link_3",
+          "label": "Link 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_4",
+          "label": "Icon 4"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text 4"
+        },
+        {
+          "type": "url",
+          "id": "link_4",
+          "label": "Link 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
         }
       ]
     }
