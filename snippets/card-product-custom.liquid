@@ -1,31 +1,3 @@
-<style>
-.carousel {
-  background: #FAFAFA;
-}
-
-.carousel-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  counter-increment: carousel-cell;
-}
-
-.carousel.is-fullscreen .carousel-cell {
-  height: 100%;
-}
-
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-}
-</style>
-
 <div class="custom__product-card">
   {%- if card_product.featured_media != blank -%}
     <div class="product-card-img-wrapper img__wrapper">
@@ -36,12 +8,13 @@
         width: card_product.featured_media.width,
         loading: 'lazy'
       }}
-      <div class="carousel" data-flickity='{ "fullscreen": true }'>
-        <div class="carousel-cell">A</div>
-        <div class="carousel-cell">B</div>
-        <div class="carousel-cell">C</div>
-        <div class="carousel-cell">D</div>
-        <div class="carousel-cell">E</div>
+      <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1 }'>
+        {% for variant in card_product.variants %}
+          <div class="carousel-cell">
+            <img class="carousel-cell-image"
+              data-flickity-lazyload="{{ variant.featured_media | image_url: width: 1000 }}" />
+          </div>
+        {% endfor %}
       </div>
 
       <div class="variants-counter">{{ card_product.variants.size }} Colors</div>
