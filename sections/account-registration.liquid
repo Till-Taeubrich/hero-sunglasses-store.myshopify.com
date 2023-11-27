@@ -114,7 +114,7 @@
   }
 
   #shopify-section-{{ section.id }} .second-section .qr-code-wrapper {
-    width: 350px;
+    max-width: 350px;
   }
 
   #shopify-section-{{ section.id }} .form-hr {
@@ -289,8 +289,7 @@
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.39);
     backdrop-filter: blur(3px);
     border-radius: 10px;
-    padding-top: 30px;
-    padding-bottom: 50px;
+    padding: 30px 50px 50px;
   }
 
   #shopify-section-{{ section.id }} .qr-code-wrapper {
@@ -307,19 +306,85 @@
     font-size: 24px;
     font-weight: bold;
   }
+
+  #shopify-section-{{ section.id }} .empty-element {
+    display: block;
+  }
+  
+  @media (max-width: 1399px) {
+    #shopify-section-{{ section.id }} .account-registration-form {
+      position: static;
+      margin: 0 auto;
+    }
+
+    #shopify-section-{{ section.id }} .bullets-and-form-wrapper {
+      flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} .frist-section-header {
+      text-align: center;
+    }
+
+    #shopify-section-{{ section.id }} .bullet-point {
+      text-align: center;
+    }
+
+    #shopify-section-{{ section.id }} .bullet-point-icon-wrapper {
+      margin: 0 auto;
+    }
+
+    #shopify-section-{{ section.id }} .empty-element {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .qr-box {
+      margin-left: auto;
+      margin-right: auto;
+      flex-basis: unset;
+      padding: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+
+    #shopify-section-{{ section.id }} .first-section .first-section-title,
+    #shopify-section-{{ section.id }} .qr-title {
+        font-size: 30px;
+    }
+
+    #shopify-section-{{ section.id }} .qr-caption {
+      font-size: 20px;
+    }
+
+  }
+
+  @media (max-width: 550px) {
+
+    #shopify-section-{{ section.id }} .left-bullet-points {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .policy-agreement-wrapper label {
+      flex: unset;
+      text-align: center;
+    }
+
+  }
 </style>
 
 <section class="shopify-section section section-shop-by-brand">
   <div class="first-section">
     <div class="page-width">
-      <div class="first-section-title">{{ section.settings.title }}</div>
-      <div class="first-section-caption">{{ section.settings.caption }}</div>
+      <div class="frist-section-header">
+        <div class="first-section-title">{{ section.settings.title }}</div>
+        <div class="first-section-caption">{{ section.settings.caption }}</div>
+      </div>
       <div class="flex bullets-and-form-wrapper">
         <div class="left-bullet-points">
           {% for block in section.blocks %}
             <div class="bullet-point">
               {%- if block.settings.img != blank -%}
-                <div class="img__wrapper">
+                <div class="img__wrapper bullet-point-icon-wrapper">
                   {%- assign img_height = block.settings.img.width | divided_by: block.settings.img.aspect_ratio -%}
         
                   {{ block.settings.img | image_url: width: 1000 | image_tag:
@@ -451,7 +516,7 @@
           </div>
           {%- endif -%}
       </div>
-      <div class="empty-element" style="display: block;"></div>
+      <div class="empty-element"></div>
     </div>
   </div>
 </section>
