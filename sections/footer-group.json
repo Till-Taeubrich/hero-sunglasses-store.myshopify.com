@@ -8,13 +8,13 @@
         "d4949d70-7a0d-4da1-b4b1-283982b80535": {
           "type": "store_information",
           "settings": {
-            "heading": "Store information",
+            "heading": "",
             "address": "",
             "phone": "317-888-4484",
             "email": "info@herosunglasses.com",
             "footer_logo_enable": true,
             "footer_logo": "shopify:\/\/shop_images\/footer_img.jpg",
-            "footer_logo_width": 200,
+            "footer_logo_width": 260,
             "footer_logo_alignment": "left"
           }
         },
@@ -75,11 +75,11 @@
       ],
       "settings": {
         "color_scheme": "inverse",
-        "bottom_links": "footer",
-        "show_social": true,
+        "bottom_links": "",
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
-        "payment_enable": true,
+        "payment_enable": false,
         "enable_follow_on_shop": true,
         "enable_collapse": true,
         "open_first_collapsible_row": true,
