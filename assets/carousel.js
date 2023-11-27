@@ -1,6 +1,7 @@
 window.addEventListener('load', function () {
   let productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
   const imgWrappers = document.querySelectorAll('.product-card-img-wrapper')
+  const flickityBtns = this.document.querySelectorAll('.custom__product-card .flickity-button')
 
   const addHeight = (e) => {
     e.target.querySelector('.carousel').style.height = productCardHeight
@@ -22,8 +23,8 @@ window.addEventListener('load', function () {
 
   const updateMainImg = (e) => {
     const productCard = e.target.closest('.custom__product-card').querySelector('.main_product_img')
-    console.log('🚀 ~ file: carousel.js:25 ~ updateMainImg ~ productCard:', productCard)
-    const newMainImgUrl = e.target.querySelector('.carousel-cell.is-selected').dataset.variantMainImg
+    console.log('🚀 ~ file: carousel.js:26 ~ updateMainImg ~ e.target:', e.target)
+    const newMainImgUrl = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantMainImg
     productCard.srcset = newMainImgUrl
   }
 
@@ -33,6 +34,10 @@ window.addEventListener('load', function () {
       removeHeight(e)
       updateMainImg(e)
     })
+  })
+
+  flickityBtns.forEach(btn => {
+    btn.addEventListener('click', updateMainImg)
   })
 
   addEventListener("resize", () => {
