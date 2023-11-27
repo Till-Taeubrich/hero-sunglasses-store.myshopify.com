@@ -1,13 +1,4 @@
 <style>
-  @keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-
   #shopify-section-{{ section.id }} .section-logo-carousel {
     overflow: hidden;
     padding: 25px 0;
@@ -50,6 +41,24 @@
     height: 50px;
     margin: 0 40px;
   }
+
+  @media (min-width: 551px) {
+    #shopify-section-{{ section.id }} .logos-slide {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  @media (max-width: 550px) {
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  }
 </style>
 
 <section class="shopify-section section section-logo-carousel">
@@ -69,8 +78,10 @@
 </section>
 
 <script>
+if (matchMedia('(max-width: 550px)').matches) {
   var copy = document.querySelector(".logos-slide").cloneNode(true);
   document.querySelector(".section-logo-carousel").appendChild(copy);
+}
 </script>
 
 
