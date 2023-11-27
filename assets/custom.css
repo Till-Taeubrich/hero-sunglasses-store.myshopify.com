@@ -977,16 +977,14 @@ a:not([href]) {
   height: 0;
 }
 
-li.grid__item:hover .product-card-img-wrapper > img {
-  padding-top: unset;
+li.grid__item .product-card-img-wrapper:hover > img {
   display: none;
 }
 
-li.grid__item:hover .custom__product-card .img__wrapper {
+li.grid__item:hover .product-card-img-wrapper:hover {
   padding-top: unset;
 }
 
-li.grid__item:hover .custom__product-card .carousel {
+li.grid__item:hover .product-card-img-wrapper:hover .carousel {
   visibility: visible;
-  height: unset;
 }
