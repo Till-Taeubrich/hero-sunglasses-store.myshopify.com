@@ -1,4 +1,44 @@
-{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+<style>
+  #shopify-section-{{ section.id }} .header__left-icons {
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .additional-menu-items__left,
+  #shopify-section-{{ section.id }} .additional-menu-items__right {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    gap: 5px;
+  }
+
+  #shopify-section-{{ section.id }} .additional-menu-item {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  #shopify-section-{{ section.id }} .additional-menu-item a {
+    color: black;
+  }
+  
+  #shopify-section-{{ section.id }} .additional-menu-item a.red-font {
+    color: #fe0000;
+  }
+
+  @media (min-width: 990px) {
+    #shopify-section-{{ section.id }} .header__icons {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 989px) {
+    #shopify-section-{{ section.id }} .additional-menu-items__left,
+    #shopify-section-{{ section.id }} .additional-menu-items__right {
+      display: none;
+    }
+  }
+</style>
+
 {%- liquid
   assign has_localization = false
   assign total_location = 0
@@ -387,6 +427,11 @@
               </span>
             </a>
           {%- endif -%}
+          <div class="additional-menu-items__left">
+            <div class="additional-menu-item uppercase"><a href="/">Shop brand</a></div>
+            <div class="additional-menu-item uppercase"><a href="/">Men</a></div>
+            <div class="additional-menu-item uppercase"><a href="/">Women</a></div>
+          </div>
         </div>  
       {%- endif -%}
 

@@ -1,4 +1,9 @@
 <div class="header__icons flex align-center">
+  <div class="additional-menu-items__right">
+    <div class="additional-menu-item uppercase"><a class="red-font" href="/">Nominate a hero</a></div>
+    <div class="additional-menu-item uppercase"><a href="/">Contact us</a></div>
+  </div>
+
   {%- if section.settings.logo_position == 'top-left' -%}
     <div class="header__search small-hide medium-hide{% if section.settings.logo_position == 'top-left' and has_supported_region == false %} header__search--distance-right{% endif %}">
       {%- render 'header-predictive-search', suffix_id: 'Inline' -%}  

@@ -1021,3 +1021,7 @@ li.grid__item.selected .product-card-img-wrapper .carousel {
     }
   }
 }
+
+a {
+  text-decoration: none;
+}
