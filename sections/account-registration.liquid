@@ -81,7 +81,6 @@
 
   #shopify-section-{{ section.id }} .account-registration-form .input-wrapper label {
     background-color: #fff;;
-    color: #333333;
     padding: 3px 6.5px;
     font-size: 14px;
     position: relative;
@@ -124,8 +123,11 @@
   #shopify-section-{{ section.id }} .hr-title {
     display: flex;
     align-items: center;
-    margin-bottom: 32px;
     gap: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .hr-title.margin-bottom {
+    margin-bottom: 32px;
   }
 
   #shopify-section-{{ section.id }} .hr-title .form-hr{
@@ -238,23 +240,29 @@
 
   #shopify-section-{{ section.id }} .form-section-caption {
     margin-bottom: 15px;
+    font-size: 10px;
+    color: #D93636;
+    font-weight: bold;
   }
 
   #shopify-section-{{ section.id }} .file-upload {
-    width: 240px;
     position: relative;
     display: inline-block;
     font-size: 20px;
+    height: 100%;
+    width: 100%;
   }
 
   #shopify-section-{{ section.id }} .file-upload__label {
     display: block;
-    padding: 10px 27px;
-    color: #333333;
-    background: #BCBCBC;
+    padding: 30px 27px;
+    background: #b6b6b6;
     border-radius: .4em;
     transition: background .3s;
     text-align: center;
+    height: 100%;
+    width: 100%;
+    border: black 1px solid;
   }
       
   #shopify-section-{{ section.id }} .file-upload__input {
@@ -317,6 +325,26 @@
   #shopify-section-{{ section.id }} .error-msg {
     padding-left: 25px;
     color: #FF0000;
+  }
+
+  #shopify-section-{{ section.id }} .file-upload-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 579px;
+    color: white;
+  }
+
+  #shopify-section-{{ section.id }} .file-upload-section > * {
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .upload-title {
+    font-size: 20px;
+  }
+  #shopify-section-{{ section.id }} .upload-description {
+    font-size: 14px;
   }
   
   @media (max-width: 1399px) {
@@ -381,6 +409,13 @@
       text-align: center;
     }
 
+    #shopify-section-{{ section.id }} .account-registration-form {
+      padding: 20px !important;
+    }
+
+    #shopify-section-{{ section.id }} .file-upload-section {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
@@ -431,8 +466,8 @@
               <input type="email" name="email" id="email" placeholder="Email*" required/>
             </div>
           </div>
-          <div class="hr-title">
-            <div class="form-title">Select Affiliation</div>
+          <div class="hr-title margin-bottom">
+            <div class="form-title uppercase">Select affiliation</div>
             <hr class="form-hr">
           </div>
 
@@ -469,22 +504,30 @@
             </label>
           </div>
 
-          <hr class="margin-32">
-          <div class="photo-id-upload">
-            <div class="form-section-title">Employment photo id</div>
-            <div class="form-section-caption">Upload a photo of the front of your photo id.</div>
-            <div class="file-upload">
-              <label for="upload-photo-id" class="file-upload__label">Upload photo id</label>
-              <input id="upload-photo-id" class="file-upload__input" type="file" name="photo-id" required>
-            </div>
+          <div class="hr-title">
+            <div class="form-title uppercase">Verify your affiliation</div>
+            <hr class="form-hr">
           </div>
-          <hr class="margin-32">
-          <div class="selfie-upload">
-            <div class="form-section-title">Upload selfie</div>
-            <div class="form-section-caption">This helps us verify it's really you. Please provide a photo of yourself.</div>
-            <div class="file-upload">
-              <label for="upload-selfie" class="file-upload__label">Upload selfie</label>
-              <input id="upload-selfie" class="file-upload__input" type="file" name="selfie" required>
+          <div class="form-section-caption uppercase">We do not store your photos, please feel free to block out any sensitive information</div>
+
+          <div class="file-upload-section">
+            <div class="photo-id-upload">
+              <div class="file-upload">
+                <label for="upload-photo-id" class="file-upload__label">
+                  <div class="upload-title uppercase">Step 1</div>
+                  <div class="upload-description">UPLOAD & PICTURE OF YOUR EMPLOYMENT ID.</div>
+                </label>
+                <input id="upload-photo-id" class="file-upload__input" type="file" name="photo-id" required>
+              </div>
+            </div>
+            <div class="selfie-upload">
+              <div class="file-upload">
+                <label for="upload-selfie" class="file-upload__label">
+                  <div class="upload-title uppercase">Step 2</div>
+                  <div class="upload-description">UPLOAD A SELFIE SO WE CAN CROSS REFERENCE YOUR ID</div>
+                </label>
+                <input id="upload-selfie" class="file-upload__input" type="file" name="selfie" required>
+              </div>
             </div>
           </div>
           <hr class="margin-32">
