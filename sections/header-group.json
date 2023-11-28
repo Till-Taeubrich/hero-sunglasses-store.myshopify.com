@@ -2,6 +2,45 @@
   "type": "header",
   "name": "Header Group",
   "sections": {
+    "b887bb73-8ce2-4994-b065-44acd74a2d90": {
+      "type": "top-banner",
+      "blocks": {
+        "0d69b2eb-e192-46ce-9ab1-5f6cdfb7a493": {
+          "type": "banner",
+          "settings": {
+            "text": "CREATE AN ACCOUNT TO UNLOCK HERO PRICING"
+          }
+        },
+        "9529933f-d5d4-44c1-9e44-885c2703d7d0": {
+          "type": "banner",
+          "settings": {
+            "text": "ALL PRODUCTS IN STOCK"
+          }
+        },
+        "1b6ee750-1401-4a73-9c5c-f1823481f1cb": {
+          "type": "banner",
+          "settings": {
+            "text": "FAMILY OWNED & OPERATED SINCE 2007"
+          }
+        },
+        "1be73853-011b-4e5b-8460-0a30c277dcb6": {
+          "type": "banner",
+          "settings": {
+            "text": "FREE SHIPPING & RETURNS"
+          }
+        }
+      },
+      "block_order": [
+        "0d69b2eb-e192-46ce-9ab1-5f6cdfb7a493",
+        "9529933f-d5d4-44c1-9e44-885c2703d7d0",
+        "1b6ee750-1401-4a73-9c5c-f1823481f1cb",
+        "1be73853-011b-4e5b-8460-0a30c277dcb6"
+      ],
+      "settings": {
+        "padding-top": 0,
+        "padding-bottom": 0
+      }
+    },
     "c0a18aba-f749-4871-a793-4c16130cbb26": {
       "type": "bullet-point-bar",
       "blocks": {
@@ -203,6 +242,7 @@
     }
   },
   "order": [
+    "b887bb73-8ce2-4994-b065-44acd74a2d90",
     "c0a18aba-f749-4871-a793-4c16130cbb26",
     "header",
     "1699830288448e1e16"
