@@ -1,3 +1,5 @@
+<script src="{{ 'registration-form-validation.js' | asset_url }}" defer="defer"></script>
+
 {% unless customer %}
 <style>
   #shopify-section-{{ section.id }} {
@@ -411,7 +413,7 @@
             </div>
             <div class="input-wrapper">
               <label for="phone">Phone #</label>
-              <input type="tel" name="name" id="name" placeholder="317-888-4484" required />
+              <input id="tel-input" type="tel" name="name" id="name" placeholder="317-888-4484" required />
             </div>
             <div class="input-wrapper">
               <label for="email">Email</label>
@@ -426,32 +428,32 @@
 
           <div class="affiliation-selection">
             <label>
-              <input type="radio" name="affiliation" value="military">
+              <input type="radio" name="affiliation" value="military" required>
               {% render 'educators-icon' %}
             </label>
 
             <label>
-              <input type="radio" name="affiliation" value="fire-and-ems">
+              <input type="radio" name="affiliation" value="fire-and-ems" required>
               {% render 'ems-icon' %}
             </label>
 
             <label>
-              <input type="radio" name="affiliation" value="medical">
+              <input type="radio" name="affiliation" value="medical" required>
               {% render 'medical-icon' %}
             </label>
 
             <label>
-              <input type="radio" name="affiliation" value="gov">
+              <input type="radio" name="affiliation" value="gov" required>
               {% render 'gov-icon' %}
             </label>
 
             <label>
-              <input type="radio" name="affiliation" value="police">
+              <input type="radio" name="affiliation" value="police" required>
               {% render 'police-icon' %}
             </label>
 
             <label>
-              <input type="radio" name="affiliation" value="educator">
+              <input type="radio" name="affiliation" value="educator" required>
               {% render 'educator-icon' %}
             </label>
           </div>
@@ -462,7 +464,7 @@
             <div class="form-section-caption">Upload a photo of the front of your photo id.</div>
             <div class="file-upload">
               <label for="upload-photo-id" class="file-upload__label">Upload photo id</label>
-              <input id="upload-photo-id" class="file-upload__input" type="file" name="photo-id">
+              <input id="upload-photo-id" class="file-upload__input" type="file" name="photo-id" required>
             </div>
           </div>
           <hr class="margin-32">
@@ -471,7 +473,7 @@
             <div class="form-section-caption">This helps us verify it's really you. Please provide a photo of yourself.</div>
             <div class="file-upload">
               <label for="upload-selfie" class="file-upload__label">Upload selfie</label>
-              <input id="upload-selfie" class="file-upload__input" type="file" name="selfie">
+              <input id="upload-selfie" class="file-upload__input" type="file" name="selfie" required>
             </div>
           </div>
           <hr class="margin-32">
@@ -521,19 +523,6 @@
   </div>
 </section>
 {% endunless %}
-
-<script>
-  const checkbox = document.querySelector("#policy-agreement");
-  const submitBtn = document.querySelector("#submit-btn");
-
-  checkbox.addEventListener('change', function() {
-    if (this.checked) {
-      submitBtn.disabled = false 
-    } else {
-      submitBtn.disabled = true
-    }
-  });
-</script>
 
 {% schema %}
 {
