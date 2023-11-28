@@ -848,7 +848,7 @@ summary::-webkit-details-marker {
   .footer .page-width {
     padding: 2rem;
   }
-  .grid--3-col-tablet .grid__item {
+  .footer .grid--3-col-tablet .grid__item {
     width: calc(16.3% - var(--grid-horizontal-spacing) * 2 / 3) !important;
   }
 }
