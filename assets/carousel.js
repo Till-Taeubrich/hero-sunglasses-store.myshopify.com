@@ -28,11 +28,23 @@ window.addEventListener('load', function () {
     productCard.srcset = newMainImgUrl
   }
 
+  const addSelectedClass = (e) => {
+    e.target.closest('li.grid__item').classList.add('selected')
+  }
+
+  const removeSelectedClass = (e) => {
+    e.target.closest('li.grid__item').classList.remove('selected')
+  }
+
   imgWrappers.forEach(item => {
-    item.addEventListener('mouseenter', (e) => addHeight(e))
+    item.addEventListener('mouseenter', (e) => {
+      addHeight(e)
+      addSelectedClass(e)
+    })
     item.addEventListener('mouseleave', (e) => {
       removeHeight(e)
       updateMainImg(e)
+      removeSelectedClass(e)
     })
   })
 
