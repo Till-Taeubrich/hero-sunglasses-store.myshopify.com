@@ -946,7 +946,7 @@ a:not([href]) {
 
 .custom__product-card .product-card-img-wrapper {
   margin-bottom: 8px;
-  background-color: #f2f2f2;
+  background-color: #fff;
 }
 
 .custom__product-card .product-card-product-title {

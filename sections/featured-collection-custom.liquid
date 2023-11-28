@@ -1,4 +1,8 @@
 <style>
+  #shopify-section-{{ section.id }} {
+    background-color: #f2f2f2;
+  }
+
   #shopify-section-{{ section.id }}.section .header-section {
     border: 5px solid var(--lt-color-black);
   }
@@ -8,7 +12,7 @@
   }
 
   #shopify-section-{{ section.id }}.section .header-caption {
-    background-color: var(--lt-color-white);
+    background-color: #f2f2f2;
   }
 </style>
 
@@ -170,7 +174,7 @@
   {%- render 'section-heading-styles' -%}
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<div class="">
   <div class="collection section-{{ section.id }}-padding">
     <div class="featured-collection 
       featured-collection--{{ section.id }}
