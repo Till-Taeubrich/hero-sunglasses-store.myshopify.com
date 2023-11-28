@@ -23,9 +23,23 @@ window.addEventListener('load', function () {
 
   const updateMainImg = (e) => {
     const productCard = e.target.closest('.custom__product-card').querySelector('.main_product_img')
-    console.log('🚀 ~ file: carousel.js:26 ~ updateMainImg ~ e.target:', e.target)
     const newMainImgUrl = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantMainImg
     productCard.srcset = newMainImgUrl
+  }
+
+  const filterPrice = (string) => {
+    return string.split(">")[1].split("<")[0]
+  }
+
+  const updatePrice = (e) => {
+    // const newComparePriceSpan = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantComparePrice
+    const newPriceData = filterPrice(e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantPrice)
+    const productPriceElement = e.target.closest('.custom__product-card').querySelector('.price-item--regular > span')
+    productPriceElement.textContent = newPriceData
+
+    // if (newComparePriceSpan) {
+    //   return
+    // }
   }
 
   const addSelectedClass = (e) => {
@@ -36,6 +50,17 @@ window.addEventListener('load', function () {
     e.target.closest('li.grid__item').classList.remove('selected')
   }
 
+  const initialPriceLoad = () => {
+    const productCards = document.querySelectorAll('.custom__product-card');
+    productCards.forEach(card => {
+      const price = filterPrice(card.querySelector('.carousel-cell.is-selected').dataset.variantPrice)
+      const productPriceElement = card.querySelector('.price-item--regular > span')
+      productPriceElement.style.visibility = "visible"
+      productPriceElement.textContent = price
+    })
+
+  }
+
   imgWrappers.forEach(item => {
     item.addEventListener('mouseenter', (e) => {
       addHeight(e)
@@ -43,16 +68,21 @@ window.addEventListener('load', function () {
     })
     item.addEventListener('mouseleave', (e) => {
       removeHeight(e)
-      updateMainImg(e)
+      // updateMainImg(e)
       removeSelectedClass(e)
     })
   })
 
   flickityBtns.forEach(btn => {
-    btn.addEventListener('click', updateMainImg)
+    btn.addEventListener('click', (e) => {
+      updatePrice(e)
+      updateMainImg(e)
+    })
   })
 
   addEventListener("resize", () => {
     productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
   });
+
+  initialPriceLoad()
 }) 

@@ -13,7 +13,7 @@
 {% endcomment %}
 {%- liquid
   if use_variant
-    assign target = product.selected_or_first_available_variant
+    assign target = product.variants[0]
   else
     assign target = product
   endif
@@ -49,7 +49,7 @@
         {% comment %}start BSS Commerce ltsp{% endcomment %}{% assign bssltspp = product | default: item | default: prod %}{% capture bssltspop %}{{ money_price }}{% endcapture %}{% render 'bsscommerce-login-to-see-price', product: bssltspp, old_price: bssltspop %}{% comment %}end BSS Commerce ltsp{% endcomment %}
       </span>
     </div>
-    <div class="price__sale{% if show_in_card %} flex-column{% endif %}">
+    <div class="price__sale">
       {%- unless product.price_varies == false and product.compare_at_price_varies %}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="flex align-center">
@@ -61,6 +61,7 @@
             {% endif %}
           </s>
           
+          {% comment %}
           {%- if show_badges and show_in_card and target.price < target.compare_at_price -%}
             <span class="price__badge price__badge--in-card lh1 color-foreground">
               {%- if settings.sale_badge_label == 'text' -%}
@@ -76,6 +77,7 @@
               {%- endif -%}	
             </span>
           {%- endif -%}
+          {% endcomment %}
         </span>
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>

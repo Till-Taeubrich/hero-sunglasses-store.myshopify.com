@@ -178,7 +178,7 @@
 }
 
 .small-margin-top {
-  margin-top: 2rem;
+  margin-top: 8px;
 }
 
 .small-margin-bottom {
@@ -2088,6 +2088,10 @@ card-product-colors {
 .price--sold-out .price__availability,
 .price__regular {
   display: block;
+}
+
+.price__regular {
+  font-size: 0;
 }
 
 .price__sale,

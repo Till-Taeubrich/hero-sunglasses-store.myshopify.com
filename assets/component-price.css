@@ -48,6 +48,10 @@ product-price {
   column-gap: 1.2rem;
 }
 
+.price-item--regular > span {
+  font-size: 1.4rem;
+}
+
 .price--on-sale .price-item--regular {
   text-decoration: line-through;
   font-size: 1.4rem;

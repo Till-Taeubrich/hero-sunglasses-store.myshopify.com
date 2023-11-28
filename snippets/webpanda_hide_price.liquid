@@ -25,8 +25,8 @@
 {% endif %}
 
 <script>
-    {% if customer %}var customerIsLogged = true;{% else %}var customerIsLogged = false;{% endif %}
-    {% if customer %}var customerIsLoggedBasic = true;{% else %}var customerIsLoggedBasic = false;{% endif %}
+    {% if customer %}var customerIsLogged = true;{% else %}var customerIsLogged = true;{% endif %}
+    {% if customer %}var customerIsLoggedBasic = true;{% else %}var customerIsLoggedBasic = true;{% endif %}
     var webPandaHidePriceSettings = {"subscription": 1, "hide_price_enabled": true, "message": "{LOGIN} | {REGISTRATION} to see price", "message_logged_customers": "The product is not available for your account", "label_login": "Login", "label_registration": "Register", "font_size": 14.0, "style_by_page": true, "font_size_listing_page": 13.0, "font_size_product_page": 14.0, "font_size_search_page": 13.0, "text_color": "#1670d3", "has_background_color": true, "background_color": "#f3f3f3", "has_border": false, "border_width": 2.0, "border_color": "#e2a192", "border_radius": 8.0, "has_custom_login": false, "login_url": null, "has_custom_registration": false, "registration_url": null, "by_product_id": false, "by_product_tags": false, "by_collection": false, "product_tags": "", "language_config": "", "by_customer_tags": false, "customer_tags": "", "depth": 5, "depth_on_search": 5, "depth_on_listings": 0, "parent_depth": 3, "parent_depth_on_search": 2, "custom_price_selector": null, "custom_cart_selector": null, "force_hide_on_cart": false, "force_price_selector": null, "force_cart_selector": null, "cart_display": null, "quick_view_selector": null, "redirect_after_login": true}
     
     window.onload = function() {
