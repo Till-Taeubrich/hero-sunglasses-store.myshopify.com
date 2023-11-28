@@ -988,3 +988,9 @@ li.grid__item:hover .product-card-img-wrapper:hover {
 li.grid__item:hover .product-card-img-wrapper:hover .carousel {
   visibility: visible;
 }
+
+.custom__product-card .product_logo {
+  max-width: 100px;
+  height: auto;
+  left: 5%;
+}
