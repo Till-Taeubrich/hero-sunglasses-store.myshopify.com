@@ -26,7 +26,7 @@
             >
             <a href="{{ variant.url }}">
               <img class="carousel-cell-image"
-                data-flickity-lazyload="{{ variant.metafields.custom.product_image_2 | image_url: width: 1000 }}"
+        data-flickity-lazyload="{% if variant.metafields.custom.product_image_2 %}{{ variant.metafields.custom.product_image_2 | image_url: width: 1000 }}{% else %}{{ variant.metafields.custom.product_image_1 | image_url: width: 1000 }}{% endif %}"
                 />
             </a>
           <div class="variant-title" style="z-index: 11;">{{ variant.title }}</div>
