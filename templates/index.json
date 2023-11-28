@@ -187,8 +187,8 @@
       ],
       "settings": {
         "background_color": "#b6b6b6",
-        "title": "Account Registration",
-        "caption": "To gain access to pricing please register to verify your ID affiliation.",
+        "title": "REGISTER & SAVE",
+        "caption": "ONCE REGISTERED, YOU'LL RECEIVE EXCLUSIVE <span style=\"color: red\">HERO PRICING <\/span> ON ALL OF YOUR FAVORITE SUNGLASS BRANDS",
         "background_img": "shopify:\/\/shop_images\/background_img.png",
         "qr_title": "Sign up with mobile!",
         "qr_caption": "Don’t have your ID on your desktop?",
