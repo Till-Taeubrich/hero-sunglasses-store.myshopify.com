@@ -31,6 +31,10 @@
     width: 200px;
   }
 
+  #shopify-section-{{ section.id }} .footer-block-store-information__item {
+    font-size: 17px;
+  }
+
   @media (max-width: 749px) {
 
     #shopify-section-{{ section.id }} .footer-logo {
@@ -182,7 +186,7 @@
                         {%- endif -%}
                         {%- if block.settings.phone != blank -%}
                           <li class="flex footer-block-store-information__item">
-                            <div class="footer-block-store-information__item__content rte"><b>Phone: </b>{{ block.settings.phone }}</div>
+                            <div class="footer-block-store-information__item__content rte footer"><b>Phone: </b>{{ block.settings.phone }}</div>
                           </li>
                         {%- endif -%}
                         {%- if block.settings.email != blank -%}
