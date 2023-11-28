@@ -157,17 +157,17 @@
 
   #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:hover + svg,
   #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:checked + svg {
-    filter: invert(48%) sepia(44%) saturate(7319%) hue-rotate(340deg) brightness(88%) contrast(106%);
+    filter: invert(29%) sepia(16%) saturate(962%) hue-rotate(170deg) brightness(93%) contrast(93%);
   }
 
   #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:hover + svg,
   #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:checked + svg {
-    filter: invert(56%) sepia(85%) saturate(573%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    filter: invert(48%) sepia(44%) saturate(7319%) hue-rotate(340deg) brightness(88%) contrast(106%);
   }
 
   #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:hover + svg,
   #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:checked + svg {
-    filter: invert(29%) sepia(16%) saturate(962%) hue-rotate(170deg) brightness(93%) contrast(93%);
+    filter: invert(56%) sepia(85%) saturate(573%) hue-rotate(210deg) brightness(89%) contrast(91%);
   }
 
   #shopify-section-{{ section.id }} label:nth-child(5) [type=radio]:hover + svg,
@@ -443,6 +443,11 @@
             </label>
 
             <label>
+              <input type="radio" name="affiliation" value="police" required>
+              {% render 'police-icon' %}
+            </label>
+            
+            <label>
               <input type="radio" name="affiliation" value="fire-and-ems" required>
               {% render 'ems-icon' %}
             </label>
@@ -455,11 +460,6 @@
             <label>
               <input type="radio" name="affiliation" value="gov" required>
               {% render 'gov-icon' %}
-            </label>
-
-            <label>
-              <input type="radio" name="affiliation" value="police" required>
-              {% render 'police-icon' %}
             </label>
 
             <label>
