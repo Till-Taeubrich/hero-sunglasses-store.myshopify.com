@@ -316,6 +316,11 @@
   #shopify-section-{{ section.id }} .empty-element {
     display: block;
   }
+
+  #shopify-section-{{ section.id }} .error-msg {
+    padding-left: 25px;
+    color: #FF0000;
+  }
   
   @media (max-width: 1399px) {
     #shopify-section-{{ section.id }} .account-registration-form {
@@ -417,11 +422,12 @@
             </div>
             <div class="input-wrapper">
               <label for="phone">Phone #</label>
-              <input id="tel-input" type="tel" name="name" id="name" placeholder="317-888-4484" required />
+              <input id="tel-input" type="tel" name="name" id="name" placeholder="3178884484" required/>
             </div>
+            <div class="error-msg phone-error-msg hidden">Phone number needs to be 10 characters.</div>
             <div class="input-wrapper">
               <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="Email*" required />
+              <input type="email" name="email" id="email" placeholder="Email*" required/>
             </div>
           </div>
           <div class="hr-title">
@@ -485,20 +491,22 @@
           <div class="password-fields-wrapper">
             <div class="input-wrapper">
               <label for="password">Create a Password</label>
-              <input type="password" name="password" id="password" placeholder="Password" required />
+              <input type="password" name="password" id="password" placeholder="Password" required/>
             </div>
+            <div class="error-msg password-error-msg hidden">Password needs to be at least 5 characters long.</div>
             <div class="input-wrapper">
               <label for="confirm-password">Confirm Password</label>
-              <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required />
+              <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required/>
             </div>
+            <div class="error-msg password-confirmation-error-msg hidden">Passwords need to match.</div>
           </div>
 
           <div class="submit-wrapper">
-            <input id="submit-btn" disabled type="submit" value="Create my Account" />
+            <input id="submit-btn" disabled type="submit" value="Create my Account"/>
           </div>
 
           <div class="policy-agreement-wrapper">
-            <input type="checkbox" id="policy-agreement" value="Create my Account"/>
+            <input type="checkbox" id="policy-agreement" value="Create my Account" required/>
             <label for="policy-agreement">I agree to Terms of Service and Privacy Policy</label>
           </div>
         </form>
