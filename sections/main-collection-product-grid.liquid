@@ -125,6 +125,7 @@
               grid product-grid contains-card--product grid--{{ section.settings.columns_mobile }}-col
               grid--{{ section.settings.columns_tablet }}-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop element-margin-top collection__product-grid" data-id="{{ section.id }}">
               {%- for card_product in collection.products -%}
+                {%- if card_product.variants[0].metafields.custom.product_image_1 != blank -%}
                 <li class="grid__item">
                   {%-liquid
                     assign no_lazy_load = true
@@ -132,6 +133,8 @@
                       assign no_lazy_load = false
                     endif  
                   -%} 
+
+                  {% comment %}
                   {%- if section.settings.include_collection_in_url and collection.handle != 'all' -%}
                     {%- render 'card-product',
                       card_product: card_product,
@@ -168,7 +171,10 @@
                       small_space_on_large_screen: small_space_on_large_screen
                     -%}
                   {%- endif -%}
+                  {% endcomment %}
+                  {%- render 'card-product-custom' card_product: card_product, -%}
                 </li>
+                {%- endif -%}
               {%- endfor -%}
             </ul>
 
