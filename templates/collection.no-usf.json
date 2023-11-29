@@ -62,7 +62,7 @@
         "enable_filtering": true,
         "filter_type": "vertical",
         "filter_include_group_name": true,
-        "enable_sorting": true,
+        "enable_sorting": false,
         "categories_filter": "",
         "show_collection_description": true,
         "description_position": "above",
