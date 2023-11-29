@@ -274,7 +274,7 @@
 }
 
 .background-input {
-  background-color: rgb(var(--color-background-input));
+  background-color: #f2f2f2;
 }
 
 .grid-auto-flow {
