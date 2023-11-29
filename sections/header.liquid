@@ -449,6 +449,7 @@
         {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text flex{% if section.settings.mobile_logo_position == 'center' %} justify-center{% endif %}{% if section.settings.logo == blank %} break{% endif %}">
             {%- if section.settings.logo != blank -%}
+              {% comment %}
               {%-liquid
                 assign logo_width = section.settings.logo_width | plus: 30
                 assign logo_alt = section.settings.logo.alt | default: shop.name | escape
@@ -463,6 +464,8 @@
                 width: logo_width,
                 alt: logo_alt
               }}
+              {% endcomment %}
+              {% render 'hero-logo' %}
             {%- else -%}
               <span class="h2">{{ shop.name }}</span>
             {%- endif -%}
