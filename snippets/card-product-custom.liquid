@@ -11,12 +11,14 @@
       }}
       {%- assign img_height = card_product.metafields.custom.brand_name_image.width | divided_by: card_product.metafields.custom.brand_name_image.aspect_ratio -%}
   
+      {%- if card_product.metafields.custom.brand_name_image != blank -%}
       {{ card_product.metafields.custom.brand_name_image | image_url: width: 1000 | image_tag:
         height: img_height,
         class: "product_logo",
         width: card_product.metafields.custom.brand_name_image.width,
         loading: 'lazy'
       }}
+      {%- endif -%}
       <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "pageDots": false, "draggable": false, "wrapAround": true }'>
         {% for variant in card_product.variants %}
           <div class="carousel-cell"
