@@ -51,7 +51,7 @@ uncomment for stop-on-hover
     justify-content: center;
   }
 
-  #shopify-section-{{ section.id }} .banner {
+  #shopify-section-{{ section.id }} .banner-element {
     text-align: center;
   }
 }
@@ -86,7 +86,7 @@ uncomment for stop-on-hover
   <div class="banners-slide">
   {% for block in section.blocks %}
     {%- if block.settings.text != blank -%}
-      <div class="banner">{{ block.settings.text }}</div>
+      <div class="banner-element">{{ block.settings.text }}</div>
     {%- endif -%}
   {% endfor %}
   </div>
