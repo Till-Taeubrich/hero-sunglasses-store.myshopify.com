@@ -7,6 +7,7 @@ const pwInput = document.querySelector('#password')
 const pwErrorMsg = document.querySelector('.password-error-msg')
 const pwConfirmInput = document.querySelector('#confirm-password')
 const pwConfirmErrorMsg = document.querySelector('.password-confirmation-error-msg')
+const fileUploadInputs = document.querySelectorAll('.file-upload__input')
 
 checkbox.addEventListener('change', function() {
   if (this.checked) {
@@ -58,6 +59,15 @@ const checkConfirmPassword = () => {
 
   return validation
 }
+
+const addUploadedClass = (e) => {
+  const label = e.target.previousElementSibling
+  label.classList.add('uploaded')
+}
+
+fileUploadInputs.forEach(input => {
+  input.addEventListener('change', (e) => addUploadedClass(e))
+})
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
