@@ -1005,6 +1005,7 @@ li.grid__item.selected .product-card-img-wrapper .carousel {
   max-width: 100px;
   height: auto;
   left: 5%;
+  z-index: 11;
 }
 
 .price-item--regular > span {

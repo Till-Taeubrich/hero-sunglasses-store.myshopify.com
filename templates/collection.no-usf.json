@@ -47,7 +47,7 @@
       ],
       "settings": {
         "products_per_page": 16,
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "pagination_style": "infinite",
         "image_ratio": "adapt",
         "show_secondary_image": true,
