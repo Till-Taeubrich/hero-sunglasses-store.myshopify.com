@@ -127,7 +127,7 @@
   }
 
   #shopify-section-{{ section.id }} .hr-title.margin-bottom {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
 
   #shopify-section-{{ section.id }} .hr-title .form-hr{
@@ -150,39 +150,54 @@
   }
 
   #shopify-section-{{ section.id }} label:nth-child(1) [type=radio]:hover + svg,
-  #shopify-section-{{ section.id }} label:nth-child(1) [type=radio]:checked + svg {
+  #shopify-section-{{ section.id }} label:nth-child(1) [type=radio]:checked + svg,
+  #shopify-section-{{ section.id }} label:nth-child(1) [type=radio]:hover ~ .icon-caption,
+  #shopify-section-{{ section.id }} label:nth-child(1) [type=radio]:checked ~ .icon-caption {
     filter: invert(64%) sepia(30%) saturate(747%) hue-rotate(23deg) brightness(95%) contrast(85%);
   }
 
   #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:hover + svg,
-  #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:checked + svg {
+  #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:checked + svg,
+  #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:hover ~ .icon-caption,
+  #shopify-section-{{ section.id }} label:nth-child(2) [type=radio]:checked ~ .icon-caption {
     filter: invert(29%) sepia(16%) saturate(962%) hue-rotate(170deg) brightness(93%) contrast(93%);
   }
 
   #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:hover + svg,
-  #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:checked + svg {
+  #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:checked + svg,
+  #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:hover ~ .icon-caption,
+  #shopify-section-{{ section.id }} label:nth-child(3) [type=radio]:checked ~ .icon-caption {
     filter: invert(48%) sepia(44%) saturate(7319%) hue-rotate(340deg) brightness(88%) contrast(106%);
   }
 
   #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:hover + svg,
-  #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:checked + svg {
+  #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:checked + svg,
+  #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:hover ~ .icon-caption,
+  #shopify-section-{{ section.id }} label:nth-child(4) [type=radio]:checked ~ .icon-caption {
     filter: invert(56%) sepia(85%) saturate(573%) hue-rotate(210deg) brightness(89%) contrast(91%);
   }
 
   #shopify-section-{{ section.id }} label:nth-child(5) [type=radio]:hover + svg,
-  #shopify-section-{{ section.id }} label:nth-child(5) [type=radio]:checked + svg {
+  #shopify-section-{{ section.id }} label:nth-child(5) [type=radio]:checked + svg,
+  #shopify-section-{{ section.id }} label:nth-child(5) [type=radio]:hover ~ .icon-caption,
+  #shopify-section-{{ section.id }} label:nth-child(5) [type=radio]:checked ~ .icon-caption {
     filter: invert(55%) sepia(57%) saturate(613%) hue-rotate(151deg) brightness(92%) contrast(94%);
   }
 
   #shopify-section-{{ section.id }} label:nth-child(6) [type=radio]:hover + svg,
-  #shopify-section-{{ section.id }} label:nth-child(6) [type=radio]:checked + svg {
+  #shopify-section-{{ section.id }} label:nth-child(6) [type=radio]:checked + svg,
+  #shopify-section-{{ section.id }} label:nth-child(6) [type=radio]:hover ~ .icon-caption,
+  #shopify-section-{{ section.id }} label:nth-child(6) [type=radio]:checked ~ .icon-caption {
     filter: invert(61%) sepia(85%) saturate(322%) hue-rotate(2deg) brightness(90%) contrast(83%);
   }
 
   #shopify-section-{{ section.id }} .affiliation-selection {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 16px;
     align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
   }
   
   #shopify-section-{{ section.id }} .affiliation-selection svg {
@@ -346,6 +361,12 @@
   #shopify-section-{{ section.id }} .upload-description {
     font-size: 14px;
   }
+
+  #shopify-section-{{ section.id }} .icon-caption {
+    font-size: 10px;
+    text-align: center;
+    color: #bcbcbc;
+  }
   
   @media (max-width: 1399px) {
     #shopify-section-{{ section.id }} .account-registration-form {
@@ -396,6 +417,9 @@
       font-size: 20px;
     }
 
+    #shopify-section-{{ section.id }} .affiliation-selection {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   @media (max-width: 550px) {
@@ -475,32 +499,38 @@
           <div class="affiliation-selection">
             <label>
               <input type="radio" name="affiliation" value="military" required>
-              {% render 'educators-icon' %}
+              {% render 'military-icon' %}
+              <div class="uppercase icon-caption">military</div>
             </label>
 
             <label>
               <input type="radio" name="affiliation" value="police" required>
               {% render 'police-icon' %}
+              <div class="uppercase icon-caption">Police</div>
             </label>
             
             <label>
               <input type="radio" name="affiliation" value="fire-and-ems" required>
               {% render 'ems-icon' %}
+              <div class="uppercase icon-caption">fire & ems</div>
             </label>
 
             <label>
               <input type="radio" name="affiliation" value="medical" required>
               {% render 'medical-icon' %}
+              <div class="uppercase icon-caption">medical</div>
             </label>
 
             <label>
               <input type="radio" name="affiliation" value="gov" required>
               {% render 'gov-icon' %}
+              <div class="uppercase icon-caption">government</div>
             </label>
 
             <label>
               <input type="radio" name="affiliation" value="educator" required>
               {% render 'educator-icon' %}
+              <div class="uppercase icon-caption">educators</div>
             </label>
           </div>
 
