@@ -304,6 +304,8 @@
 
   #shopify-section-{{ section.id }} .qr-box-wrapper {
     display: flex;
+    position: relative;
+    bottom: 60px;
   }
 
   #shopify-section-{{ section.id }} .qr-box-wrapper > * {
@@ -313,8 +315,8 @@
   #shopify-section-{{ section.id }} .qr-box {
     max-width: 630px;
     text-align: center;
-    margin-top: 70px;
-    margin-bottom: 35px;
+    /* margin-top: 70px;
+    margin-bottom: 35px; */
     padding-top: ;
     background: rgba(51, 51, 51, 0.3);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.39);
@@ -336,10 +338,6 @@
   #shopify-section-{{ section.id }} .qr-caption {
     font-size: 18px;
     font-weight: bold;
-  }
-
-  #shopify-section-{{ section.id }} .empty-element {
-    display: block;
   }
 
   #shopify-section-{{ section.id }} .error-msg {
@@ -401,10 +399,6 @@
 
     #shopify-section-{{ section.id }} .bullet-point-icon-wrapper {
       margin: 0 auto;
-    }
-
-    #shopify-section-{{ section.id }} .empty-element {
-      display: none;
     }
 
     #shopify-section-{{ section.id }} .qr-box {
@@ -613,7 +607,6 @@
           </div>
           {%- endif -%}
       </div>
-      <div class="empty-element"></div>
     </div>
   </div>
 </section>
