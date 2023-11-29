@@ -171,6 +171,12 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+
+    {% if template.name == "index" or template.name == "collection" %} 
+      <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="{{ 'carousel.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
   </head>
 
   <body class="gradient">
