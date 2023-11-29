@@ -36,9 +36,9 @@
     animation: 35s slide infinite linear;
   }
 
-  #shopify-section-{{ section.id }} .logos-slide img {
-    height: 100px;
-    width: 100px;
+  #shopify-section-{{ section.id }} .logos-slide .img__wrapper {
+    height: 110px;
+    width: 110px;
     margin: 0 40px;
   }
 
@@ -52,17 +52,11 @@
 
 <section class="shopify-section section section-logo-carousel">
   <div class="logos-slide">
-  {% for block in section.blocks %}
-    {%- if block.settings.img != blank -%}
-      {%- assign img_height = block.settings.img.width | divided_by: block.settings.img.aspect_ratio -%}
-  
-      {{ block.settings.img | image_url: width: 1000 | image_tag:
-        height: img_height,
-        width: block.settings.img.width,
-        loading: 'lazy'
-      }}
-    {%- endif -%}
-  {% endfor %}
+    <div class="img__wrapper">{% render 'ray-ban' %}</div>
+    <div class="img__wrapper">{% render 'oakley' %}</div>
+    <div class="img__wrapper">{% render 'maui-jim' %}</div>
+    <div class="img__wrapper">{% render 'costa' %}</div>
+    <div class="img__wrapper">{% render 'prada' %}</div>
   </div>
 </section>
 
