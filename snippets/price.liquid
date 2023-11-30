@@ -46,7 +46,6 @@
     <div class="price__regular">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       <span style="font-size: 1.4em;" class="price-item price-item--regular">
-        {% comment %}start BSS Commerce ltsp{% endcomment %}{% assign bssltspp = product | default: item | default: prod %}{% capture bssltspop %}{{ money_price }}{% endcapture %}{% render 'bsscommerce-login-to-see-price', product: bssltspp, old_price: bssltspop %}{% comment %}end BSS Commerce ltsp{% endcomment %}
       </span>
     </div>
     <div class="price__sale">
@@ -55,9 +54,7 @@
         <span class="flex align-center">
           <s class="price-item price-item--regular">
             {% if settings.currency_code_enabled %}
-              {% comment %}start BSS Commerce ltsp{% endcomment %}{% assign bssltspp = product | default: item | default: prod %}{% capture bssltspop %}{{ compare_at_price | money_with_currency }}{% endcapture %}{% render 'bsscommerce-login-to-see-price', product: bssltspp, old_price: bssltspop %}{% comment %}end BSS Commerce ltsp{% endcomment %}
             {% else %}
-              {% comment %}start BSS Commerce ltsp{% endcomment %}{% assign bssltspp = product | default: item | default: prod %}{% capture bssltspop %}{{ compare_at_price | money }}{% endcapture %}{% render 'bsscommerce-login-to-see-price', product: bssltspp, old_price: bssltspop %}{% comment %}end BSS Commerce ltsp{% endcomment %}
             {% endif %}
           </s>
           
@@ -82,7 +79,6 @@
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
       <span class="price-item price-item--sale price-item--last{% if show_in_card %} price-item--sale-in-card{% endif %}">
-        {% comment %}start BSS Commerce ltsp{% endcomment %}{% assign bssltspp = product | default: item | default: prod %}{% capture bssltspop %}{{ money_price }}{% endcapture %}{% render 'bsscommerce-login-to-see-price', product: bssltspp, old_price: bssltspop %}{% comment %}end BSS Commerce ltsp{% endcomment %}
       </span>
     </div>
     {%- unless show_in_card and product.selected_or_first_available_variant.unit_price_measurement == nil -%}

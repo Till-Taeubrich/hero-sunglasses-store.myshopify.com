@@ -4,7 +4,7 @@
   }
 </style>
 
-{% capture redirectScript %}{% render 'bsscommerce-redirect-product-page-logic', product: product, collection: collection %}{% endcapture %}{% assign redirectScript = redirectScript | strip %}{% unless redirectScript contains "Liquid error" %}{% if redirectScript != "" %}<script id="bss-redirect" type="text/javascript">if ( "{{ routes.root_url }}" != "/" && "{{ redirectScript }}".indexOf("-") === -1) {window.location.replace( "{{ routes.root_url }}" + "{{ redirectScript }}" )} else { window.location.replace("{{ redirectScript }}")}</script>{% endif %}{% endunless %}<link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
