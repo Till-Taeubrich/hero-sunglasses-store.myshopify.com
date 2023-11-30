@@ -13,7 +13,7 @@
 {% endcomment %}
 {%- liquid
   if use_variant
-    assign target = product.variants[0]
+    assign target = product.selected_or_first_available_variant
   else
     assign target = product
   endif
@@ -45,20 +45,22 @@
     {%- endcomment -%}
     <div class="price__regular">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-      <span style="font-size: 1.4em;" class="price-item price-item--regular">
+      <span class="price-item price-item--regular">
+        {{ money_price }}
       </span>
     </div>
-    <div class="price__sale">
+    <div class="price__sale{% if show_in_card %} flex-column{% endif %}">
       {%- unless product.price_varies == false and product.compare_at_price_varies %}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="flex align-center">
           <s class="price-item price-item--regular">
             {% if settings.currency_code_enabled %}
+              {{ compare_at_price | money_with_currency }}
             {% else %}
+              {{ compare_at_price | money }}
             {% endif %}
           </s>
           
-          {% comment %}
           {%- if show_badges and show_in_card and target.price < target.compare_at_price -%}
             <span class="price__badge price__badge--in-card lh1 color-foreground">
               {%- if settings.sale_badge_label == 'text' -%}
@@ -74,11 +76,11 @@
               {%- endif -%}	
             </span>
           {%- endif -%}
-          {% endcomment %}
         </span>
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
       <span class="price-item price-item--sale price-item--last{% if show_in_card %} price-item--sale-in-card{% endif %}">
+        {{ money_price }}
       </span>
     </div>
     {%- unless show_in_card and product.selected_or_first_available_variant.unit_price_measurement == nil -%}
@@ -103,7 +105,7 @@
       {%- if settings.sale_badge_label == 'text' -%}
         {{ 'products.product.on_sale' | t }}
       {%- elsif settings.sale_badge_label == 'percent' -%}
-        {{ target.price | minus: target.compare_at_price | times: 100 | divided_by: target.compare_at_price | floor }}%
+        {{ target.price | minus: target.compare_at_price | times: 100.00 | divided_by: target.compare_at_price | round }}%
       {%- else -%}
         {%- if settings.currency_code_enabled -%}
           -{{ target.compare_at_price | minus: target.price | money_with_currency }}	
