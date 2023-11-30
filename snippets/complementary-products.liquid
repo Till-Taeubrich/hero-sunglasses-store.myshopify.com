@@ -1,4 +1,3 @@
-
 <product-recommendations class="complementary-products no-js-hidden db{% if block.settings.make_collapsible_row %} is-accordion accordion{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=8&intent=complementary">
   {%- if recommendations.performed and recommendations.products_count > 0 -%}
     {%- assign section_id = section.id | append: '-' | append: block.id -%}
@@ -206,4 +205,3 @@ $("#scrollDownComplementary").click(function() {
             <button  id="scrollDownComplementary">Click</button>
           </div>
 {%- endcomment -%}
-
