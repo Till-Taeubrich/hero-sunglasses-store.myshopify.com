@@ -45,7 +45,7 @@ class CollectionLoadingButton extends HTMLElement
 const reinitCarouselJs = () => {
 	let productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
 	const imgWrappers = document.querySelectorAll('.product-card-img-wrapper')
-	const flickityBtns = this.document.querySelectorAll('.custom__product-card .flickity-button')
+	const flickityBtns = document.querySelectorAll('.custom__product-card .flickity-button')
 
 	const addHeight = (e) => {
 		e.target.querySelector('.carousel').style.height = productCardHeight
@@ -72,23 +72,23 @@ const reinitCarouselJs = () => {
 	}
 
 	const updatePrice = (e) => {
-    const newPriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantPrice
-    const newComparePriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantComparePrice
-    const priceContainer = e.target.closest('.custom__product-card').querySelector('.price--out-card')
+		const newPriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantPrice
+		const newComparePriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantComparePrice
+		const priceContainer = e.target.closest('.custom__product-card').querySelector('.price--out-card')
 
-    const productPriceElement = newComparePriceData ? e.target.closest('.custom__product-card').querySelector('span.price-item--sale') : e.target.closest('.custom__product-card').querySelector('span.price-item--regular')
-    const compareProductPriceElement = e.target.closest('.custom__product-card').querySelector('.price__sale s.price-item--regular')
+		const productPriceElement = newComparePriceData ? e.target.closest('.custom__product-card').querySelector('span.price-item--sale') : e.target.closest('.custom__product-card').querySelector('span.price-item--regular')
+		const compareProductPriceElement = e.target.closest('.custom__product-card').querySelector('.price__sale s.price-item--regular')
 
-    if (!newComparePriceData) {
-      productPriceElement.innerText = newPriceData
-      priceContainer.classList.remove('price--on-sale')
-      return
-    }
+		if (!newComparePriceData) {
+			productPriceElement.innerText = newPriceData
+			priceContainer.classList.remove('price--on-sale')
+			return
+		}
 
-    compareProductPriceElement.cl
-    productPriceElement.innerText = newPriceData
-    compareProductPriceElement.innerText = newComparePriceData
-    priceContainer.classList.add('price--on-sale')
+		compareProductPriceElement.cl
+		productPriceElement.innerText = newPriceData
+		compareProductPriceElement.innerText = newComparePriceData
+		priceContainer.classList.add('price--on-sale')
 	}
 
 	const addSelectedClass = (e) => {
@@ -97,19 +97,6 @@ const reinitCarouselJs = () => {
 
 	const removeSelectedClass = (e) => {
 		e.target.closest('li.grid__item').classList.remove('selected')
-	}
-
-	const initCarousel = () => {
-		const flktyCarousels = document.querySelectorAll('.carousel');
-		flktyCarousels.forEach(carousel => {
-			new Flickity( carousel, {
-				fullscreen: true,
-				lazyLoad: "1",
-				pageDots:false,
-				draggable: false,
-				wrapAround: true
-			});
-		})
 	}
 
 	imgWrappers.forEach(item => {
@@ -134,7 +121,21 @@ const reinitCarouselJs = () => {
 		productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
 	});
 
+	const initCarousel = () => {
+		const flktyCarousels = document.querySelectorAll('.carousel');
+		flktyCarousels.forEach(carousel => {
+			new Flickity( carousel, {
+				fullscreen: true,
+				lazyLoad: "1",
+				pageDots:false,
+				draggable: false,
+				wrapAround: true
+			});
+		})
+	}
+
 	initCarousel()
+	
 }
 
 class CollectionInfiniteButton extends CollectionLoadingButton
