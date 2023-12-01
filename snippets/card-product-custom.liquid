@@ -38,6 +38,8 @@
       <div class="variants-counter">{{ card_product.variants.size }} Colors</div>
     </div>
     {%- endif -%}
-  <div class="product-card-product-title">{{ card_product.title }}</div>
-  {% render 'price', product: card_product, first_variant: true, use_variant: true, show_in_card: true, price_class: 'small-margin-top', show_badges: true %}
+  <div class="flex title-price-wrapper">
+    <div class="product-card-product-title">{{ card_product.title }}</div>
+    {% render 'price', product: card_product, first_variant: true, use_variant: true %}
+  </div>
 </div>

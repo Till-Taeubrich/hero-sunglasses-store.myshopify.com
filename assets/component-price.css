@@ -45,16 +45,20 @@ product-price {
 
 .price--on-sale .price__sale {
   display: flex;
-  column-gap: 1.2rem;
+  column-gap: 5px;
 }
 
-.price-item--regular > span {
-  font-size: 1.4rem;
+.price--on-sale .price__sale .price-item--regular {
+  color: rgb(var(--color-sale-off-price));
+}
+
+.price__container {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .price--on-sale .price-item--regular {
   text-decoration: line-through;
-  font-size: 1.4rem;
   color: rgb(var(--color-compare-at-price));
 }
 
@@ -62,14 +66,14 @@ product-price {
   font-size: 1.8rem;
 }
 
-.price--on-sale .price-item--sale {
+/* .price--on-sale .price-item--sale {
   color: rgb(var(--color-sale-off-price));
   font-weight: var(--font-body-weight-medium);
 }
 
 .price--on-sale .price-item--sale-in-card {
   color: rgb(var(--color-sale-off-price), 0.8);
-}
+} */
 
 .price__badge {
   background: rgb(var(--color-highlight), 0.05);

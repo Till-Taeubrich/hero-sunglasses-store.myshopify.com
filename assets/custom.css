@@ -246,13 +246,6 @@ border:5px solid #8F1818
 .product-form__input__radio-list--color {
   margin-bottom: 16px;
 }
-.margin0 {
-  
-}
-.price, .information__value {
-  margin-bottom: 16px !important;
-
-}
 
 .desktop-variant-above-buy {
   margin-bottom: 16px; 
@@ -922,6 +915,10 @@ a:not([href]) {
     display: block;
     position: relative;
     padding-top: 100%;
+}
+
+.custom__product-card .title-price-wrapper {
+  justify-content: space-between;
 }
 
 .custom__product-card img {
