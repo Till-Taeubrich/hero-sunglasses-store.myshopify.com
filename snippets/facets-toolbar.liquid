@@ -27,11 +27,11 @@
     </div>
 
     {%- if section.settings.filter_type == 'vertical' -%}
-      <button class="button facets-active-toolbar__toggle-filter font-body-semi-bold ignore-effect no-js-hidden small-hide medium-hide" onclick="this.closest('.facets-vertical').classList.toggle('facets-vertical--hide-filter')">
+      {% comment %} <button class="button facets-active-toolbar__toggle-filter font-body-semi-bold ignore-effect no-js-hidden small-hide medium-hide" onclick="this.closest('.facets-vertical').classList.toggle('facets-vertical--hide-filter')">
         {%- render 'icon-filter' -%}
         <span class="show-filter-text">{{ 'products.facets.show_filter' | t }}</span>
         <span class="hide-filter-text">{{ 'products.facets.hide_filter' | t }}</span>
-      </button>
+      </button> {% endcomment %}
     {%- endif -%}  
 
     {%- if section.settings.enable_sorting -%}
