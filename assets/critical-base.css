@@ -1766,7 +1766,7 @@ slider-component {
 }
 
 .slider-button {
-  color: rgb(var(--color-foreground));
+  color: #d4d5d6;
   background: transparent;
   border: 1px solid rgb(var(--color-foreground), 0.1);
   display: flex;

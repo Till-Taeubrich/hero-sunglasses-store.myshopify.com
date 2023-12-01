@@ -1,6 +1,6 @@
 {%- assign filter_label_downcase = filter.label | downcase -%}
 <details-accordion class="db" data-ignore-setup-event="true">
-  <details id="Details-{{ suffix_id }}{{ forloop.index }}-{{ section.id }}" class="facets__details facets__accordion js-filter{% if forloop.first %} first{% endif %}" data-index="{{ forloop.index }}" open>
+  <details id="Details-{{ suffix_id }}{{ forloop.index }}-{{ section.id }}" class="facets__details facets__accordion js-filter{% if forloop.first %} first{% endif %}" data-index="{{ forloop.index }}" >
     <summary class="facets__summary facets__summary--{{ filter_type }}{% if filter_type != 'drawer' %} facets__summary--plus-minus{% endif %} h6 font-heading-bold{% if summary_classes %} {{ summary_classes }}{% endif %} summary-accordion" aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
     onclick="return this.closest('details-accordion').toggleContent();" aria-expanded="true">
       <div class="flex align-center justify-space-between facets__label-wrapper">

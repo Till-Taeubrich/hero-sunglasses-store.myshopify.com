@@ -2,43 +2,48 @@
   "type": "header",
   "name": "Header Group",
   "sections": {
-    "b887bb73-8ce2-4994-b065-44acd74a2d90": {
-      "type": "top-banner",
+    "dbc614fa-27db-4315-9bcd-89b50ed54f64": {
+      "type": "announcement-bar",
       "blocks": {
-        "0d69b2eb-e192-46ce-9ab1-5f6cdfb7a493": {
-          "type": "banner",
+        "sections--21570111406372__dbc614fa-27db-4315-9bcd-89b50ed54f64-announcement-1": {
+          "type": "announcement",
           "settings": {
-            "text": "CREATE AN ACCOUNT TO UNLOCK HERO PRICING"
+            "text": "Create an account to unlock hero pricing",
+            "link": ""
           }
         },
-        "9529933f-d5d4-44c1-9e44-885c2703d7d0": {
-          "type": "banner",
+        "da6b261b-920e-4d04-84f3-71c6adadff2d": {
+          "type": "announcement",
           "settings": {
-            "text": "ALL PRODUCTS IN STOCK"
+            "text": "All products in stock",
+            "link": ""
           }
         },
-        "1b6ee750-1401-4a73-9c5c-f1823481f1cb": {
-          "type": "banner",
+        "fa876ff8-dfc0-4259-80e2-bc4048e98779": {
+          "type": "announcement",
           "settings": {
-            "text": "FAMILY OWNED & OPERATED SINCE 2007"
+            "text": "Family owned & operated since 2007",
+            "link": ""
           }
         },
-        "1be73853-011b-4e5b-8460-0a30c277dcb6": {
-          "type": "banner",
+        "5664f151-e1ac-4eaa-8ec4-49a7f5ec07aa": {
+          "type": "announcement",
           "settings": {
-            "text": "FREE SHIPPING & RETURNS"
+            "text": "Free shipping & returns",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "0d69b2eb-e192-46ce-9ab1-5f6cdfb7a493",
-        "9529933f-d5d4-44c1-9e44-885c2703d7d0",
-        "1b6ee750-1401-4a73-9c5c-f1823481f1cb",
-        "1be73853-011b-4e5b-8460-0a30c277dcb6"
+        "sections--21570111406372__dbc614fa-27db-4315-9bcd-89b50ed54f64-announcement-1",
+        "da6b261b-920e-4d04-84f3-71c6adadff2d",
+        "fa876ff8-dfc0-4259-80e2-bc4048e98779",
+        "5664f151-e1ac-4eaa-8ec4-49a7f5ec07aa"
       ],
       "settings": {
-        "padding-top": 0,
-        "padding-bottom": 0
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "color_scheme": ""
       }
     },
     "c0a18aba-f749-4871-a793-4c16130cbb26": {
@@ -242,7 +247,7 @@
     }
   },
   "order": [
-    "b887bb73-8ce2-4994-b065-44acd74a2d90",
+    "dbc614fa-27db-4315-9bcd-89b50ed54f64",
     "c0a18aba-f749-4871-a793-4c16130cbb26",
     "header",
     "1699830288448e1e16"

@@ -12,7 +12,7 @@
   endif
 %}
 <details-accordion class="db" data-ignore-setup-event="true">
-  <details id="Details-{{ suffix_id }}{{ forloop.index }}-{{ section.id }}" class="facets__details {% if filter_type == 'horizontal' %}disclosure-has-popup por facets__disclosure{% else %} facets__accordion{% endif %} js-filter{% if forloop.first %} first{% endif %}" data-index="{{ forloop.index }}" open>
+  <details id="Details-{{ suffix_id }}{{ forloop.index }}-{{ section.id }}" class="facets__details {% if filter_type == 'horizontal' %}disclosure-has-popup por facets__disclosure{% else %} facets__accordion{% endif %} js-filter{% if forloop.first %} first{% endif %}" data-index="{{ forloop.index }}">
     <summary class="facets__summary facets__summary--{{ filter_type }}{% if filter_type != 'drawer' %} facets__summary--plus-minus{% endif %} {% if filter_type == 'horizontal' %}h6 facets__summary--box{% if has_price_active %} facets__summary--has-actives{% endif %}{% else %}h6{% endif %} font-heading-bold{% if summary_classes %} {{ summary_classes }}{% endif %}"
       onclick="return this.closest('details-accordion').toggleContent();"
       aria-expanded="true">

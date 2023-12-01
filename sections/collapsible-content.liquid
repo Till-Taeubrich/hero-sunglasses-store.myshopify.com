@@ -45,7 +45,7 @@
         <div class="grid__item">
           {%- for block in section.blocks -%}
             <details-accordion class="accordion db collapsible-content__item" {{ block.shopify_attributes }}>
-              <details id="Details-{{ block.id }}-{{ section.id }}"{% if section.settings.open_first_collapsible_row and forloop.first %} open{% endif %}>
+              <details id="Details-{{ block.id }}-{{ section.id }}"{% if section.settings.open_first_collapsible_row and forloop.first %}{%- comment -%}open{%- endcomment -%}{% endif %}>
                 <summary class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por">
                   <div class="summary__title flex align-center flex-grow-1">
                     {% render 'icon-accordion', icon: block.settings.icon %}

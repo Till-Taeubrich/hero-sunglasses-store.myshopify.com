@@ -55,7 +55,7 @@
         "show_rating": true,
         "include_collection_in_url": true,
         "enable_quick_add": false,
-        "enable_compare": true,
+        "enable_compare": false,
         "enable_quick_view": false,
         "show_color_swatches": true,
         "color_swatches_style": "variant",

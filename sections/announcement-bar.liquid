@@ -1,6 +1,21 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    font-size: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .announcement-bar__message {
+    color: #d4d5d6;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .announcement-bar-wrap {
+    background-color: black;
+  }
+</style>
+
 {%- if section.blocks.size > 0 -%}
 {%- assign slider_button_classes = 'slider-button--transparent slider-button--' | append: section.id -%}
-<div class="color-{{ section.settings.color_scheme }} gradient announcement-bar-wrap announcement-bar-wrap--{{ section.id }}">
+<div class="color-{{ section.settings.color_scheme }} announcement-bar-wrap announcement-bar-wrap--{{ section.id }}">
   <slider-component class="por slider-{{ section.id }} slider-component-desktop">
     <button type="button" class="slider-button flex flex-column justify-center align-center slider-button--prev no-js-hidden tap-area-icon slider-button--float {{ slider_button_classes }}" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="Slider-{{ section.id }}" disabled="disabled">{% render 'icon-caret-slider-prev' %}</button>
 	  <div class="grid grid--1-col slider slider--mobile slider--tablet slider--desktop slider--buttons-mobile grid--announcement-{{ section.id }}" id="Slider-{{ section.id }}" data-autoplay="{{ section.settings.auto_rotate }}" data-speed="{{ section.settings.change_slides_speed }}">

@@ -15,7 +15,6 @@
   .facets-wrapper--vertical {
     min-width: var(--filter-width);
     width: var(--filter-width);
-    position: sticky;
     top: 1rem;
     max-height: calc(100vh - 1rem);
     overflow-y: auto;
@@ -75,3 +74,8 @@
   }
 /* } */
 
+@media (max-width: 749px) {
+  .facets-wrapper--vertical {
+    position: sticky;
+  }
+}
