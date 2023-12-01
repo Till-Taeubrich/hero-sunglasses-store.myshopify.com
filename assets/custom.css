@@ -952,6 +952,7 @@ a:not([href]) {
 .custom__product-card .product-card-img-wrapper {
   margin-bottom: 8px;
   background-color: #fff;
+  border-radius: 5px;
 }
 
 .custom__product-card .product-card-product-title {
