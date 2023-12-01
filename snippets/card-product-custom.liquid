@@ -23,8 +23,8 @@
         {% for variant in card_product.variants %}
           <div class="carousel-cell"
             data-variant-main-img="{{ variant.metafields.custom.product_image_1 | image_url: width: 1000 }}"
-            data-variant-compare-price="{{ variant.compare_at_price | money_with_currency }}"
-            data-variant-price="{{ variant.price | money_with_currency }}"
+            data-variant-compare-price="{{ variant.compare_at_price | money }}"
+            data-variant-price="{{ variant.price | money }}"
             >
             <a href="{{ variant.url }}">
               <img class="carousel-cell-image"

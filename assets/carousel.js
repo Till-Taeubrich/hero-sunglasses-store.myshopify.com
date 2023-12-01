@@ -31,12 +31,17 @@ window.addEventListener('load', function () {
     const newPriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantPrice
     const newComparePriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantComparePrice
 
+    const productPriceElement = newComparePriceData ? e.target.closest('.custom__product-card').querySelector('span.price-item--sale') : e.target.closest('.custom__product-card').querySelector('span.price-item--regular')
+    const compareProductPriceElement = e.target.closest('.custom__product-card').querySelector('.price__sale s.price-item--regular')
+
     if (!newComparePriceData) {
-      const productPriceElement = e.target.closest('.custom__product-card').querySelector('span.price-item--regular')
       productPriceElement.innerText = newPriceData
       return
     }
-    // productPriceElement.textContent = newPriceData
+
+    compareProductPriceElement.cl
+    productPriceElement.innerText = newPriceData
+    compareProductPriceElement.innerText = newComparePriceData
   }
 
   const addSelectedClass = (e) => {
