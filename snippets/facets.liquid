@@ -151,7 +151,7 @@
 {%- endcapture -%}
 <div class="facets-container facets-container-{{ filter_type }}{% if filter_type == 'drawer' %} page-width flex justify-space-between{% endif %} small-margin-bottom">
   {%- if filter_type == 'vertical' -%}
-    <facet-filters-form class="facets small-hide medium-hide" data-type="{{ filter_type }}">
+    <facet-filters-form class="facets" data-type="{{ filter_type }}">
       <form id="FacetFiltersForm" class="facets__form-vertical flex">
         {%- if results.terms -%}
           <input type="hidden" name="q" value="{{ results.terms | escape }}">

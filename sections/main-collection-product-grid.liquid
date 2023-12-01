@@ -2,6 +2,26 @@
   #shopify-section-{{ section.id }} {
     background: #f2f2f2;
   }
+
+  #shopify-section-{{ section.id }} #main-collection-filters {
+    max-width: 70%;
+    margin: 0 auto;
+    background-color: white;
+    z-index: 12;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  #shopify-section-{{ section.id }} #Filter-range-Price-LTE {
+    background: #f2f2f2;
+  }
+
+  @media (max-width: 749px) {
+    #shopify-section-{{ section.id }} #main-collection-filters {
+      max-width: unset;
+      width: 100%;
+    }
+  }
 </style>
 
 <link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -16,7 +36,7 @@
 {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
   {{ 'component-facets.css' | asset_url | stylesheet_tag: preload: true }}
   {%- if section.settings.filter_type == 'vertical' -%}
-    {{ 'component-facets-vertical.css' | asset_url | stylesheet_tag: media: 'screen and (min-width: 750px)' }}  
+    {{ 'component-facets-vertical.css' | asset_url | stylesheet_tag: media: 'screen and (min-width: 0px)' }}  
   {%- endif -%}  
   <script src="{{ 'details-accordion.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
