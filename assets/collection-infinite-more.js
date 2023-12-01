@@ -59,6 +59,7 @@ const reinitCarouselJs = () => {
 
 	initCarousel()
 
+	const customerLogged = document.querySelector('.main-body').dataset.customerLogged
 	let productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
 	const imgWrappers = document.querySelectorAll('.product-card-img-wrapper')
 	const flickityBtns = document.querySelectorAll('.custom__product-card .flickity-button')
@@ -115,20 +116,24 @@ const reinitCarouselJs = () => {
 		e.target.closest('li.grid__item').classList.remove('selected')
 	}
 
-	imgWrappers.forEach(item => {
-		item.addEventListener('mouseenter', (e) => {
-			addHeight(e)
-			addSelectedClass(e)
-		})
-		item.addEventListener('mouseleave', (e) => {
-			removeHeight(e)
-			removeSelectedClass(e)
-		})
-	})
+  if (window.innerWidth > 749) {
+    imgWrappers.forEach(item => {
+      item.addEventListener('mouseenter', (e) => {
+        addHeight(e)
+        addSelectedClass(e)
+      })
+      item.addEventListener('mouseleave', (e) => {
+        removeHeight(e)
+        removeSelectedClass(e)
+      })
+    })
+  }
 
 	flickityBtns.forEach(btn => {
 		btn.addEventListener('click', (e) => {
-			updatePrice(e)
+			if (customerLogged) {
+        updatePrice(e)
+      }
 			updateMainImg(e)
 		})
 	})
