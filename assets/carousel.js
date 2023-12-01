@@ -63,17 +63,6 @@ window.addEventListener('load', function () {
     })
   }
 
-  const initialPriceLoad = () => {
-    const productCards = document.querySelectorAll('.custom__product-card');
-    productCards.forEach(card => {
-      const dataElement = card.querySelector('.carousel-cell.is-selected')
-      const price = dataElement.dataset.variantPrice
-      const productPriceElement = card.querySelector('.price-item--regular > span')
-      productPriceElement.style.visibility = "visible"
-      productPriceElement.textContent = price
-    })
-  }
-
   imgWrappers.forEach(item => {
     item.addEventListener('mouseenter', (e) => {
       addHeight(e)
@@ -81,7 +70,6 @@ window.addEventListener('load', function () {
     })
     item.addEventListener('mouseleave', (e) => {
       removeHeight(e)
-      // updateMainImg(e)
       removeSelectedClass(e)
     })
   })
@@ -98,5 +86,4 @@ window.addEventListener('load', function () {
   });
 
   initCarousel()
-  initialPriceLoad()
 }) 

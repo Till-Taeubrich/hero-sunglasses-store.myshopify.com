@@ -1008,10 +1008,6 @@ li.grid__item.selected .product-card-img-wrapper .carousel {
   z-index: 11;
 }
 
-.price-item--regular > span {
-  visibility: hidden;
-}
-
 @media (max-width: 749px) {
   @keyframes slide {
     from {

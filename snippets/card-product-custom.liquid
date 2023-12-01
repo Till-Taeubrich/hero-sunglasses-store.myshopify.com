@@ -39,5 +39,5 @@
     </div>
     {%- endif -%}
   <div class="product-card-product-title">{{ card_product.title }}</div>
-  {% render 'price', product: card_product, show_in_card: true, price_class: 'small-margin-top', show_badges: true %}
+  {% render 'price', product: card_product, first_variant: true, use_variant: true, show_in_card: true, price_class: 'small-margin-top', show_badges: true %}
 </div>

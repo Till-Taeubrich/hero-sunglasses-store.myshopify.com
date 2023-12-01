@@ -12,7 +12,9 @@
     {% render 'price', product: product %}
 {% endcomment %}
 {%- liquid
-  if use_variant
+  if use_variant and first_variant
+    assign target = product.variants[0]
+  elsif use_variant
     assign target = product.selected_or_first_available_variant
   else
     assign target = product
@@ -46,7 +48,7 @@
     <div class="price__regular">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       <span class="price-item price-item--regular">
-        {{ money_price }}
+        {{ target.price | money }}
       </span>
     </div>
     <div class="price__sale{% if show_in_card %} flex-column{% endif %}">

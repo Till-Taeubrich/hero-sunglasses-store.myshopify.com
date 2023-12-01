@@ -107,17 +107,6 @@ const reinitCarouselJs = () => {
 		})
 	}
 
-	const initialPriceLoad = () => {
-		const productCards = document.querySelectorAll('.custom__product-card');
-		productCards.forEach(card => {
-			const dataElement = card.querySelector('.carousel-cell.is-selected')
-			const price = dataElement.dataset.variantPrice
-			const productPriceElement = card.querySelector('.price-item--regular > span')
-			productPriceElement.style.visibility = "visible"
-			productPriceElement.textContent = price
-		})
-	}
-
 	imgWrappers.forEach(item => {
 		item.addEventListener('mouseenter', (e) => {
 			addHeight(e)
@@ -142,7 +131,6 @@ const reinitCarouselJs = () => {
 	});
 
 	initCarousel()
-	initialPriceLoad()
 }
 
 class CollectionInfiniteButton extends CollectionLoadingButton
