@@ -22,6 +22,12 @@
       width: 100%;
     }
   }
+
+  @media (max-width: 550px) {
+    #shopify-section-{{ section.id }} .product_logo {
+      max-width: 60px;
+    }
+  }
 </style>
 
 <link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
