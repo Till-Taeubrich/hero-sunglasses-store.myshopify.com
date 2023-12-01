@@ -923,6 +923,8 @@ a:not([href]) {
 
 .login-and-register-links {
   text-align: end;
+  flex-basis: 40%;
+  font-size: 12px;
 }
 
 .login-and-register-links a {
@@ -957,6 +959,7 @@ a:not([href]) {
 
 .custom__product-card .product-card-product-title {
   font-weight: bold;
+  flex-grow: 1;
 }
 
 .custom__product-card .flickity-button {
