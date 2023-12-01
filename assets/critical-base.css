@@ -2099,10 +2099,6 @@ card-product-colors {
   display: block;
 }
 
-.price__regular {
-  font-size: 0;
-}
-
 .price__sale,
 .price__availability,
 .price .price__badge-sale,
