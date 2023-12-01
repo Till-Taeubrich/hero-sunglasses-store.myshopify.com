@@ -30,18 +30,21 @@ window.addEventListener('load', function () {
   const updatePrice = (e) => {
     const newPriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantPrice
     const newComparePriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantComparePrice
+    const priceContainer = e.target.closest('.custom__product-card').querySelector('.price--out-card')
 
     const productPriceElement = newComparePriceData ? e.target.closest('.custom__product-card').querySelector('span.price-item--sale') : e.target.closest('.custom__product-card').querySelector('span.price-item--regular')
     const compareProductPriceElement = e.target.closest('.custom__product-card').querySelector('.price__sale s.price-item--regular')
 
     if (!newComparePriceData) {
       productPriceElement.innerText = newPriceData
+      priceContainer.classList.remove('price--on-sale')
       return
     }
 
     compareProductPriceElement.cl
     productPriceElement.innerText = newPriceData
     compareProductPriceElement.innerText = newComparePriceData
+    priceContainer.classList.add('price--on-sale')
   }
 
   const addSelectedClass = (e) => {
