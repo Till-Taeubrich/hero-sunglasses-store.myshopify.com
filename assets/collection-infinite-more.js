@@ -43,6 +43,22 @@ class CollectionLoadingButton extends HTMLElement
 }
 
 const reinitCarouselJs = () => {
+
+	const initCarousel = () => {
+		const flktyCarousels = document.querySelectorAll('.carousel');
+		flktyCarousels.forEach(carousel => {
+			new Flickity( carousel, {
+				fullscreen: true,
+				lazyLoad: "1",
+				pageDots:false,
+				draggable: false,
+				wrapAround: true
+			});
+		})
+	}
+
+	initCarousel()
+
 	let productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
 	const imgWrappers = document.querySelectorAll('.product-card-img-wrapper')
 	const flickityBtns = document.querySelectorAll('.custom__product-card .flickity-button')
@@ -120,22 +136,6 @@ const reinitCarouselJs = () => {
 	addEventListener("resize", () => {
 		productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
 	});
-
-	const initCarousel = () => {
-		const flktyCarousels = document.querySelectorAll('.carousel');
-		flktyCarousels.forEach(carousel => {
-			new Flickity( carousel, {
-				fullscreen: true,
-				lazyLoad: "1",
-				pageDots:false,
-				draggable: false,
-				wrapAround: true
-			});
-		})
-	}
-
-	initCarousel()
-	
 }
 
 class CollectionInfiniteButton extends CollectionLoadingButton
