@@ -71,10 +71,6 @@ const reinitCarouselJs = () => {
 		productCard.srcset = newMainImgUrl
 	}
 
-	const filterPrice = (string) => {
-		return string.split(">")[1].split("<")[0]
-	}
-
 	const updatePrice = (e) => {
     const newPriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantPrice
     const newComparePriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantComparePrice
@@ -123,7 +119,6 @@ const reinitCarouselJs = () => {
 		})
 		item.addEventListener('mouseleave', (e) => {
 			removeHeight(e)
-			// updateMainImg(e)
 			removeSelectedClass(e)
 		})
 	})
