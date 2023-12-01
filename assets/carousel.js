@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
   let productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
   const imgWrappers = document.querySelectorAll('.product-card-img-wrapper')
-  const flickityBtns = this.document.querySelectorAll('.custom__product-card .flickity-button')
+  const flickityBtns = document.querySelectorAll('.custom__product-card .flickity-button')
 
   const addHeight = (e) => {
     e.target.querySelector('.carousel').style.height = productCardHeight
@@ -27,19 +27,16 @@ window.addEventListener('load', function () {
     productCard.srcset = newMainImgUrl
   }
 
-  const filterPrice = (string) => {
-    return string.split(">")[1].split("<")[0]
-  }
-
   const updatePrice = (e) => {
-    // const newComparePriceSpan = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantComparePrice
-    const newPriceData = filterPrice(e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantPrice)
-    const productPriceElement = e.target.closest('.custom__product-card').querySelector('.price-item--regular > span')
-    productPriceElement.textContent = newPriceData
+    const newPriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantPrice
+    const newComparePriceData = e.target.closest('.custom__product-card').querySelector('.carousel-cell.is-selected').dataset.variantComparePrice
 
-    // if (newComparePriceSpan) {
-    //   return
-    // }
+    if (!newComparePriceData) {
+      const productPriceElement = e.target.closest('.custom__product-card').querySelector('span.price-item--regular')
+      productPriceElement.innerText = newPriceData
+      return
+    }
+    // productPriceElement.textContent = newPriceData
   }
 
   const addSelectedClass = (e) => {
@@ -48,19 +45,6 @@ window.addEventListener('load', function () {
 
   const removeSelectedClass = (e) => {
     e.target.closest('li.grid__item').classList.remove('selected')
-  }
-
-  const initCarousel = () => {
-    const flktyCarousels = document.querySelectorAll('.carousel');
-    flktyCarousels.forEach(carousel => {
-      new Flickity( carousel, {
-        fullscreen: true,
-        lazyLoad: "1",
-        pageDots:false,
-        draggable: false,
-        wrapAround: true
-      });
-    })
   }
 
   imgWrappers.forEach(item => {
@@ -84,6 +68,4 @@ window.addEventListener('load', function () {
   addEventListener("resize", () => {
     productCardHeight = `${document.querySelector('.custom__product-card .product-card-img-wrapper > img').offsetHeight}px`
   });
-
-  initCarousel()
 }) 

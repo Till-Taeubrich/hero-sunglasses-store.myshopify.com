@@ -19,7 +19,7 @@
         loading: 'lazy'
       }}
       {%- endif -%}
-      <div class="carousel">
+      <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 1, "pageDots": false, "draggable": false, "wrapAround": true }'>
         {% for variant in card_product.variants %}
           <div class="carousel-cell"
             data-variant-main-img="{{ variant.metafields.custom.product_image_1 | image_url: width: 1000 }}"
