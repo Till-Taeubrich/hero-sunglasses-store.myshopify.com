@@ -101,6 +101,11 @@
 -%}
 
 <div class="section-{{ section.id }}-padding">
+  {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+    <aside aria-labelledby="verticalTitle" class="facets-wrapper facets-wrapper--{{ section.settings.filter_type }}{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ section.id }}">
+      {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type, filter_include_group_name: section.settings.filter_include_group_name %}
+    </aside>
+  {%- endif -%}
   {%- if section.settings.show_collection_description and section.settings.description_position == 'above' and collection.description != blank -%}
     <div class="page-width">
       <div class="collection__description rte element-margin-top {{ section.settings.description_style }} {{ section.settings.description_alignment }}{% if section.settings.description_style == 'subtitle' %} subtitle--small{% endif %}">{{ collection.description }}</div>
@@ -111,11 +116,6 @@
       <a class="skip-to-content-link button visually-hidden small-hide medium-hide" href="#product-grid">
         <span>{{ "accessibility.skip_to_product_grid" | t }}</span>
       </a>
-    {%- endif -%}
-    {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-      <aside aria-labelledby="verticalTitle" class="facets-wrapper facets-wrapper--{{ section.settings.filter_type }}{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ section.id }}">
-        {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type, filter_include_group_name: section.settings.filter_include_group_name %}
-      </aside>
     {%- endif -%}
 
     <div class="product-grid-container{% if section.settings.filter_type == 'drawer' %} element-small-margin-top{% endif %}{% if section.settings.filter_type == 'vertical' %} flex-grow-1{% endif %}" id="ProductGridContainer">
