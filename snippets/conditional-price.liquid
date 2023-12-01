@@ -1,0 +1,5 @@
+{% if customer %}
+  {% render 'price', product: card_product, first_variant: true, use_variant: true %}
+{% else %}
+  {% render 'login-and-register' %}
+{% endif %}

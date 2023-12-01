@@ -921,6 +921,14 @@ a:not([href]) {
   justify-content: space-between;
 }
 
+.login-and-register-links {
+  text-align: end;
+}
+
+.login-and-register-links a {
+  color: black;
+}
+
 .custom__product-card img {
     position: absolute;
     top: 0;
