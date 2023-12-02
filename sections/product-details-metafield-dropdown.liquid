@@ -46,7 +46,6 @@
        {% if product.selected_or_first_available_variant.id == variant.id %}
          style="display: block;"
        {% endif %}>
-       {%- comment -%}
          
 <details-accordion class="accordion db collapsible-content__item">
               <details class="details-metafield" id="Details-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
@@ -113,7 +112,6 @@
                 </div>
               </details>
             </details-accordion>
-       {%- endcomment -%}
        {%- if  variant.metafields.custom.fit_description_long != blank -%}
             
             <details-accordion  class="accordion db collapsible-content__item lens_description">
