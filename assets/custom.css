@@ -901,6 +901,10 @@ letter-spacing: 0.96px;
   object-fit: contain;
 }
 
+.section-account-registration .bullet-point-icon-wrapper img {
+  height: unset;
+}
+
 a:not([href]) {
   cursor: unset;
 }
