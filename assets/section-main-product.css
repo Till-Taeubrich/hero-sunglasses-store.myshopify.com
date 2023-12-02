@@ -129,14 +129,17 @@
     --vertical-thumbnail-width: 6.5rem;
   }
 
+  .product--large:not(.product--no-media) {
+    justify-content: space-between;
+    flex-basis: 64%;
+  }
+
   .product--large:not(.product--no-media) .product__media-wrapper {
-    max-width: 65%;
-    width: 65%;
+    flex-basis: 64%;
   }
 
   .product--large:not(.product--no-media) .product__info-wrapper {
-    max-width: 35%;
-    width: 35%;
+    flex-basis: 35%;
   }
 
   .product--medium:not(.product--no-media) .product__media-wrapper,
