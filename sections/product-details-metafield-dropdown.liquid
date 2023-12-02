@@ -1,3 +1,22 @@
+<style>
+  #shopify-section-{{ section.id }} .product-code {
+    color: #666666;
+  }
+
+  #shopify-section-{{ section.id }} .product-detail-accordion {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #shopify-section-{{ section.id }} .variant__description {
+    margin-bottom: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .accordion-seperator {
+    margin: 20px 0;
+  }
+</style>
+
 <section id="shopify-section-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" class="shopify-section"><link href="//s1o3wq7mjxqlnwyo-83776799012.shopifypreview.com/cdn/shop/t/8/assets/component-accordion.css?v=18637288360933037841698094434" rel="stylesheet" type="text/css" media="all">
 
 <link href="//s1o3wq7mjxqlnwyo-83776799012.shopifypreview.com/cdn/shop/t/8/assets/collapsible-content.css?v=106254775568716911291698094434" rel="stylesheet" type="text/css" media="all">
@@ -54,7 +73,7 @@
             <div class="summary__title flex align-center flex-grow-1">
               
               <h2 class="h6 accordion__title font-heading-bold margin0">
-                <div class="productDetails">Product Details</div>
+                <div class="accordion__title">Product Details</div>
               </h2>
             </div>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-caret light">
@@ -63,7 +82,7 @@
           </summary>
           <div class="accordion__content accordion__content--no-icon accordion__content--empty" id="CollapsibleAccordion-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824" role="region" aria-labelledby="Summary-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
             <div class="rte">
-              <div class="displayColumn">
+              <div class="displayColumn ">
     
               {% for variant in product.variants %}
                 <div
@@ -73,14 +92,14 @@
                     style="display: block;"
                   {% endif %}
                 >
-                   <div class="productDetailsMetafield">Product Code:
+                   <div class="productDetailsMetafield product-code">Product Code:
                    {{ variant.metafields.custom.model_number_w_color_code }}
                   </div>
                   </div>
                 {% endfor %}
       
               </div>
-          <div class="angry-grid-details">
+          <div class="product-detail-accordion">
             {% for variant in product.variants %}
               <div
                 class="variant__description"
@@ -198,6 +217,7 @@
         </details>
       </details-accordion>
 
+      <hr class="accordion-seperator">
 
 <details-accordion class="accordion db collapsible-content__item">
               <details class="details-metafield" id="Details-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824-collapsible_row-3-template--21359381938468__d77e951c-7d3e-4f3c-9c97-c1473848d824">
@@ -205,7 +225,7 @@
                   <div class="summary__title flex align-center flex-grow-1">
                     
                     <h2 class="h6 accordion__title font-heading-bold margin0">
-                      FIT GUIDE
+                      SIZE & FIT GUIDE
                     </h2>
                   </div>
              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-caret light">
@@ -312,6 +332,7 @@
                 </div>
               </details>
             </details-accordion>
+            <hr class="accordion-seperator">
        {%- if  variant.metafields.custom.fit_description_long != blank -%}
             
             <details-accordion  class="accordion db collapsible-content__item lens_description">
@@ -363,6 +384,7 @@
                 </div>
               </details>
             </details-accordion>
+            <hr class="accordion-seperator">
           {%- endif -%}
             {%- if  variant.metafields.custom.lens_technology_long != blank -%}
               
@@ -396,6 +418,7 @@
                 </div>
               </details>
             </details-accordion>  
+            <hr class="accordion-seperator">
           {%- endif -%}
             
             <details-accordion class="accordion db collapsible-content__item">
@@ -417,6 +440,7 @@
                 </div>
               </details>
             </details-accordion>
+            <hr class="accordion-seperator">
         </div>
     {% endfor %}
         
@@ -765,9 +789,10 @@ margin-top: 15px;
 const detailsElements = document.querySelectorAll(".details-metafield");
 
 // Loop through each details element and set the "open" attribute to true
-detailsElements.forEach(function (detailsElement) {
-  detailsElement.open = true;
-});
+// detailsElements.forEach(function (detailsElement) {
+//   detailsElement.open = true;
+// });
+detailsElements[0].open = true;
 </script>
 
 <style>
