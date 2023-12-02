@@ -1,8 +1,31 @@
 {
   "sections": {
     "main": {
-      "type": "main-usf-search",
+      "type": "main-search",
       "settings": {
+        "show_search_box": true,
+        "items_per_page": 24,
+        "columns_desktop": 4,
+        "columns_tablet": "3",
+        "pagination_style": "infinite",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": false,
+        "enable_compare": true,
+        "enable_quick_view": false,
+        "show_color_swatches": true,
+        "color_swatches_style": "variant",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "filter_include_group_name": true,
+        "enable_sorting": true,
+        "article_show_date": false,
+        "article_show_author": false,
+        "columns_mobile": "2",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
