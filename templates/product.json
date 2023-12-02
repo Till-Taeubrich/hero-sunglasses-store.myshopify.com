@@ -102,11 +102,6 @@
         "padding_bottom": 28
       }
     },
-    "63c83bdb-0ab9-4e19-b1cb-59aab96c9f63": {
-      "type": "product-details",
-      "settings": {
-      }
-    },
     "a65eadf1-3a83-481c-923e-c7f41866f697": {
       "type": "product-details-metafield-dropdown",
       "settings": {
@@ -532,7 +527,6 @@
   },
   "order": [
     "main",
-    "63c83bdb-0ab9-4e19-b1cb-59aab96c9f63",
     "a65eadf1-3a83-481c-923e-c7f41866f697",
     "d9bcf872-4d28-44c3-892e-28a6c441cd05",
     "52bf00c5-c1a5-4bcd-9b87-204e690ab1d5",
