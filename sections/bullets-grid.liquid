@@ -1,0 +1,129 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding-top }}px;
+    padding-bottom: {{ section.settings.padding-bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .section-bullet-grid {
+    display: flex;
+    gap: 44px;
+  }
+
+  #shopify-section-{{ section.id }} .left-bullet-points {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 0;
+  }
+
+  #shopify-section-{{ section.id }} .bullet-point-icon-wrapper {
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+  #shopify-section-{{ section.id }} .main-img__wrapper {
+    font-size: 0;
+    max-width: 466px;
+  }
+
+  #shopify-section-{{ section.id }} .main-img-caption {
+    border-bottom: 2px #CC3333 solid;
+  }
+</style>
+
+<section class="shopify-section section page-width section-bullet-grid">
+  <div class="left-bullet-points">
+    {% for block in section.blocks %}
+      <div class="bullet-point">
+        {%- if block.settings.img != blank -%}
+          <div class="img__wrapper bullet-point-icon-wrapper">
+            {%- assign img_height = block.settings.img.width | divided_by: block.settings.img.aspect_ratio -%}
+  
+            {{ block.settings.img | image_url: width: 1000 | image_tag:
+              height: img_height,
+              width: block.settings.img.width,
+              loading: 'lazy'
+            }}
+          </div>
+        {%- endif -%}
+        <div class="bullet-point-title">{{ block.settings.title }}</div>
+        <div class="bullet-point-description">{{ block.settings.description }}</div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="main-img">
+    <div class="img__wrapper main-img__wrapper">
+      {%- assign img_height = section.settings.img.width | divided_by: section.settings.img.aspect_ratio -%}
+
+      {{ section.settings.img | image_url: width: 1000 | image_tag:
+        height: img_height,
+        width: section.settings.img.width,
+        loading: 'lazy'
+      }}
+    </div>
+    <div class="main-img-caption">{{ section.settings.text }}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bullet grid",
+  "presets": [
+  {
+   "name":"bullet-grid"
+  }
+  ],
+  "settings": [
+		{
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+		{
+      "type": "image_picker",
+      "id": "img",
+      "label": "Main image"
+    },
+		{
+      "type": "range",
+      "id": "padding-top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Bullet point",
+      "type": "bullet_point",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
