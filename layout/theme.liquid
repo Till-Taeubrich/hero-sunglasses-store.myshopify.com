@@ -159,6 +159,7 @@
     
     {{ content_for_header }}
 
+
     {%- render 'critical-inline-styles', body_font: body_font, body_font_bold: body_font_bold, body_font_medium: body_font_medium, body_font_italic: body_font_italic, body_font_bold_italic: body_font_bold_italic, heading_font: heading_font, heading_font_bold: heading_font_bold, heading_font_medium: heading_font_medium, heading_font_semi_bold: heading_font_semi_bold, heading_font_bold_rte: heading_font_bold_rte, only_variables: false -%}
 
     {{ 'critical-base.css' | asset_url | stylesheet_tag: preload: true }}
@@ -177,7 +178,7 @@
     {% endif %}
   </head>
 
-  <body class="gradient">
+  <body class="gradient main-body" data-customer-logged="{{ customer }}">
     {% include 'preloaderapp' %}
     <a class="skip-to-content-link skip-to-content-link--all button visually-hidden" href="#MainContent">
       <span>{{ "accessibility.skip_to_text" | t }}</span>
