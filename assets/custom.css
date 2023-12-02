@@ -464,14 +464,6 @@ border-bottom: 1px solid gray;
 max-height: 22vh;
 } 
 
-.variant-details-container {
-}
-
-.complementary-products__container {
-  min-width:30vw;
-}
-
-
 .complementary__item__quantity {
   display: none !important  ;
 }
@@ -683,7 +675,7 @@ word-break: keep-all;
 #product__title_desktop > h1 {
   max-width: 250px;
   word-break: keep-all;
-  margin-right: 15px;
+  margin: 0px;
 }
 
 details[open="true"] .complementary-details{

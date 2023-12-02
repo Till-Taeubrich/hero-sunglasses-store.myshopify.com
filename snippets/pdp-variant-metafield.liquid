@@ -29,14 +29,6 @@
       <span class="first-pdp-metafield font-body-bold">LENS MATERIAL: </span><p class="second-pdp-metafield"> {{ variant.metafields.custom.lens_material }}</p>
     </div>
   {% endif -%}
-
-  {%- if product.metafields.custom.fit_description != blank -%}
-    <div class="displayRow mb-8 mimic-button">
-      <span class="first-pdp-metafield font-body-bold">FIT: </span><p class="second-pdp-metafield"> {{ product.metafields.custom.fit_description }}</p>
-    </div>
-
-  {%- endif -%}
-
 </div>
 {% endfor %}
       

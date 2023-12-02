@@ -95,7 +95,7 @@
   }
 
   .product__info-wrapper-media-left > .product__info-container {
-    padding-left: var(--spacing-column);
+    padding: 10px var(--spacing-column) var(--spacing-column) var(--spacing-column);
     background-color: white;
   }
 
