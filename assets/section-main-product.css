@@ -94,9 +94,11 @@
     margin-bottom: 0;
   }
 
-  .product__info-wrapper-media-left {
+  .product__info-wrapper-media-left > .product__info-container {
     padding-left: var(--spacing-column);
+    background-color: white;
   }
+
   .product__info-wrapper-media-right {
     padding-right: var(--spacing-column);
   }

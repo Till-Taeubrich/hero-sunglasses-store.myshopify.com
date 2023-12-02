@@ -671,12 +671,6 @@
 
     ],
     "blocks": {
-      "10249797228608187657": {
-        "type": "shopify:\/\/apps\/ai-search-product-filter-sb\/blocks\/core\/45de52d0-b602-4c6e-aa3b-61524a251869",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "15914998778720525373": {
         "type": "shopify:\/\/apps\/crisp-live-chat-chatbot\/blocks\/app-embed\/5c3cfd5f-01d4-496a-891b-f98ecf27ff08",
         "disabled": false,

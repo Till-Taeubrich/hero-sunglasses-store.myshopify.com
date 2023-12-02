@@ -59,6 +59,7 @@
         <hr class="pxGrayLine">
       </div>
     
+        {% render 'pdp-variant-metafield' %}
         <fieldset class="js product-form__input product-form__input--fieldset flex flex-column{% if block.settings.size_chart_enable and size_name == option_name_downcase and block.settings.size_chart_link_label != blank %} por{% endif %}{% unless forloop.first %} element-small-margin-top{% endunless %}">
           <legend class="product-form__input__form-label text-small margin-bottom-1rem">{{ option.name }}: <span class="product-form__input__option-value font-body-bold">{{ option.selected_value }}</span></legend>  
           <ul class="list-unstyled flex flex-wrap product-form__input__radio-list{% if is_color_swatches %} product-form__input__radio-list--color{% endif %}">
@@ -193,7 +194,6 @@
         </fieldset>
         
       {%- endfor -%}
-      {% render 'pdp-variant-metafield' %}
 
       <script type="application/json">
         {{ product.variants | json }}

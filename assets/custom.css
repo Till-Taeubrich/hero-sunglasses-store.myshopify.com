@@ -240,7 +240,8 @@ border:5px solid #8F1818
 }
 
 .product__info-container {
-  position: fixed !important;
+  position: sticky !important;
+  top: 0;
   
 }
 
@@ -765,17 +766,10 @@ details[open=true]+.details-modal-overlay {
       margin: 0 20px;
     }
 
-
-    .divider-vertical-black {
-      height: 86px;
-      border: solid #232323 1px;
-    }
-
-
     .section-header {
       /* Your section-header styles here */
       transition: z-index 0.3s; /* Add a transition for a smooth effect */
-  }
+    }
 
   .z-index-1 {
       z-index: 1;
