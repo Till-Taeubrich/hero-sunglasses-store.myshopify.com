@@ -278,7 +278,7 @@
         ".quick-add__submit {display: none;}"
       ],
       "settings": {
-        "title": "Recently viewed",
+        "title": "",
         "subtitle": "",
         "heading_size": "h2",
         "full_width": false,
