@@ -27,7 +27,7 @@
     data-prev-button="Slider-{{ section.id }}-prev-button"
     data-next-button="Slider-{{ section.id }}-next-button"
   >
-    <div class="recently-viewed-products__section color-{{ section.settings.color_scheme }} hidden">
+    <div class="recently-viewed-products__section hidden">
       <div class="collection section-{{ section.id }}-padding">
         <div class="page-width{% if section.settings.full_width %}--full{% endif %}">
           {%- render 'section-heading', show_desktop_slider: true, show_tablet_slider: true, show_mobile_slider: true -%}
