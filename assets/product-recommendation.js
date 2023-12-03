@@ -14,7 +14,7 @@ if (!customElements.get('product-recommendations')) {
           .then(text => {
             const html = document.createElement('div');
             html.innerHTML = text;
-            const recommendations = html.querySelector('product-recommendations');
+            const recommendations = this.classList.contains('related-products') ? html.querySelector('.related-products') : html.querySelector('product-recommendations');
 
             if (recommendations && recommendations.innerHTML.trim().length) {
               this.innerHTML = recommendations.innerHTML;
