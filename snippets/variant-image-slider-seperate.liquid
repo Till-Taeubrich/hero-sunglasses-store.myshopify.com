@@ -10,7 +10,6 @@
 
 
   <div class="angry-grid-video-pdp">
-    
     {% for metafield in variant.metafields.custom.variant_image.value %}
       <div class="img__wrapper">
         <img lazyload="lazyload" lazyload id="item-video-pdp-{{ forloop.rindex0}}" class="variant-image-slider-image product__media-item--variant" src="{{ metafield | img_url: '400x300' }}" alt=""> 

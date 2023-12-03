@@ -25,6 +25,16 @@
   #shopify-section-{{ section.id }} .complementary-products {
     margin-bottom: 10px;
   }
+
+  #shopify-section-{{ section.id }} .product__media-wrapper,
+  #shopify-section-{{ section.id }} .product__info-wrapper {
+    width: unset;
+  }
+
+  #shopify-section-{{ section.id }} .main-product-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
 </style>
 
 <section id="MainProduct-{{ section.id }}" class="product-section section-{{ section.id }}-padding{% if settings.page_width > 1400 and section.settings.media_size == "small" %} page-width--extra-spacing-column{% endif %}" data-section="{{ section.id }}">
