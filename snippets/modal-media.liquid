@@ -15,7 +15,7 @@
           {% if metafield.media_type == 'video' %}
                               
             <video class="yourVideo slider-video-full" id="yourVideo" autoplay playsinline preload="metadata" muted>
-              <source src={{ metafield | metafield_tag }}
+              <source src={{ metafield | metafield_tag }}>
               </video>
             {% else %}
             <img lazyload="lazyload" lazyload id="item-video-pdp-{{ forloop.rindex0}}"  src="{{ metafield | img_url: '1000x600' }}" alt=""> 
