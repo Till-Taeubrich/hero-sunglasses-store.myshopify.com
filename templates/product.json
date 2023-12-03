@@ -236,6 +236,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "custom_css": [
         ".price-item {font-size: 16px !important; font-style: normal; font-weight: 400; line-height: normal; letter-spacing: 0.64px;}",
         ".card__heading--product {font-size: 16px; font-weight: 700;}",
