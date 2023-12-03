@@ -12,7 +12,9 @@
   <div class="angry-grid-video-pdp">
     
     {% for metafield in variant.metafields.custom.variant_image.value %}
-      <img lazyload="lazyload" lazyload id="item-video-pdp-{{ forloop.rindex0}}" class="variant-image-slider-image product__media-item--variant" src="{{ metafield | img_url: '400x300' }}" alt=""> 
+      <div class="img__wrapper">
+        <img lazyload="lazyload" lazyload id="item-video-pdp-{{ forloop.rindex0}}" class="variant-image-slider-image product__media-item--variant" src="{{ metafield | img_url: '400x300' }}" alt=""> 
+      </div>
    {% endfor %}
 
 
@@ -22,17 +24,15 @@
   
   
   <div id="item-video-pdp-2">
-      {%- if variant.metafields.custom.pdp_male_video  != blank -%}
+      {%- if variant.metafields.custom.pdp_male_video != blank -%}
         
         <div id="video-pdp-container">
           
           <video class="yourVideo" id="yourVideo" preload="metadata" muted  width="400" height="300">
-            <source src={{ variant.metafields.custom.pdp_male_video | metafield_tag }}
+            <source src={{ variant.metafields.custom.pdp_male_video | metafield_tag }}>
             </video>
             
           </div>
-          {%- else -%}
-          <img class="pdp-video-replacement" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/hero-pdp-video-banner-left_1.png?v=1700153658">
         {%- endif -%}
 
     </div>
@@ -43,13 +43,11 @@
       <div id="video-pdp-container">
 
         <video class="yourVideo" id="yourVideo2" preload="metadata" muted  width="400" height="300">
-          <source src={{ variant.metafields.custom.pdp_female_video | metafield_tag }}
+          <source src={{ variant.metafields.custom.pdp_female_video | metafield_tag }}>
         </video>
 
 
       </div>
-      {%- else -%}
-      <img class="pdp-video-replacement" src="https://cdn.shopify.com/s/files/1/0837/7679/9012/files/hero-pdp-video-banner_1.png?v=1700152859">
     {%- endif -%}
 
     </div>
@@ -105,12 +103,14 @@
 </script>
   <style>
     .angry-grid-video-pdp {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      place-items: stretch;
+      display: flex;
+      flex-wrap: wrap;
+      /* display: grid;
+      grid-template-columns: 1fr 1fr; */
+      /* place-items: stretch;
       max-width: 95%;
       gap: 0px;
-      height: 100%;
+      height: 100%; */
     }
       
     #item-video-pdp-0 {
