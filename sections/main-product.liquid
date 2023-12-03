@@ -116,7 +116,7 @@
   <link id="ModelViewerStyle" rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css" media="print" onload="this.media='all'">
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-  <div class="{% if section.settings.use_background_input %} background-input product-section__padding{% endif %}">
+  <div class="{% if section.settings.use_background_input %} product-section__padding{% endif %}">
     {%-liquid
       if settings.enable_breadcrumns
         if collection
