@@ -46,7 +46,6 @@ class RecentlyViewed extends HTMLElement
   constructor() {
 		super();
 
-		console.log('test')
 		this.limit = parseInt(this.dataset.limit);
 		
 		this.isEmpty = true;
@@ -89,7 +88,6 @@ class RecentlyViewed extends HTMLElement
 				}
 				// main element
 				const sliderComponent = html.querySelector('slider-component');
-				console.log('🚀 ~ file: recently-viewed.js:91 ~ updateContent ~ sliderComponent:', sliderComponent)
 				if(sliderComponent) {
 					sliderComponent.setAttribute('data-outside-prev-button-id', this.dataset.prevButton);
 					sliderComponent.setAttribute('data-outside-next-button-id', this.dataset.nextButton);
