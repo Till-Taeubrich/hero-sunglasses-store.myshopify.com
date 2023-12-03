@@ -21,6 +21,10 @@
   #shopify-section-{{ section.id }} .product__info-container {
     border-radius: 0.8rem;
   }
+
+  #shopify-section-{{ section.id }} .complementary-products {
+    margin-bottom: 10px;
+  }
 </style>
 
 <section id="MainProduct-{{ section.id }}" class="product-section section-{{ section.id }}-padding{% if settings.page_width > 1400 and section.settings.media_size == "small" %} page-width--extra-spacing-column{% endif %}" data-section="{{ section.id }}">
