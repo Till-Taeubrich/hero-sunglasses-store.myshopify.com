@@ -1,0 +1,207 @@
+<product-recommendations class="complementary-products no-js-hidden db{% if block.settings.make_collapsible_row %} is-accordion accordion{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=8&intent=complementary">
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    {%- assign section_id = section.id | append: '-' | append: block.id -%}
+    <aside aria-label="{{ 'accessibility.complementary_products' | t }}" {{ block.shopify_attributes }}>
+      <div class="complementary-products__container">
+        {%- if block.settings.make_collapsible_row -%}
+          <div class="product__accordion db">
+            <div  id="Details-{{ block.id }}-{{ section.id }}" open>
+              <summary id="removeComplementary"  class="summary-accordion summary-accordion--has-hover flex justify-space-between align-center por">
+        {%- endif %}
+        <div class="summary__title flex align-center flex-grow-1">
+          {%- if block.settings.make_collapsible_row -%}
+            {%- render 'icon-picker', icon: block.settings.icon, add_classes: 'icon-accordion' -%}
+          {%- endif -%}
+          <h2 class="h4 accordion__title margin0 font-heading-bold complementary-products__title">
+            {{ block.settings.block_heading }} 
+            <br>
+            <span id="metafieldCountDetails">
+              Available Options:
+              {% assign metafieldcount = product.metafields.shopify--discovery--product_recommendation.related_products.value %}
+              {{ metafieldcount.count | append: ")" | prepend: "("}}
+            </span>
+          </h2>
+          {% assign count_complementary = product.metafields.shopify--discovery--product_recommendation.related_products.value %}
+          {% if count_complementary != empty %}
+
+          {% assign metafield_count = count_complementary.size %}
+          {{metafield_count }}
+          {% endif %}
+        </div>
+        {%- if block.settings.make_collapsible_row -%}
+            <div class="summary-accordion__plus-minus-wrapper flex justify-center align-center">
+              <span class="summary-accordion__plus-minus por flex justify-center align-center">
+                <span class="summary-accordion__icon-line"></span>
+                <span class="summary-accordion__icon-line"></span>
+              </span>
+            </div>
+          </summary>
+        {%- endif -%}
+        <summary id="lowerSummaryComplementary">
+          {%- comment -%}
+            
+            <div id="complementaryDrawer">
+              <span style="font-size:smaller;">{{ product.title}}</span>
+              <img src="{{ product | image_url: width: 80, height: 40, crop: 'center' }}"/>
+            </div>
+          {%- endcomment -%}
+
+          <img src="{{ product | image_url: width: 80, height: 40, crop: 'center' }}"/>
+          <div style="text-align:center;" class="displayColumn">
+            <span style="font-weight: 700;font-size:16px;">{{ product.title}}</span>
+            <span style="font-weight: 500;">RELATED MODELS</span>
+          </div>
+           <li class="variant-drawer-complementary">
+
+            <details-modal  data-breakpoint="tablet">
+              <details class="details">
+                <summary class="header__icon header__icon--search header__icon--summary link header__button-icon modal__toggle flex justify-center align-center" aria-haspopup="dialog" aria-label="Search" role="button">
+                  
+                  <a id="clickHideHeader" href="javascript:;" class="arrow">{% render 'icon-chevron' %}</a>
+                </summary>
+        <complementary-products id="complementary-products-{{ section.id }}" class="complementary complementary--standard db product__info-box variant-details{% if block.settings.make_collapsible_row %} {% endif %}" tabindex="-1" role="group">
+
+          <div class="product__sale-box product__info-box flex flex-column">
+            
+            <div class="variant-details-inner variant-details-inner-complementary">
+              <div class="close flex justify-right">
+
+                            <button type="button" class="modal__close-button link link--text focus-inset flex justify-center align-center" aria-label="Close">
+                              <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+                                <use href="#icon-close"></use>
+                              </svg>
+                            </button>
+                          </div>
+              <ul id="complementaryList" class="list-unstyled recommendation-list complementary__product-list" role="list">
+                {%- for r_product in recommendations.products -%}
+                  {%- capture srcset -%}
+                    {%- if r_product.featured_image.width >= 275 -%}{{ r_product.featured_image | image_url: width: 275 }} 275w,{%- endif -%}
+                    {%- if r_product.featured_image.width >= 550 -%}{{ r_product.featured_image | image_url: width: 550 }} 550w,{%- endif -%}
+                    {%- if r_product.featured_image.width >= 710 -%}{{ r_product.featured_image | image_url: width: 710 }} 710w,{%- endif -%}
+                    {%- if r_product.featured_image.width >= 1420 -%}{{ r_product.featured_image | image_url: width: 1420 }} 1420w,{%- endif -%}
+                    {{ r_product.featured_image | image_url }} {{ r_product.featured_image.width }}w
+                  {%- endcapture -%}
+                  
+                  <li id="li_comp_{{ forloop.rindex0 }}" class="complementary__item how-many-comp"{% if r_product.variants.size > 1 and r_product.featured_image != blank %} data-featured-image="{{ srcset }}"{% endif %}>
+                    <div class="complementary__item__info complementary__item__info--media{% unless r_product.has_only_default_variant %} complementary__item__info--has-variants{% endunless %}">
+                      {%- if  r_product.featured_image != blank -%}
+                        <a class="complementary__item__media-wrapper" href="{{ r_product.url }}" aria-label="{{ r_product.featured_image.alt | default: r_product.title | escape }}">
+                          <{% if settings.enable_appear_effect %}use-animate{% else %}div{% endif %} class="media media--{{ block.settings.image_ratio }}">
+                            <img
+                              class="complementary__item__image"
+                              srcset="{{ srcset }}"
+                              src="{{ r_product.featured_image | image_url: width: 160 }}"
+                              sizes="30rem"
+                              alt="{{ r_product.featured_image.alt }}"
+                              height="{{ r_product.featured_image.height }}"
+                              width="{{ r_product.featured_image.width }}"
+                              loading="lazy"
+                            >
+                          </{% if settings.enable_appear_effect %}use-animate{% else %}div{% endif %}>
+                        </a>
+                      {%- else -%}
+                        {{ r_product.title }}  
+                      {%- endif -%}
+                    </div>
+                    <div class="complementary__item__info complementary__item__name flex flex-column justify-center">
+                      <h3 class="h4 complementary__item__title margin0" id="rel-title-{{ section_id }}-{{ r_product.id }}">
+                        <a href="{{ r_product.url }}" class="link link-effect-no-underline">{{ r_product.title }}</a>
+                      </h3>
+                    </div>
+                    <div class="complementary__item__info complementary__item__info--variant flex align-center">
+                      {%- unless r_product.has_only_default_variant -%}
+                        <div class="select">
+                          <div
+                            class="select__select complementary__item__select complementary-variant-id"
+                            name="items[][id]"
+                          >
+                            {%- for r_variant in r_product.variants limit: 1 -%}
+                              <div value="{{ r_variant.id | escape }}"
+                                {% if r_variant.id == r_product.first_available_variant.id %} selected="selected"{% endif %}
+                                data-price="{{ r_variant.price }}"
+                                data-compare-at-price="{{ r_variant.compare_at_price }}"
+                                data-available="{{ r_variant.available }}"
+                                {% unless r_variant.available %}disabled{% endunless %}
+                                {% if r_variant.featured_image != blank %} data-featured-image="{{ r_variant.featured_image.src | image_url }}" data-featured-image-width="{{ r_variant.featured_image.width }}"{% endif %}
+                              >
+                               <a class="link h6" href="{{ r_product.url }}">SEE AVAILABLE OPTIONS</a>  
+                              </div>
+                            {%- endfor -%}
+                          </div>
+                        </div>
+                      {%- else -%}
+                      {%- endunless -%}  
+                      {%- if r_product.available -%}
+
+                      {%- endif -%}
+                    </div>
+                    
+                  </li>
+                    <li><hr class="complementary__separated-line"></li>
+                {%- endfor -%}
+              </ul>
+            </div>  
+            {%- if block.settings.total_enable or block.settings.button_enable -%}
+              <div class="complementary__actions w100 flex align-center product__sale-box__footer por flex justify-space-between">
+                {%- if block.settings.total_enable -%}
+                  {%- liquid
+                    assign money_price = 0 | money
+                    if settings.currency_code_enabled
+                      assign money_price = 0 | money_with_currency
+                    endif
+                  -%}
+                  <div class="complementary__total flex flex-column">
+                    <span class="complementary__total__label text-small lh1">{{ block.settings.total_label }}</span>
+
+                  </div>
+                {%- endif -%}
+       
+              </div>
+            {%- endif -%}
+          </div>
+        </complementary-products>
+        {%- if block.settings.make_collapsible_row -%}
+        </div>
+          <div class="details-modal-overlay search-modal-overlay"></div>
+      </div>
+        {%- endif -%}  
+      </div>
+    </aside>
+  {%- endif -%}
+  {{ 'component-complementary-products.css' | asset_url | stylesheet_tag }}
+  {%- unless request.design_mode -%}
+    <script src="{{ 'complementary-products.js' | asset_url }}" defer="defer"></script>
+  {%- endunless -%}
+  {%- if block.settings.enable_quick_add -%}
+    <link rel="stylesheet" href="{{ 'component-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+    <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+  {%- if block.settings.make_collapsible_row -%}
+    <script src="{{ 'details-accordion.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}  
+</product-recommendations>
+</details>
+<div class="details-modal-overlay search-modal-overlay"></div>
+</details-modal>
+
+{%- comment -%}
+  
+<script>
+var upScrollComp = document.getElementById("scrollUpComplementary");
+var downScrollComp = document.getElementById("scrollDownComplementary");
+$("#scrollUpComplementary").click(function() {
+  $('complementary__item').animate({
+      scrollTop: $("#li_comp_1").offset().top},
+      'slow');
+});
+$("#scrollDownComplementary").click(function() {
+  $('.complementary__item').animate({
+      scrollBottom: $("#li_comp_0").offset().bottom},
+      'slow');
+});
+</script>
+          <div class="Column">
+            <button id="scrollUpComplementary">Click</button>
+            <button  id="scrollDownComplementary">Click</button>
+          </div>
+{%- endcomment -%}
