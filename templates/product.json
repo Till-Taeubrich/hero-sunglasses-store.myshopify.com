@@ -309,6 +309,7 @@
       "block_order": [
         "62866e65-862d-4e95-8285-839f9752e53c"
       ],
+      "disabled": true,
       "custom_css": [
         "# {max-width: 54%;}"
       ],
