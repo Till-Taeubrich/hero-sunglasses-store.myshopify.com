@@ -2,6 +2,27 @@
   #shopify-section-{{ section.id }} {
     background-color: #f2f2f2;
   }
+
+  #shopify-section-{{ section.id }} #Slider-recently-viewed-products-ajax {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+ 
+  #shopify-section-{{ section.id }} #Slider-recently-viewed-products-ajax .grid__item {
+    width: unset;
+  }
+
+  @media screen and (max-width: 989px) {
+    #shopify-section-{{ section.id }} #Slider-recently-viewed-products-ajax {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} #Slider-recently-viewed-products-ajax {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
 {%- if settings.recently_viewed_enable -%}

@@ -60,7 +60,7 @@
   endif
 -%}
 
-<slider-component class="por slider-mobile-gutter{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} has-slider{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if show_tablet_slider %} slider-component-tablet{% endif %}{% if show_mobile_slider %} slider-component-mobile{% endif %}">
+<slider-component class="por slider-mobile-gutter">
   <ul id="Slider-{{ section.id }}" class="grid--4-col-desktop grid product-grid contains-card contains-card--product grid--{{ settings.recently_viewed_columns_tablet }}-col-tablet grid--{{ settings.recently_viewed_columns_desktop }}-col-desktop grid--{{ settings.recently_viewed_columns_mobile }}-col{% if show_mobile_slider or show_tablet_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_tablet_slider %} slider--tablet{% endif %}{% if show_mobile_slider %} slider--mobile{% endif %}{% endif %}" role="list" aria-label="{{ 'general.floating_bar.recently_viewed' | t | escape }}">
     {%- for card_product in search.results limit: settings.recently_viewed_products_to_show -%}
       {% if forloop.index < 5 %}
