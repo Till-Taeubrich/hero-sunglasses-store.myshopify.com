@@ -743,17 +743,7 @@ details[open=true]+.details-modal-overlay {
       min-width: 28.5vw;
       object-fit: contain;
     }
-
-    .angry-grid-video-pdp {
-      max-height: 285px;
-    }
-    @media screen and (max-width: 1700px) {
-      .angry-grid-video-pdp {
-        max-height: 285px;
-      }
       
-    }
-
     .margin015 {
       margin: 0 20px;
     }

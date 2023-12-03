@@ -35,6 +35,17 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
+
+  #shopify-section-{{ section.id }} .angry-grid-video-pdp .img__wrapper {
+    width: 100%;
+    flex-basis: 50%;
+  }
+
+  @media(max-width: 989px) {
+    #shopify-section-{{ section.id }} .angry-grid-video-pdp .img__wrapper {
+      flex-basis: 100%;
+    }
+  }
 </style>
 
 <section id="MainProduct-{{ section.id }}" class="product-section section-{{ section.id }}-padding{% if settings.page_width > 1400 and section.settings.media_size == "small" %} page-width--extra-spacing-column{% endif %}" data-section="{{ section.id }}">
