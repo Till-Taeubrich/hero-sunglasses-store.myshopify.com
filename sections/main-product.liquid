@@ -52,6 +52,12 @@
       grid-template-columns: unset;
     }
   }
+
+  @media(max-width: 749px) {
+    #shopify-section-{{ section.id }} .product-detail-accordion {
+      flex-direction: column;
+    }
+  }
 </style>
 
 <section id="MainProduct-{{ section.id }}" class="product-section section-{{ section.id }}-padding{% if settings.page_width > 1400 and section.settings.media_size == "small" %} page-width--extra-spacing-column{% endif %}" data-section="{{ section.id }}">
