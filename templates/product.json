@@ -1,54 +1,5 @@
 {
   "sections": {
-    "68fb2487-c8c9-4b5e-bda9-114812fda9ed": {
-      "type": "bullets-grid",
-      "blocks": {
-        "a63f1bbf-e423-4cc2-9455-eafd797a0686": {
-          "type": "bullet_point",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/24_hour_2.svg",
-            "title": "Live Chat",
-            "description": "Have a question? Just click the little icon in the bottom right of your screen!"
-          }
-        },
-        "7a060988-54a0-4a6d-8276-c40f1325a670": {
-          "type": "bullet_point",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/Customer_Service.svg",
-            "title": "Phone Support",
-            "description": "More of a phone call person? Just give us a ring! Leave a VM if we’re closed."
-          }
-        },
-        "66756f46-cca0-46cd-b400-e144bef9e55e": {
-          "type": "bullet_point",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/Mobile_Shopping_1_375e1efc-0d18-479d-a51c-1c00ebd2d45e.svg",
-            "title": "SMS Support",
-            "description": "Shoot us a text at 317-888-4484 -- We’re looking forward to it!"
-          }
-        },
-        "626cf6c9-2579-4a58-b503-4db9f723b3b2": {
-          "type": "bullet_point",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/Online_Payment.svg",
-            "title": "Email Support",
-            "description": "Shoot us an email at  info@96shades.com - We’ll get back to you within 24 hours!"
-          }
-        }
-      },
-      "block_order": [
-        "a63f1bbf-e423-4cc2-9455-eafd797a0686",
-        "7a060988-54a0-4a6d-8276-c40f1325a670",
-        "66756f46-cca0-46cd-b400-e144bef9e55e",
-        "626cf6c9-2579-4a58-b503-4db9f723b3b2"
-      ],
-      "settings": {
-        "text": "Not all Heros have two legs!",
-        "img": "shopify:\/\/shop_images\/dog.png",
-        "padding-top": 0,
-        "padding-bottom": 0
-      }
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -572,10 +523,58 @@
         "padding-top": 60,
         "padding-bottom": 90
       }
+    },
+    "68fb2487-c8c9-4b5e-bda9-114812fda9ed": {
+      "type": "bullets-grid",
+      "blocks": {
+        "a63f1bbf-e423-4cc2-9455-eafd797a0686": {
+          "type": "bullet_point",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/24_hour_2.svg",
+            "title": "Live Chat",
+            "description": "Have a question? Just click the little icon in the bottom right of your screen!"
+          }
+        },
+        "7a060988-54a0-4a6d-8276-c40f1325a670": {
+          "type": "bullet_point",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Customer_Service.svg",
+            "title": "Phone Support",
+            "description": "More of a phone call person? Just give us a ring! Leave a VM if we’re closed."
+          }
+        },
+        "66756f46-cca0-46cd-b400-e144bef9e55e": {
+          "type": "bullet_point",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Mobile_Shopping_1_375e1efc-0d18-479d-a51c-1c00ebd2d45e.svg",
+            "title": "SMS Support",
+            "description": "Shoot us a text at 317-888-4484 -- We’re looking forward to it!"
+          }
+        },
+        "626cf6c9-2579-4a58-b503-4db9f723b3b2": {
+          "type": "bullet_point",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Online_Payment.svg",
+            "title": "Email Support",
+            "description": "Shoot us an email at  info@96shades.com - We’ll get back to you within 24 hours!"
+          }
+        }
+      },
+      "block_order": [
+        "a63f1bbf-e423-4cc2-9455-eafd797a0686",
+        "7a060988-54a0-4a6d-8276-c40f1325a670",
+        "66756f46-cca0-46cd-b400-e144bef9e55e",
+        "626cf6c9-2579-4a58-b503-4db9f723b3b2"
+      ],
+      "settings": {
+        "text": "Not all Heros have two legs!",
+        "img": "shopify:\/\/shop_images\/dog.png",
+        "padding-top": 21,
+        "padding-bottom": 20
+      }
     }
   },
   "order": [
-    "68fb2487-c8c9-4b5e-bda9-114812fda9ed",
     "main",
     "a65eadf1-3a83-481c-923e-c7f41866f697",
     "d9bcf872-4d28-44c3-892e-28a6c441cd05",
@@ -589,6 +588,7 @@
     "1699830306d37cad31",
     "fd37e9c2-fd41-43f0-be72-5842404b2d02",
     "d5aaf82b-b2bb-4cbb-92a3-bd267eb3ff81",
-    "d16a4844-1d98-4165-9734-a499d12f0617"
+    "d16a4844-1d98-4165-9734-a499d12f0617",
+    "68fb2487-c8c9-4b5e-bda9-114812fda9ed"
   ]
 }
