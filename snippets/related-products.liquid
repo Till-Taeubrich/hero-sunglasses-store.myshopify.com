@@ -73,7 +73,7 @@
                             </button>
                           </div>
               <ul id="complementaryList" class="list-unstyled recommendation-list complementary__product-list" role="list">
-                {%- for r_product in recommendations.products -%}
+                {%- for r_product in metafieldcount -%}
                   {%- capture srcset -%}
                     {%- if r_product.featured_image.width >= 275 -%}{{ r_product.featured_image | image_url: width: 275 }} 275w,{%- endif -%}
                     {%- if r_product.featured_image.width >= 550 -%}{{ r_product.featured_image | image_url: width: 550 }} 550w,{%- endif -%}

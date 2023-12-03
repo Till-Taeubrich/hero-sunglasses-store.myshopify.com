@@ -719,6 +719,7 @@
                 </div>
               {%- when 'complementary' -%}
                 {%- render 'complementary-products', product: product, section: section, block: block -%}
+                {%- render 'related-products', product: product, section: section, block: block -%}
               {%- when 'countdown' -%}
                 {%- if block.settings.fallback_datetime != blank or block.settings.metafields != blank -%}
                   {%- liquid
