@@ -42,6 +42,15 @@
   opacity: 0;
 }
 
+@media screen and (min-width: 769px) {
+  .product__sticky {
+    display: block;
+    position: sticky;
+    top: 1rem;
+    z-index: 0;
+    transition: top 500ms ease;
+  }
+}
 @media screen and (min-width: 750px) {
   .product-section {
     --spacing-column: 2rem;

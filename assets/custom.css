@@ -240,7 +240,7 @@ border:5px solid #8F1818
 }
 
 .product__info-container {
-  position: sticky !important;
+  position: sticky;
   top: 0;
   
 }
