@@ -52,8 +52,22 @@
 	assign height = 973 | divided_by: image.aspect_ratio | ceil
 -%}
 
-{%- unless lazy_load == false -%}
-	{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, loading: 'lazy', class: 'GrabELementSrc' }}
-{%- else -%}
-	{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc' }}
-{%- endunless -%}
+{% if carousel %}
+	<div class="carousel" data-flickity='{ "fullscreen": true }'>
+		<div class="carousel-cell">
+			{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc' }}
+		</div>
+		<div class="carousel-cell">
+			{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc' }}
+		</div>
+		<div class="carousel-cell">
+			{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc' }}
+		</div>
+	</div>
+{% else %}
+	{%- unless lazy_load == false -%}
+		{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, loading: 'lazy', class: 'GrabELementSrc' }}
+	{%- else -%}
+		{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc' }}
+	{%- endunless -%}
+{% endif %}
