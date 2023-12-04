@@ -53,9 +53,11 @@
 
 {%- if media.media_type == 'image' -%}
 <a onclick="getClName()" class="openModalBtn product__modal-opener product__modal-opener--image"  data-pswp-width="{{ media.preview_image.width }}" data-pswp-height="{{ media.preview_image.height }}" aria-label="{{ 'products.product.media.open_media' | t: index: position | escape }}" tabindex="-1">
+{% comment %} 
   <span class="product__media-icon motion-reduce quick-add-hidden no-js-hidden" aria-hidden="true">
-    {%- render 'icon-zoom' -%}
+  {%- render 'icon-zoom' -%}
   </span>
+{% endcomment %}
 
   <div class="img__wrapper w100 product__media media {% if image_ratio == 'adapt' %}ratio{% else %}media--{{ image_ratio }}{% endif %}"{% if image_ratio == 'adapt' %} style="--ratio-percent: {{ 1.35 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;"{% endif %}>
     {%- render 'product-thumbnail-img', image: media.preview_image, sizes: sizes, lazy_load: lazy_load -%}
