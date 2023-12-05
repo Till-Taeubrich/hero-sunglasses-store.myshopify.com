@@ -56,9 +56,9 @@
 
 {%- if media.media_type == 'image' -%}
 <a class="product__modal-opener product__modal-opener--image" href="{{ media.preview_image | image_url: width: media.preview_image.width }}" data-pswp-width="{{ media.preview_image.width }}" data-pswp-height="{{ media.preview_image.height }}" aria-label="{{ 'products.product.media.open_media' | t: index: position | escape }}" tabindex="-1">
-  <span class="product__media-icon motion-reduce quick-add-hidden no-js-hidden" aria-hidden="true">
+  {% comment %} <span class="product__media-icon motion-reduce quick-add-hidden no-js-hidden" aria-hidden="true">
     {%- render 'icon-zoom' -%}
-  </span>
+  </span> {% endcomment %}
 
   <div class="w100 product__media media {% if image_ratio == 'adapt' %}ratio{% else %}media--{{ image_ratio }}{% endif %}"{% if image_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;"{% endif %}>
     {%- render 'product-thumbnail-img', carousel: true, product: product, image: media.preview_image, sizes: sizes, lazy_load: lazy_load -%}
