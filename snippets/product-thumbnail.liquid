@@ -63,7 +63,9 @@
   <div class="w100 product__media media {% if image_ratio == 'adapt' %}ratio{% else %}media--{{ image_ratio }}{% endif %}"{% if image_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;"{% endif %}>
     {%- render 'product-thumbnail-img', carousel: true, product: product, image: media.preview_image, sizes: sizes, lazy_load: lazy_load -%}
   </div>
+  {% comment %}
   {%- render 'icon-cart-loading', add_classes: 'product__media-loading no-js-hidden' -%}
+  {% endcomment %}
 </a>
 {%- endif -%}
 
