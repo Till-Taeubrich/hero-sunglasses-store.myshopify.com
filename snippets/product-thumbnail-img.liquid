@@ -54,15 +54,13 @@
 
 {% if carousel %}
 	<div class="carousel" data-flickity='{ "fullscreen": true }'>
-		<div class="carousel-cell">
-			{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc' }}
-		</div>
-		<div class="carousel-cell">
-			{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc' }}
-		</div>
-		<div class="carousel-cell">
-			{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc' }}
-		</div>
+		{{ image | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc carousel-img' }}
+		{% if product.selected_or_first_available_variant.metafields.custom.product_image_2 %}
+			{{ product.selected_or_first_available_variant.metafields.custom.product_image_2 | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc carousel-img' }}
+		{% endif %}
+		{% if product.selected_or_first_available_variant.metafields.custom.product_image_3 %}
+			{{ product.selected_or_first_available_variant.metafields.custom.product_image_3 | image_url: width: 1946 | image_tag: sizes: sizes, widths: widths, width: image.width, height: height, preload: true, fetchpriority: 'high', class: 'GrabELementSrc carousel-img' }}
+		{% endif %}
 	</div>
 {% else %}
 	{%- unless lazy_load == false -%}
