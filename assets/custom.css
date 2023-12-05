@@ -1024,3 +1024,7 @@ li.grid__item.selected .product-card-img-wrapper .carousel {
 a {
   text-decoration: none;
 }
+
+.product__media-item.product__media-item--variant {
+  display: block !important;
+}
