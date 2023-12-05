@@ -64,8 +64,14 @@
   }
 
   @media(min-width: 770px) {
-    #shopify-section-{{ section.id }} .carousel-img.only-mobile {
-      display: none;
+    #shopify-section-{{ section.id }} .main-product-carousel {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    #shopify-section-{{ section.id }} .main-product-carousel .carousel-img:not(.only-mobile){
+      grid-column: 1 / 3;
     }
   }
 
