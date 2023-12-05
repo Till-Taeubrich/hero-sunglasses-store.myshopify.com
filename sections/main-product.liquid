@@ -73,6 +73,7 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="{{ 'main-product-carousel.js' | asset_url }}" defer="defer"></script>
 
 {%- if product.media.size == 0 -%}
   {{ 'section-main-product-no-media.css' | asset_url | stylesheet_tag }}
