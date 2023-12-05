@@ -1,10 +1,12 @@
-const mainProductCarouselElement = document.querySelector('.main-product-carousel')
+const mainProductCarouselElement = document.querySelectorAll('.main-product-carousel')
 const mobileScreen = (window.innerWidth < 770) ? true : false;
 
 if (mobileScreen) {
-  new Flickity( mainProductCarouselElement, {
-    fullscreen: true,
-    prevNextButtons: false,
-    pageDots: true
-  });
+  mainProductCarouselElement.forEach(elem => {
+    new Flickity( elem, {
+      fullscreen: true,
+      prevNextButtons: false,
+      pageDots: true
+    });
+  })
 }
