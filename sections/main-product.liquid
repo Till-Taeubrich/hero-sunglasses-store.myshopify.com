@@ -63,6 +63,12 @@
     margin: 0;
   }
 
+  @media(min-width: 770px) {
+    #shopify-section-{{ section.id }} .carousel-img.only-mobile {
+      display: none;
+    }
+  }
+
   @media(max-width: 989px) {
     #shopify-section-{{ section.id }} .angry-grid-video-pdp .img__wrapper {
       flex-basis: 100%;
